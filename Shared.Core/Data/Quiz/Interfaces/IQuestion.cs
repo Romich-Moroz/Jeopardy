@@ -8,5 +8,6 @@ namespace Shared.Core.Data.Quiz.Interfaces
         IQuestionContent QuestionContent { get; }
         int Price { get; }
         string CorrectAnswer { get; }
+        string TaskDescription { get; }
     }
 }

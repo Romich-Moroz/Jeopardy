@@ -6,7 +6,6 @@ namespace Shared.Core.Data.Quiz.Interfaces
     {
         ContentAccessType ContentAccessType { get; }
         ContentType ContentType { get; }
-        string ContentLink { get; }
-        byte[] ContentBinary { get; }
+        byte[] Content { get; }
     }
 }
