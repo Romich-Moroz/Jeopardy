@@ -1,0 +1,182 @@
+﻿<Window x:Class="Jeopardy.Desktop.Tester.App.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:Jeopardy.Desktop.Tester.App.Viewmodels"
+        xmlns:hotkeys="clr-namespace:Jeopardy.Core.Wpf.Hotkeys;assembly=Jeopardy.Core.Wpf"
+        xmlns:locales="clr-namespace:Jeopardy.Core.Localization.Locales;assembly=Jeopardy.Core.Localization"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:data="clr-namespace:Jeopardy.Core.Data.Quiz.Constants;assembly=Jeopardy.Core.Data"
+        xmlns:conv="clr-namespace:Jeopardy.Core.Wpf.Converters;assembly=Jeopardy.Core.Wpf"
+        xmlns:mex="clr-namespace:Jeopardy.Core.Wpf.MarkupExtensions;assembly=Jeopardy.Core.Wpf"
+        d:DataContext="{d:DesignInstance viewmodels:MainWindowViewmodel}"
+        mc:Ignorable="d"
+        Height="450" 
+        Width="800" 
+        Title="{x:Static locales:LocaleTester.MainWindow_Title}">
+    <Window.InputBindings>
+        <hotkeys:MultiKeyBinding Command="{Binding AddRoundCommand}" 
+                                 Gesture="Ctrl+N,R"/>
+        <hotkeys:MultiKeyBinding Command="{Binding AddCategoryCommand}" 
+                                 Gesture="Ctrl+N,C"/>
+        <hotkeys:MultiKeyBinding Command="{Binding AddQuestionCommand}" 
+                                 Gesture="Ctrl+N,Q"/>
+        
+        <hotkeys:MultiKeyBinding Command="{Binding RemoveRoundCommand}" 
+                                 Gesture="Ctrl+D,R"/>
+        <hotkeys:MultiKeyBinding Command="{Binding RemoveCategoryCommand}" 
+                                 Gesture="Ctrl+D,C"/>
+        <hotkeys:MultiKeyBinding Command="{Binding RemoveQuestionCommand}" 
+                                 Gesture="Ctrl+D,Q"/>
+    </Window.InputBindings>
+
+    <Window.Resources>
+        <conv:EnumConverter x:Key="EnumConverter"></conv:EnumConverter>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_File}">
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_File_New}" 
+                          InputGestureText="Ctrl+N,F"
+                          Command="{Binding NewQuizCommand}"/>
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_File_Open}" 
+                          InputGestureText="Ctrl+O"
+                          Command="{Binding OpenQuizCommand}"/>
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_File_SaveAs}" 
+                          InputGestureText="Ctrl+S"
+                          Command="{Binding SaveQuizCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Rounds}">
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Rounds_Add}" 
+                          InputGestureText="Ctrl+N,R" 
+                          Command="{Binding AddRoundCommand}"/>
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Rounds_DeleteSelected}" 
+                          InputGestureText="Ctrl+D,R" 
+                          Command="{Binding RemoveRoundCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Categories}">
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Categories_Add}" 
+                          InputGestureText="Ctrl+N,C" 
+                          Command="{Binding AddCategoryCommand}"/>
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Categories_DeleteSelected}" 
+                          InputGestureText="Ctrl+D,C" 
+                          Command="{Binding RemoveCategoryCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Questions}">
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Questions_Add}" 
+                          InputGestureText="Ctrl+N,Q" 
+                          Command="{Binding AddQuestionCommand}"/>
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Questions_DeleteSelected}" 
+                          InputGestureText="Ctrl+D,Q" 
+                          Command="{Binding RemoveQuestionCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Actions}">
+                <MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Validate}"
+                      InputGestureText="Ctrl+N,V"
+                      Command="{Binding RunValidationsCommand}"/>
+            </MenuItem>
+            
+            <!--<MenuItem Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Language}">
+                <ComboBox ItemsSource="{Binding Source={mex:Enumeration {x:Type localization:SupportedLocale}}}"
+                          DisplayMemberPath="Description" 
+                          SelectedValue="{Binding CurrentStatus}"  
+                          SelectedValuePath="Value">
+                          
+                </ComboBox>
+            </MenuItem>-->
+        </Menu>
+
+        <!--<TabControl Grid.Row="1" Style="{StaticResource TabControlStyle}"/>-->
+        <ListBox Grid.Row="1" ItemsSource="{Binding ValidationResult.FieldValidationResults}" MaxHeight="100">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TabControl Grid.Row="2" 
+                    ItemsSource="{Binding Quiz.Rounds}" 
+                    SelectedIndex="{Binding SelectedRound}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
+                             Margin="0 0 50 0"
+                             MinWidth="50"
+                             MaxLength="20"/>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <TabControl ItemsSource="{Binding Categories}" 
+                                SelectedIndex="{Binding DataContext.SelectedCategory, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                        <TabControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
+                                         Margin="0 0 50 0" 
+                                         MinWidth="50"
+                                         MaxLength="20"/>
+                            </DataTemplate>
+                        </TabControl.ItemTemplate>
+                        <TabControl.ContentTemplate>
+                            <DataTemplate>
+                                <DataGrid ItemsSource="{Binding Questions}" 
+                                          SelectedIndex="{Binding DataContext.SelectedQuestion, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                          AutoGenerateColumns="False"
+                                          CanUserAddRows="False">
+                                    <DataGrid.Columns>
+                                        <DataGridComboBoxColumn Header="{x:Static locales:LocaleCommon.Question_QuestionType}" 
+                                                                ItemsSource="{Binding Source={mex:Enumeration {x:Type data:QuestionType}}}"
+                                                                DisplayMemberPath="Description"
+                                                                SelectedValuePath="Value"
+                                                                SelectedValueBinding="{Binding QuestionType, UpdateSourceTrigger=PropertyChanged}">
+                                        </DataGridComboBoxColumn>
+                                        <DataGridComboBoxColumn Header="{x:Static locales:LocaleCommon.Question_ContentType}"
+                                                                ItemsSource="{Binding Source={mex:Enumeration {x:Type data:ContentType}}}"
+                                                                DisplayMemberPath="Description"
+                                                                SelectedValuePath="Value"
+                                                                SelectedValueBinding="{Binding ContentType, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridComboBoxColumn Header="{x:Static locales:LocaleCommon.Question_ContentAccessType}"
+                                                                ItemsSource="{Binding Source={mex:Enumeration {x:Type data:ContentAccessType}}}"
+                                                                DisplayMemberPath="Description"
+                                                                SelectedValuePath="Value"
+                                                                SelectedValueBinding="{Binding ContentAccessType, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridTextColumn Header="{x:Static locales:LocaleCommon.Question_TaskDescription}" 
+                                                            Binding="{Binding TaskDescription, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridTextColumn Header="{x:Static locales:LocaleCommon.Question_CorrectAnswer}" 
+                                                            Binding="{Binding CorrectAnswer, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridTextColumn Header="{x:Static locales:LocaleCommon.Question_Price}" 
+                                                            Binding="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridTextColumn Header="{x:Static locales:LocaleCommon.Question_ContentPath}"
+                                                            Binding="{Binding ContentPath, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <DataGridTemplateColumn Header="{x:Static locales:LocaleTester.MainWindow_Menu_Header_Actions}">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Width="auto" Content="{x:Static locales:LocaleTester.DataGrid_Actions_SetFile}" 
+                                                                Command="{Binding DataContext.SetContentCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                            <DataGridTemplateColumn.CellEditingTemplate>
+                                                <DataTemplate>
+                                                    <Button Width="auto" Content="{x:Static locales:LocaleTester.DataGrid_Actions_SetFile}" 
+                                                                Command="{Binding DataContext.SetContentCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellEditingTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </DataTemplate>
+                        </TabControl.ContentTemplate>
+                    </TabControl>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+    </Grid>
+</Window>
