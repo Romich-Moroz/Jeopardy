@@ -1,4 +1,5 @@
 ﻿using Jeopardy.Core.Data.Quiz;
+using Jeopardy.Core.Data.Quiz.Constants;
 using Jeopardy.Core.Data.Validation;
 using Jeopardy.Core.Files.Serialization;
 using Jeopardy.Core.Localization;
@@ -71,9 +72,27 @@ namespace Jeopardy.Desktop.Tester.App.Viewmodels
                 () =>
                 {
                     OpenFileDialog openFileDialog = new();
+                    Question? question = Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions[SelectedQuestion];
+                    ContentType contentType = question.ContentType;
+
+                    switch (contentType)
+                    {
+                        case ContentType.Image:
+                            openFileDialog.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg";
+                            break;
+                        case ContentType.Sound:
+                            openFileDialog.Filter = "Sound files (*.mp3;*.flac)|*.mp3;*.flac";
+                            break;
+                        case ContentType.Video:
+                            openFileDialog.Filter = "Video files (*.mp4;*.avi)|*.mp4;*.avi";
+                            break;
+                        default:
+                            return;
+                    }
+
                     if (openFileDialog.ShowDialog() == true)
                     {
-                        Question? question = Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions[SelectedQuestion];
+
                         question.ContentPath = openFileDialog.FileName;
                         question.ContentAccessType = Core.Data.Quiz.Constants.ContentAccessType.Embedded;
                     }

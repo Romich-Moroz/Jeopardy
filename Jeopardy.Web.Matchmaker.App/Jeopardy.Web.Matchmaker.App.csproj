@@ -10,4 +10,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Jeopardy.Core.Data\Jeopardy.Core.Data.csproj" />
+  </ItemGroup>
+
 </Project>
