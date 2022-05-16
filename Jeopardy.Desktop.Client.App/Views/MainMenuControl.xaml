@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Jeopardy.Desktop.Client.App.Views.MainMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:viewmodels="clr-namespace:Jeopardy.Desktop.Client.App.Viewmodels"
+             d:DataContext="{d:DesignInstance viewmodels:MainMenuViewmodel}"
+             xmlns:locales="clr-namespace:Jeopardy.Core.Localization.Locales;assembly=Jeopardy.Core.Localization"
+             xmlns:converters="clr-namespace:Jeopardy.Core.Wpf.Converters;assembly=Jeopardy.Core.Wpf">
+    
+    <UserControl.Resources>
+        <BitmapImage x:Key="DefaultAvatar" UriSource="../Resources/Images/DefaultAvatar.png" />
+        <converters:ByteArrayToBitmapImageConverter x:Key="ImageConverter"/>
+    </UserControl.Resources>
+    
+    <StackPanel Width="300" VerticalAlignment="Center">
+
+        <TextBlock FontSize="30" 
+                   Padding="0 10 0 5" 
+                   Text="{Binding User.Username, FallbackValue=Username}" 
+                   HorizontalAlignment="Center"/>
+        <Image Width="150" Source="{Binding User.Avatar, FallbackValue={StaticResource DefaultAvatar}, Converter={StaticResource ImageConverter}}"/>
+
+        <Button Content="{x:Static locales:LocaleClient.MainMenu_HostGame}" 
+                Margin="10 50 10 10" 
+                FontSize="20"
+                Height="auto"
+                Command="{Binding HostGameCommand}"/>
+        <Button Content="{x:Static locales:LocaleClient.MainMenu_JoinGame}" 
+                Margin="10" 
+                FontSize="20"
+                Height="auto"
+                Command="{Binding JoinGameCommand}"/>
+        <Button Content="{x:Static locales:LocaleClient.MainMenu_ChangeIdentity}" 
+                Margin="10" 
+                FontSize="20"
+                Height="auto"
+                Command="{Binding ChangeIdentityCommand}"/>
+        <Button Content="Exit" 
+                Margin="10" 
+                FontSize="20"
+                Height="auto"
+                Command="{Binding ExitCommand}"/>
+    </StackPanel>
+</UserControl>

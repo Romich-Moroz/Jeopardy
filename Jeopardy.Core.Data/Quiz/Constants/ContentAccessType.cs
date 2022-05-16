@@ -1,8 +1,10 @@
 ﻿using Jeopardy.Core.Localization.Locales;
+using ProtoBuf;
 using System.ComponentModel.DataAnnotations;
 
 namespace Jeopardy.Core.Data.Quiz.Constants
 {
+    [ProtoContract]
     public enum ContentAccessType
     {
         [Display(Description = "Enum_Undefined", ResourceType = typeof(LocaleCommon))]
@@ -10,8 +12,8 @@ namespace Jeopardy.Core.Data.Quiz.Constants
         //Access via embedded binary
         [Display(Description = "ContentAccessType_Embedded", ResourceType = typeof(LocaleCommon))]
         Embedded = 1,
-        //Access via link on the internet
-        [Display(Description = "ContentAccessType_Link", ResourceType = typeof(LocaleCommon))]
-        Link = 2
+        ////Access via link on the internet
+        //[Display(Description = "ContentAccessType_Link", ResourceType = typeof(LocaleCommon))]
+        //Link = 2
     }
 }

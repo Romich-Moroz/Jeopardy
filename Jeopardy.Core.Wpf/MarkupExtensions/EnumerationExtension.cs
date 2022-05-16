@@ -9,10 +9,7 @@ namespace Jeopardy.Core.Wpf.MarkupExtensions
     {
         private Type _enumType;
 
-        public EnumerationExtension(Type enumType)
-        {
-            _enumType = enumType ?? throw new ArgumentNullException(nameof(enumType));
-        }
+        public EnumerationExtension(Type enumType) => _enumType = enumType ?? throw new ArgumentNullException(nameof(enumType));
 
         public Type EnumType
         {
@@ -35,24 +32,18 @@ namespace Jeopardy.Core.Wpf.MarkupExtensions
             }
         }
 
-        public override object ProvideValue(IServiceProvider serviceProvider)
-        {
-            return Enum.GetValues(EnumType)
+        public override object ProvideValue(IServiceProvider serviceProvider) => Enum.GetValues(EnumType)
                        .Cast<Enum>()
                        .Skip(1)
                        .Select(v => new EnumerationMember(v.GetDisplayDescription(), v))
                        .ToArray();
-        }
 
         public class EnumerationMember
         {
             public string Description { get; set; }
             public object Value { get; set; }
 
-            public EnumerationMember(string description, object value)
-            {
-                (Description, Value) = (description, value);
-            }
+            public EnumerationMember(string description, object value) => (Description, Value) = (description, value);
         }
     }
 }

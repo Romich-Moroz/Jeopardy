@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Jeopardy.Desktop.Client.App.Views.AuthControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:viewmodels="clr-namespace:Jeopardy.Desktop.Client.App.Viewmodels"
+             d:DataContext="{d:DesignInstance viewmodels:AuthViewmodel}"
+             xmlns:locales="clr-namespace:Jeopardy.Core.Localization.Locales;assembly=Jeopardy.Core.Localization"
+             xmlns:converters="clr-namespace:Jeopardy.Core.Wpf.Converters;assembly=Jeopardy.Core.Wpf"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <UserControl.Resources>
+        <BitmapImage x:Key="DefaultAvatar" UriSource="../Resources/Images/DefaultAvatar.png" />
+        <converters:ByteArrayToBitmapImageConverter x:Key="ImageConverter"/>
+    </UserControl.Resources>
+
+    <StackPanel Width="300" VerticalAlignment="Center">
+        <TextBlock FontSize="30" 
+                   Padding="0 10 0 10" 
+                   Text="{x:Static locales:LocaleClient.AuthControl_Title}" 
+                   HorizontalAlignment="Center"/>
+        <Image Width="150" Source="{Binding UserIdentity.Avatar, FallbackValue={StaticResource DefaultAvatar}, Converter={StaticResource ImageConverter}}"/>
+
+        <Button Content="{x:Static locales:LocaleClient.AuthControl_SetAvatar}" 
+                FontSize="20" 
+                Width="150" 
+                Margin="0 10"
+                Height="auto"
+                Command="{Binding SetAvatarCommand}"/>
+        <TextBox FontSize="20" materialDesign:HintAssist.Hint="{x:Static locales:LocaleClient.AuthControl_Username}" Text="{Binding UserIdentity.Username, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Content="{x:Static locales:LocaleClient.AuthControl_UseIdentity}"
+                FontSize="20" 
+                Margin="0 10 0 5" 
+                Height="auto"
+                Command="{Binding UseIdentityCommand}"/>
+    </StackPanel>
+</UserControl>

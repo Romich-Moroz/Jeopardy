@@ -1,11 +1,10 @@
 ﻿using Jeopardy.Core.Data.Quiz;
 using Jeopardy.Core.Data.Quiz.Constants;
+using Jeopardy.Core.Data.Utility;
 using Jeopardy.Core.Data.Validation;
-using Jeopardy.Core.Files.Serialization;
-using Jeopardy.Core.Localization;
+using Jeopardy.Core.Serialization;
 using Jeopardy.Core.Wpf.Commands;
 using Jeopardy.Core.Wpf.Viewmodels;
-using Jeopardy.Desktop.Tester.App.Models;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -17,109 +16,95 @@ namespace Jeopardy.Desktop.Tester.App.Viewmodels
         public Quiz Quiz { get; set; } = new(new ObservableCollection<QuizRound>());
         public ValidationResult ValidationResult { get; set; } = new();
 
-        public ICommand AddRoundCommand { get; }
-        public ICommand RemoveRoundCommand { get; }
-        public ICommand AddCategoryCommand { get; }
-        public ICommand RemoveCategoryCommand { get; }
-        public ICommand AddQuestionCommand { get; }
-        public ICommand RemoveQuestionCommand { get; }
+        public ICommand AddRoundCommand => new RelayCommand(
+            () => Quiz.Rounds.Add(new(new ObservableCollection<QuizCategory>())),
+            null
+        );
 
-        public ICommand SetContentCommand { get; }
-        public ICommand SetLanguageCommand { get; }
-        public ICommand RunValidationsCommand { get; }
+        public ICommand AddCategoryCommand => new RelayCommand(
+            () => Quiz.Rounds[SelectedRound].Categories.Add(new(new ObservableCollection<Question>())),
+            IsRoundSelected
+        );
 
-        public ICommand NewQuizCommand { get; }
-        public ICommand SaveQuizCommand { get; }
-        public ICommand OpenQuizCommand { get; }
+        public ICommand AddQuestionCommand => new RelayCommand(
+            () => Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions.Add(new Question()),
+            IsCategorySelected
+        );
 
-        public int SelectedRound { get; set; } = -1;
-        public int SelectedCategory { get; set; } = -1;
-        public int SelectedQuestion { get; set; } = -1;
+        public ICommand RemoveRoundCommand => new RelayCommand(
+            () => Quiz.Rounds.RemoveAt(SelectedRound),
+            IsRoundSelected
+        );
 
-        public MainWindowViewmodel()
-        {
-            AddRoundCommand = new RelayCommand(
-                () => Quiz.Rounds.Add(new(new ObservableCollection<QuizCategory>())),
-                null
-            );
+        public ICommand RemoveCategoryCommand => new RelayCommand(
+            () => Quiz.Rounds[SelectedRound].Categories.RemoveAt(SelectedCategory),
+            IsCategorySelected
+        );
 
-            AddCategoryCommand = new RelayCommand(
-                () => Quiz.Rounds[SelectedRound].Categories.Add(new(new ObservableCollection<Question>())),
-                IsRoundSelected
-            );
+        public ICommand RemoveQuestionCommand => new RelayCommand(
+            () => Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions.RemoveAt(SelectedQuestion),
+            IsQuestionSelected
+        );
 
-            AddQuestionCommand = new RelayCommand(
-                () => Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions.Add(new Question()),
-                IsCategorySelected
-            );
-
-            RemoveRoundCommand = new RelayCommand(
-                () => Quiz.Rounds.RemoveAt(SelectedRound),
-                IsRoundSelected
-            );
-
-            RemoveCategoryCommand = new RelayCommand(
-                () => Quiz.Rounds[SelectedRound].Categories.RemoveAt(SelectedCategory),
-                IsCategorySelected
-            );
-
-            RemoveQuestionCommand = new RelayCommand(
-                () => Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions.RemoveAt(SelectedQuestion),
-                IsQuestionSelected
-            );
-
-            SetContentCommand = new RelayCommand(
-                () =>
-                {
-                    OpenFileDialog openFileDialog = new();
-                    Question? question = Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions[SelectedQuestion];
-                    ContentType contentType = question.ContentType;
-
-                    switch (contentType)
-                    {
-                        case ContentType.Image:
-                            openFileDialog.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg";
-                            break;
-                        case ContentType.Sound:
-                            openFileDialog.Filter = "Sound files (*.mp3;*.flac)|*.mp3;*.flac";
-                            break;
-                        case ContentType.Video:
-                            openFileDialog.Filter = "Video files (*.mp4;*.avi)|*.mp4;*.avi";
-                            break;
-                        default:
-                            return;
-                    }
-
-                    if (openFileDialog.ShowDialog() == true)
-                    {
-
-                        question.ContentPath = openFileDialog.FileName;
-                        question.ContentAccessType = Core.Data.Quiz.Constants.ContentAccessType.Embedded;
-                    }
-                },
-                null //selected question is populated before invocation so its always good
-            );
-
-            SetLanguageCommand = new RelayCommand<SupportedLocale>((locale) =>
+        public ICommand SetContentCommand => new RelayCommand(
+            () =>
             {
-                Localizer.SetCurrentLocale(locale);
-            }, null);
+                OpenFileDialog openFileDialog = new();
+                Question? question = Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions[SelectedQuestion];
+                ContentType contentType = question.ContentType;
 
-            RunValidationsCommand = new RelayCommand(() =>
+                switch (contentType)
+                {
+                    case ContentType.Image:
+                        openFileDialog.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg";
+                        break;
+                    case ContentType.Sound:
+                        openFileDialog.Filter = "Sound files (*.mp3;*.flac)|*.mp3;*.flac";
+                        break;
+                    case ContentType.Video:
+                        openFileDialog.Filter = "Video files (*.mp4;*.avi)|*.mp4;*.avi";
+                        break;
+                    default:
+                        return;
+                }
+
+                if (openFileDialog.ShowDialog() == true)
+                {
+
+                    question.ContentPath = openFileDialog.FileName;
+                    question.ContentAccessType = Core.Data.Quiz.Constants.ContentAccessType.Embedded;
+                }
+            },
+            null //selected question is populated before invocation so its always good
+        );
+
+        //public ICommand SetLanguageCommand => new RelayCommand<SupportedLocale>(
+        //    (locale) => Localizer.SetCurrentLocale(locale),
+        //    null
+        //);
+
+        public ICommand RunValidationsCommand => new RelayCommand(
+            () =>
             {
                 ValidationResult = QuizPacker.Validate(Quiz);
                 OnPropertyChanged(nameof(ValidationResult));
-            }, null);
+            },
+            null
+        );
 
-            NewQuizCommand = new RelayCommand(() =>
+        public ICommand NewQuizCommand => new RelayCommand(
+            () =>
             {
                 ValidationResult.FieldValidationResults.Clear();
                 OnPropertyChanged(nameof(ValidationResult));
                 Quiz = new(new ObservableCollection<QuizRound>());
                 OnPropertyChanged(nameof(Quiz));
-            }, null);
+            },
+            null
+        );
 
-            SaveQuizCommand = new RelayCommand(() =>
+        public ICommand SaveQuizCommand => new RelayCommand(
+            () =>
             {
                 SaveFileDialog dlg = new();
                 dlg.Filter = "Question pack (*.qpck)|*.qpck";
@@ -130,44 +115,41 @@ namespace Jeopardy.Desktop.Tester.App.Viewmodels
                     ValidationResult = QuizPacker.Pack(Quiz);
                     if (!ValidationResult.HasErrors())
                     {
-                        BinarySerializer<Quiz>.SerializeToFile(Quiz, dlg.FileName);
+                        BinarySerializer.SerializeToFile(Quiz, dlg.FileName);
                     }
                 }
+            },
+            null
+        );
 
-            }, null);
-
-            OpenQuizCommand = new RelayCommand(() =>
+        public ICommand OpenQuizCommand => new RelayCommand(
+            () =>
             {
                 OpenFileDialog openFileDialog = new();
                 openFileDialog.Filter = "Question pack (*.qpck)|*.qpck";
                 if (openFileDialog.ShowDialog() == true)
                 {
-                    Quiz = BinarySerializer<Quiz>.DeserializeFromFile(openFileDialog.FileName);
+                    Quiz = BinarySerializer.DeserializeFromFile<Quiz>(openFileDialog.FileName);
                     QuizPacker.Unpack(Quiz);
                     OnPropertyChanged(nameof(Quiz));
                 }
+            },
+            null
+        );
 
-            }, null);
-        }
+        public int SelectedRound { get; set; } = -1;
+        public int SelectedCategory { get; set; } = -1;
+        public int SelectedQuestion { get; set; } = -1;
 
-        private bool IsRoundSelected()
-        {
-            return SelectedRound >= 0 &&
+        private bool IsRoundSelected() => SelectedRound >= 0 &&
                    SelectedRound < Quiz.Rounds.Count;
-        }
 
-        private bool IsCategorySelected()
-        {
-            return IsRoundSelected() &&
+        private bool IsCategorySelected() => IsRoundSelected() &&
                    SelectedCategory >= 0 &&
                    SelectedCategory < Quiz.Rounds[SelectedRound].Categories.Count;
-        }
 
-        private bool IsQuestionSelected()
-        {
-            return IsCategorySelected() &&
+        private bool IsQuestionSelected() => IsCategorySelected() &&
                    SelectedQuestion >= 0 &&
                    SelectedQuestion < Quiz.Rounds[SelectedRound].Categories[SelectedCategory].Questions.Count;
-        }
     }
 }

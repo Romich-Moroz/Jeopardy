@@ -6,7 +6,7 @@ namespace Jeopardy.Core.Localization
     {
         public static SupportedLocale CurrentLocale { get; }
 
-        private static readonly IReadOnlyDictionary<SupportedLocale, CultureInfo> Cultures = new Dictionary<SupportedLocale, CultureInfo>
+        private static readonly IReadOnlyDictionary<SupportedLocale, CultureInfo> _cultures = new Dictionary<SupportedLocale, CultureInfo>
         {
             { SupportedLocale.Undefined, CultureInfo.CreateSpecificCulture("en-US") },
             { SupportedLocale.English, CultureInfo.CreateSpecificCulture("en-US") },
@@ -15,7 +15,7 @@ namespace Jeopardy.Core.Localization
 
         public static void SetCurrentLocale(SupportedLocale locale)
         {
-            CultureInfo cultureInfo = Cultures[locale];
+            CultureInfo cultureInfo = _cultures[locale];
 
             Thread.CurrentThread.CurrentCulture = cultureInfo;
             Thread.CurrentThread.CurrentUICulture = cultureInfo;

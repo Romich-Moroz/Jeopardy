@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jeopardy.Desktop.Client.App", "Jeopardy.Desktop.Client.App\Jeopardy.Desktop.Client.App.csproj", "{1725C77A-31D6-4CF8-A17A-9AC33A0E86F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jeopardy.Web.Matchmaker.App", "Jeopardy.Web.Matchmaker.App\Jeopardy.Web.Matchmaker.App.csproj", "{65B50AF5-E9B3-431D-9750-1252A58D9665}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jeopardy.Desktop.Tester.App", "Jeopardy.Desktop.Tester.App\Jeopardy.Desktop.Tester.App.csproj", "{65052167-5D63-4BF3-A743-638C7129D9E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jeopardy", "Jeopardy", "{EB6DDECB-9988-48EC-8191-6103AE66E1CA}"
@@ -29,7 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Matchmaker", "Matchmaker", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jeopardy.Core.Localization", "Jeopardy.Core.Localization\Jeopardy.Core.Localization.csproj", "{1E1D64D9-8C57-4A6D-BAAC-05A83A7F3F75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeopardy.Core.Files", "Jeopardy.Core.Files\Jeopardy.Core.Files.csproj", "{91672E48-527D-4D96-AAE4-880B179B6231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jeopardy.Core.Serialization", "Jeopardy.Core.Serialization\Jeopardy.Core.Serialization.csproj", "{91672E48-527D-4D96-AAE4-880B179B6231}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jeopardy.Core.Cryptography", "Jeopardy.Core.Cryptography\Jeopardy.Core.Cryptography.csproj", "{C0F6D655-03EB-4672-97FB-A76EBD6787B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jeopardy.Core.Network", "Jeopardy.Core.Network\Jeopardy.Core.Network.csproj", "{E557DF57-0AFC-4A8B-834A-645EE7F17D1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeopardy.Web.Matchmaker.Service", "Jeopardy.Web.Matchmaker.Service\Jeopardy.Web.Matchmaker.Service.csproj", "{FE95FFC9-AFAF-4E8D-8C7C-BB3C02DE93AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +45,6 @@ Global
 		{1725C77A-31D6-4CF8-A17A-9AC33A0E86F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1725C77A-31D6-4CF8-A17A-9AC33A0E86F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1725C77A-31D6-4CF8-A17A-9AC33A0E86F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65B50AF5-E9B3-431D-9750-1252A58D9665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65B50AF5-E9B3-431D-9750-1252A58D9665}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65B50AF5-E9B3-431D-9750-1252A58D9665}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65B50AF5-E9B3-431D-9750-1252A58D9665}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65052167-5D63-4BF3-A743-638C7129D9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65052167-5D63-4BF3-A743-638C7129D9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65052167-5D63-4BF3-A743-638C7129D9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,13 +65,24 @@ Global
 		{91672E48-527D-4D96-AAE4-880B179B6231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91672E48-527D-4D96-AAE4-880B179B6231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91672E48-527D-4D96-AAE4-880B179B6231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F6D655-03EB-4672-97FB-A76EBD6787B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F6D655-03EB-4672-97FB-A76EBD6787B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F6D655-03EB-4672-97FB-A76EBD6787B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F6D655-03EB-4672-97FB-A76EBD6787B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E557DF57-0AFC-4A8B-834A-645EE7F17D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E557DF57-0AFC-4A8B-834A-645EE7F17D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E557DF57-0AFC-4A8B-834A-645EE7F17D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E557DF57-0AFC-4A8B-834A-645EE7F17D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE95FFC9-AFAF-4E8D-8C7C-BB3C02DE93AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE95FFC9-AFAF-4E8D-8C7C-BB3C02DE93AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE95FFC9-AFAF-4E8D-8C7C-BB3C02DE93AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE95FFC9-AFAF-4E8D-8C7C-BB3C02DE93AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1725C77A-31D6-4CF8-A17A-9AC33A0E86F3} = {E4C5ECCB-F941-4029-A186-E5AF617CE4B0}
-		{65B50AF5-E9B3-431D-9750-1252A58D9665} = {A5A9A94F-6623-4695-B7DA-9D094D78CCBF}
 		{65052167-5D63-4BF3-A743-638C7129D9E4} = {75EDEC4C-DDE0-4316-9A1A-133A6C93482F}
 		{49591C8C-6DB3-4A78-AFCB-D979FDAFF6C6} = {EB6DDECB-9988-48EC-8191-6103AE66E1CA}
 		{4B75E2B8-E4FC-4B38-9A7E-626D5882956E} = {EB6DDECB-9988-48EC-8191-6103AE66E1CA}
@@ -83,6 +94,9 @@ Global
 		{A5A9A94F-6623-4695-B7DA-9D094D78CCBF} = {4B75E2B8-E4FC-4B38-9A7E-626D5882956E}
 		{1E1D64D9-8C57-4A6D-BAAC-05A83A7F3F75} = {0D4B5F02-3912-42C3-A5CB-386D8A779266}
 		{91672E48-527D-4D96-AAE4-880B179B6231} = {0D4B5F02-3912-42C3-A5CB-386D8A779266}
+		{C0F6D655-03EB-4672-97FB-A76EBD6787B9} = {0D4B5F02-3912-42C3-A5CB-386D8A779266}
+		{E557DF57-0AFC-4A8B-834A-645EE7F17D1A} = {0D4B5F02-3912-42C3-A5CB-386D8A779266}
+		{FE95FFC9-AFAF-4E8D-8C7C-BB3C02DE93AE} = {A5A9A94F-6623-4695-B7DA-9D094D78CCBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F60698A5-C03B-4B2F-9018-2631BCD3F816}

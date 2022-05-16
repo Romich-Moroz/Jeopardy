@@ -12,18 +12,15 @@ namespace Jeopardy.Core.Wpf.Hotkeys
         private readonly KeyConverter _keyConverter = new();
         private readonly ModifierKeysConverter _modifierKeysConverter = new();
 
-        public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
-        {
-            return sourceType == typeof(string);
-        }
+        public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType) => sourceType == typeof(string);
 
         public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
         {
             if (value is string gesture)
             {
-                string[]? allKeys = gesture.Split('+');
+                var allKeys = gesture.Split('+');
                 IEnumerable<string>? modifierKeys = allKeys.SkipLast(1);
-                string[]? keyStrokes = allKeys.Last().Split(',');
+                var keyStrokes = allKeys.Last().Split(',');
 
                 ModifierKeys modifiers = modifierKeys.Select(modifierKeyString => (ModifierKeys?)_modifierKeysConverter.ConvertFrom(modifierKeyString) ?? ModifierKeys.None).
                     Where(modifierKey => modifierKey != ModifierKeys.None).

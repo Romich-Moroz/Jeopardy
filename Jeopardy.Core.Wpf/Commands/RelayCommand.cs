@@ -20,16 +20,9 @@ namespace Jeopardy.Core.Wpf.Commands
             _canExecuteAction = canExecuteAction;
         }
 
-        public bool CanExecute(object? parameter)
-        {
+        public bool CanExecute(object? parameter) => _canExecuteAction == null || _canExecuteAction();
 
-            return _canExecuteAction == null || _canExecuteAction();
-        }
-
-        public void Execute(object? parameter)
-        {
-            _executeAction();
-        }
+        public void Execute(object? parameter) => _executeAction();
     }
 
     public class RelayCommand<T> : ICommand
@@ -49,15 +42,8 @@ namespace Jeopardy.Core.Wpf.Commands
             _canExecuteAction = canExecuteAction;
         }
 
-        public bool CanExecute(object? parameter)
-        {
+        public bool CanExecute(object? parameter) => _canExecuteAction == null || _canExecuteAction((T?)parameter);
 
-            return _canExecuteAction == null || _canExecuteAction((T?)parameter);
-        }
-
-        public void Execute(object? parameter)
-        {
-            _executeAction((T?)parameter);
-        }
+        public void Execute(object? parameter) => _executeAction((T?)parameter);
     }
 }

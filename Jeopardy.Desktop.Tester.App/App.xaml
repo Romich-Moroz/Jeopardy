@@ -1,6 +1,6 @@
-﻿<Application x:Class="Tester.App.App"
+﻿<Application x:Class="Jeopardy.Desktop.Tester.App.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Tester.App"
+             xmlns:local="clr-namespace:Jeopardy.Desktop.Tester.App"
              StartupUri="Views/MainWindow.xaml">
 </Application>

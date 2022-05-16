@@ -1,8 +1,10 @@
 ﻿using Jeopardy.Core.Localization.Locales;
+using ProtoBuf;
 using System.ComponentModel.DataAnnotations;
 
 namespace Jeopardy.Core.Data.Quiz.Constants
 {
+    [ProtoContract]
     public enum ContentType
     {
         [Display(Description = "Enum_Undefined", ResourceType = typeof(LocaleCommon))]

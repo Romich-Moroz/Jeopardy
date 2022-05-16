@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Jeopardy.Web.Matchmaker.Service": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -7,4 +7,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Images\DefaultAvatar.png" />
+    <None Remove="Resources\Images\MusicBackground.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jeopardy.Core.Network\Jeopardy.Core.Network.csproj" />
+    <ProjectReference Include="..\Jeopardy.Core.Serialization\Jeopardy.Core.Serialization.csproj" />
+    <ProjectReference Include="..\Jeopardy.Core.Wpf\Jeopardy.Core.Wpf.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\DefaultAvatar.png" />
+    <Resource Include="Resources\Images\MusicBackground.gif" />
+  </ItemGroup>
+
 </Project>

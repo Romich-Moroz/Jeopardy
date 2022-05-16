@@ -5,11 +5,10 @@ namespace Jeopardy.Core.Wpf.Viewmodels
 {
     public abstract class ViewmodelBase : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged = (sender, e) => { };
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName] string name = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
+        public virtual void Unsubscribe() { }
+
+        protected void OnPropertyChanged([CallerMemberName] string name = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

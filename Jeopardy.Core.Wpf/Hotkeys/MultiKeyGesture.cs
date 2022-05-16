@@ -57,24 +57,12 @@ namespace Jeopardy.Core.Wpf.Hotkeys
             return true;
         }
 
-        private static bool IsDefinedKey(Key key)
-        {
-            return key >= Key.None && key <= Key.OemClear;
-        }
+        private static bool IsDefinedKey(Key key) => key >= Key.None && key <= Key.OemClear;
 
-        private bool IsExpiredTimeFrame()
-        {
-            return _currentKeyIndex != 0 && !(DateTime.Now - _lastKeyPressDateTime <= _maximumDelayBetweenKeyPresses);
-        }
+        private bool IsExpiredTimeFrame() => _currentKeyIndex != 0 && !(DateTime.Now - _lastKeyPressDateTime <= _maximumDelayBetweenKeyPresses);
 
-        private bool IsInvalidModifiers()
-        {
-            return _currentKeyIndex == 0 && Modifiers != Keyboard.Modifiers;
-        }
+        private bool IsInvalidModifiers() => _currentKeyIndex == 0 && Modifiers != Keyboard.Modifiers;
 
-        private bool IsWrongKey(Key key)
-        {
-            return _keys[_currentKeyIndex] != key;
-        }
+        private bool IsWrongKey(Key key) => _keys[_currentKeyIndex] != key;
     }
 }

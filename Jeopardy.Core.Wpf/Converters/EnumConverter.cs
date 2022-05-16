@@ -34,9 +34,6 @@ namespace Jeopardy.Core.Wpf.Converters
             return null;
         }
 
-        public object? ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return Convert(value, targetType, parameter, culture);
-        }
+        public object? ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => Convert(value, targetType, parameter, culture);
     }
 }

@@ -1,19 +1,18 @@
-﻿namespace Jeopardy.Core.Data.Quiz
+﻿using ProtoBuf;
+
+namespace Jeopardy.Core.Data.Quiz
 {
+    [ProtoContract]
     public class Quiz
     {
-        public IList<QuizRound> Rounds { get; set; }
+        [ProtoMember(1)]
+        public IList<QuizRound> Rounds { get; set; } = new List<QuizRound>();
+        [ProtoMember(2)]
         public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public bool HasUnplayedRounds => Rounds.Any(r => r.HasUnplayedCategories);
 
+        public Quiz() { }
 
-        public Quiz()
-        {
-            Rounds = new List<QuizRound>();
-        }
-
-        public Quiz(IList<QuizRound> quizRounds)
-        {
-            Rounds = quizRounds;
-        }
+        public Quiz(IList<QuizRound> quizRounds) => Rounds = quizRounds;
     }
 }

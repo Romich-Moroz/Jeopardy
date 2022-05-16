@@ -9,8 +9,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jeopardy.Core.Data\Jeopardy.Core.Data.csproj" />
-    <ProjectReference Include="..\Jeopardy.Core.Files\Jeopardy.Core.Files.csproj" />
     <ProjectReference Include="..\Jeopardy.Core.Localization\Jeopardy.Core.Localization.csproj" />
+    <ProjectReference Include="..\Jeopardy.Core.Serialization\Jeopardy.Core.Serialization.csproj" />
     <ProjectReference Include="..\Jeopardy.Core.Wpf\Jeopardy.Core.Wpf.csproj" />
   </ItemGroup>
 
