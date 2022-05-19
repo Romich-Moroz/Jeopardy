@@ -1,0 +1,277 @@
+\section{Тестирование и проверка работоспособности программного средства}
+\label{sec:testing}
+
+Тестирование программного обеспечения – процесс анализа программного средства и сопутствующей документации с целью выявления дефектов и
+повышения качества продукта \cite{testing_ref}. Вот уже несколько десятков лет его стабильно включают в планы разработки как одна из основных работ, причем
+выполняемая практически на всех этапах проектов. Важность своевременного выявления дефектов подчеркивается выявленной эмпирически зависимостью
+между временем допущения ошибки и стоимостью ее исправления: график данной функции круто возрастает.
+
+Тестирование можно классифицировать по очень большому количеству
+признаков. Основные виды классификации включают следующие \cite{testing_ref}:
+
+\begin{enumerate}
+	\item по запуску кода на исполнение:
+	\begin{enumerate}
+		\item статическое тестирование – без запуска программного средства;
+		\item динамическое тестирование – с запуском;
+	\end{enumerate}
+	\item по степени автоматизации:
+	\begin{enumerate}
+		\item ручное тестирование – тестовые случаи выполняет человек;
+		\item автоматизированное тестирование – тестовые случаи частично или полностью выполняет специальное инструментальное средство;
+	\end{enumerate}
+    \item по принципам работы с приложением:
+	\begin{enumerate}
+		\item позитивное тестирование – все действия с приложением выполняются строго в соответствии с требованиями без недопустимых действий или некорректных данных;
+		\item негативное тестирование – проверяется способность приложения продолжать работу в критических ситуациях недопустимых действий или данных;
+	\end{enumerate}
+\end{enumerate}
+
+В данном разделе проведем динамическое ручное тестирование. В таблице~\ref{table:testing:positive} приведен список тестовых случаев, относящихся к позитивному тестированию, в таблице~\ref{table:testing:negative} -- к негативному.
+
+% Зачем: свой счетчик для нумерации тестов.
+\newcounter{testnumber}
+\newcommand\testnumber{\stepcounter{testnumber}\arabic{testnumber}}
+
+% Переключаем команды нумерации для шагов тестов. В конце файла вернем всё как было.
+\renewcommand{\labelenumi}{\arabic{enumi})}
+\renewcommand{\labelenumii}{\asbuk{enumii})}
+
+\begin{landscape}
+	\begin{longtable}[l]{|>{\centering}m{0.15\textwidth}
+					  |p{0.8\textwidth}
+					  |p{0.34\textwidth}
+					  |>{\centering\arraybackslash}m{0.16\textwidth}|} 
+	\caption{Тестовые случаи позитивного тестирования}
+	\label{table:testing:positive}\\
+
+	\hline
+	\begin{minipage}{1\linewidth}
+		\centering Модуль (экран)
+	\end{minipage} & 
+	\begin{minipage}{1\linewidth}
+		\centering Описание тестового случая
+	\end{minipage} & 
+	\begin{minipage}{1\linewidth}
+		\centering Ожидаемые результаты
+	\end{minipage} & 
+	\centering\arraybackslash Тестовый случай пройден? \endfirsthead
+
+	\caption*{Продолжение таблицы \ref{table:testing:positive}}\\\hline
+	\centering 1 & \centering 2 & \centering 3 & \centering\arraybackslash 4 \\\hline \endhead
+
+	\hline
+	\centering 1 & \centering 2 & \centering 3 & \centering\arraybackslash 4 \\
+
+    \hline
+	Авториза-ция &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Авторизация}.\newline
+ 		Предусловие: не иметь авторизации.
+ 		\begin{enumerate}
+ 			\item Ввести имя пользователя и аватар.
+ 			\item Нажать кнопку <<Use credentials>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+	 \begin{enumerate}
+		\item Отображается страница авторизации.
+		\item Отображается главное меню. Над главным меню отображается выбранный аватар и имя пользователя.
+	\end{enumerate} & Да \\
+	 \hline
+
+	Главное меню &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Создание лобби}.\newline
+ 		Предусловие: необходимо быть авторизованным.
+ 		\begin{enumerate}
+ 			\item В главном меню выбрать пункт <<Host game>>.
+ 			\item Задать имя лобби.
+ 			\item Выбрать набор вопросов для викторины.
+ 			\item Нажать кнопку <<Create lobby>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+	Отображается страница главного меню. По нажатию кнопки <<Host game>> отображается страница создания лобби. После ввода данных по нажатию кнопки <<Create lobby>> отображается игровое лобби. Пользователь является хостом лобби. & Да \\
+	\hline
+
+	Главное меню &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Подключение к лобби без пароля}.\newline
+ 		Предусловие: необходимо быть авторизованным.
+ 		\begin{enumerate}
+ 			\item В главном меню выбрать пункт <<Join game>>.
+ 			\item Выбрать лобби без пароля из списка доступных.
+ 			\item Нажать кнопку <<Join>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница главного меню. По нажатию кнопки <<Join game>> отображается страница создания лобби. По нажатию кнопки <<Join>> отображается игровое лобби. Пользователь является игроком лобби. & Да \\
+
+	Главное меню &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Подключение к лобби с паролем}.\newline
+ 		Предусловие: необходимо быть авторизованным.
+ 		\begin{enumerate}
+ 			\item В главном меню выбрать пункт <<Join game>>.
+ 			\item Выбрать лобби с паролем из списка доступных.
+ 			\item Нажать кнопку <<Join>>.
+ 			\item Ввести верный пароль.
+ 			\item Нажать кнопку <<Continue>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница главного меню. По нажатию кнопки <<Join game>> отображается страница создания лобби. По нажатию кнопки <<Join>> отображается окно ввода пароля. После ввода пароля и нажатия кнопки <<Continue>> отображается игровое лобии. Пользователь является игроком лобби. & Да \\
+	\hline
+
+	Главное меню &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Смена авторизационных данных}.\newline
+ 		Предусловие: необходимо быть авторизованным.
+ 		\begin{enumerate}
+ 			\item В главном меню выбрать пункт <<Change credentials>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница главного меню.  По нажатию кнопки <<Change credentials>> отображается страница авторизации. На странице отображены текущие авторизационные данные  & Да \\
+
+
+	Игровое лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Начало игры}.\newline
+ 		Предусловие: необходимо быть хостом лобби.
+ 		\begin{enumerate}
+ 			\item Дождаться подключения всех игроков.
+ 			\item Нажать кнопку <<Start game>>
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница игрового лобби.  По нажатию кнопки <<Start game>> хост получает право выбора игрока для первого хода. & Да \\
+	\hline
+
+	Игровое лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Выбор игрока для первого хода}.\newline
+ 		Предусловие: необходимо начать игру и быть хостом лобби.
+ 		\begin{enumerate}
+ 			\item Нажать на аватар любого из подключенных игроков.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница игрового лобби. По нажатию на аватар любого из игроков, выбранный игрок получает право выбора вопроса. & Да \\
+
+
+	Игровое лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Выбор вопроса}.\newline
+ 		Предусловие: иметь право выбора вопроса.
+ 		\begin{enumerate}
+ 			\item Нажать на любой активный вопрос из списка.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница игрового лобби. На странице отображается сетка с вопросами и их стоимостью. По нажатию на активный вопрос происходит отображение содержимого вопроса. Игроки получают возможность изъявить желание дать ответ.  & Да \\
+	\hline
+
+	Игровое лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Ответ на вопрос игроком}.\newline
+ 		Предусловие: в данный момент отображается содержимое вопроса.
+ 		\begin{enumerate}
+ 			\item Нажать кнопку <<Answer question>>.
+ 			\item Дать ответ организатору в устной форме.
+ 			\item Дождаться оценки ответа организатором.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница игрового лобби. На странице отображается текущий вопрос. По нажатию на кнопку <<Answer question>> у организатора появляются кнопки оценки правильности ответа.  & Да \\
+
+
+	Игровое лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Оценка правильности ответа организатором}.\newline
+ 		Предусловие: игрок отвечает на вопрос.
+ 		\begin{enumerate}
+ 			\item Нажать кнопку <<Correct answer>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница игрового лобби. На странице отображается текущий вопрос. По нажатию на кнопку <<Correct answer>> игроку начисляются очки, равные стоимости вопроса.  & Да \\
+	\hline
+
+	Игровое лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Отображение победителей}.\newline
+ 		Предусловие: все вопросы были разыграны.
+ 		\begin{enumerate}
+ 			\item Разыграть все вопросы между игроками.
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница игрового лобби. На странице отображается надпись Quiz is over. Над игроками-победителями отображается надпись Winner.  & Да \\
+	\hline
+
+	Игровое лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Отображение победителей}.\newline
+ 		Предусловие: пользователь находится в игровом лобби.
+ 		\begin{enumerate}
+ 			\item Нажать кнопку <<Disconnect>>
+ 		\end{enumerate}
+ 	\end{minipage} &
+     Отображается страница игрового лобби. По нажатию на кнопку <<Disconnect>> происходит переход в главное меню.  & Да \\
+	\hline
+
+	\end{longtable}
+
+
+	% Зачем: зануляем счетчик для следующей таблицы.
+	\setcounter{testnumber}{0}
+	
+	\begin{longtable}[l]{|>{\centering}m{0.15\textwidth}
+					  |p{0.8\textwidth}
+					  |p{0.34\textwidth}
+					  |>{\centering\arraybackslash}m{0.16\textwidth}|} 
+	\caption{Тестовые случаи негативного тестирования}
+	\label{table:testing:negative}\\
+
+	\hline
+	\centering Модуль (экран) & \centering Описание тестового случая & \centeringОжидаемые результаты & \centering\arraybackslash Тестовый случай пройден? \endfirsthead
+
+	\caption*{Продолжение таблицы \ref{table:testing:negative}}\\\hline
+	\centering 1 & \centering 2 & \centering 3 & \centering\arraybackslash 4 \\\hline \endhead
+
+	\hline
+	\centering 1 & \centering 2 & \centering 3 & \centering\arraybackslash 4 \\
+	\hline
+
+	Автори-зация &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Авторизация без данных}.\newline
+ 		Предусловие: необходимо запустить приложение.
+ 		\begin{enumerate}
+ 			\item Ничего не вводить в поле имени пользователя.
+ 			\item Не выбирать аватар
+ 		\end{enumerate}
+ 	\end{minipage} &
+	Отображается страница авторизации. Кнопка использования данных неактивна. Используется аватар по умолчанию. & Да \\
+    \hline
+
+	Создание лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Создание лобби с неправильными данными}.\newline
+ 		Предусловие: необходимо быть авторизованным.
+ 		\begin{enumerate}
+ 			\item Ничего не вводить в поле названия лобби.
+ 			\item Не выбирать пакет вопросов.
+ 		\end{enumerate}
+ 	\end{minipage} &
+	Отображается страница создания лобби. Кнопка создания лобби неактивна. Под полем ввода названия лобби отображается валидационная ошибка "lobby name is empty". В поле пути к пакету вопросов отображется "quiz pack is not set". & Да \\
+
+	Подключе-ние к лобби &
+	\begin{minipage}[t]{1\linewidth}
+		\testnumber. \textbf{Подключение к лобби с неправильным паролем}.\newline
+ 		Предусловие: необходимо быть авторизованным.
+ 		\begin{enumerate}
+ 			\item В поле ввода пароля ввести неправильный пароль.
+ 			\item Нажать кнопку <<Continue>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+	Отображается страница подключения к лобби. После ввода пароля и нажатия на кнопку <<Continue>> отображется ошибка "password is invalid". & Да \\
+	\hline
+
+	\end{longtable}
+\end{landscape}
+
+% Зачем: возвращаем нумерацию перечислений как надо по стандарту.
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}

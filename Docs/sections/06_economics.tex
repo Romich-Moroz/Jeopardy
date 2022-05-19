@@ -1,0 +1,389 @@
+\input{sections/06_economics_macros}
+\input{sections/06_economics_calculations}
+
+\section{Технико-экономическое обоснование разработки программного средства проведения многопользовательских викторин}
+\label{sec:economics}
+
+\subsection{Характеристика программного средства}
+\label{sec:economics:description}
+
+Разработка программ связана со значительными затратами ресурсов и всевозможными рисками. Перед разработкой проводится соответствующее 
+технико-экономическое обоснование, позволяющее предварительно оценить затраты и выгоду от инвестиций в разработку программного средства. Это обоснование и описывается в данном разделе.
+
+\subsection{Описание функций, назначения и потенциальных пользователей ПО}
+\label{sec:economics:functions_and_target_audience}
+
+Разработанное программное обеспечение служит для автоматизации проведения викторин на произвольные темы в игровой форме. Одним из видов использования является рекреационный, то есть получение
+удовольствия от игрового процесса. В то же время некоторые пользователи могут использовать формат викторин для повышения собственной эрудиции по наиболее интересным темам. Также допустим
+вариант проверки знаний по уже изученным темам в незамысловатой форме. Программное средство берет на себя большую часть организации хода проведения викторины и оставляет за ведущим лишь
+возможность принятия ключевых решений, что значительно ускоряет сам процесс игры и снижает нагрузку на организатора, что особенно заметно, если присутствует много игроков. Среди главных функций
+можно выделить несколько видов вопросов: стандартный, секрет, со ставкой и так далее, несколько форматов вопросов: текст, звук, изображение, видео, а также поддержку множества пользователей
+с работой по сети Интернет. Посчет результатов викторины и выявление победителя выполняется автоматически.
+
+Основными потенциальными покупателями данного программного средства являются люди, желающие весело и пользой провести время с друзьями, причем местоположение друзей не имеет значения, так как работа
+приложения происходит по сети. Вторичными потенциальными покупателями являются учебные заведения, которые могу проводить образовательные мероприятия для детей или студентов в игровой форме.
+После анализа рынка было выяснено, что данный формат досуга пользуется достаточно большим спросом и существующие аналоги не способны удовлетворить его в полном объеме: в час пик качество услуг аналогов
+значительно снижается, вплоть до невозможности использования. Отчасти это обусловлено текущим переходом на удаленные виды работы и как следствие уменьшением количества встреч вживую. Поэтому данное 
+программное средство может уверенно занять часть рынка развлечений. Сильной стороной данного формата развлечений является то, что он подходит для людей всех возрастов, что значительно
+повышает охват целевой аудитории.
+
+В результате использования разработанного программного обеспечения пользователи удовлетворят свои рекреационные потребности, повысят свой уровень знаний, а также определят, кто 
+в их окружении самый эрудированный.
+
+\subsection{Расчет затрат на разработку ПО}
+\label{sec:economics:expenses}
+
+Расчет затрат на разработку программного обеспечения включает в себя:
+\begin{itemize}
+    \item затраты на основную заработную плату разработчиков;
+    \item затраты на дополнительную заработную плату разработчиков;
+    \item отчисления на социальные нужды;
+    \item прочие затраты.
+\end{itemize}
+
+Исходные данные сотрудников, которые будут использоваться при расчете сметы затрат, представлены в таблице~\ref{table:economics:expenses:initial_data_employees}.
+Для расчетов используются коэффициенты из таблицы~\ref{table:economics:expenses:initial_data_factors}
+
+\begin{table}
+\caption{Исходные данные сотрудников}
+\label{table:economics:expenses:initial_data_employees}
+\centering
+    \begin{tabular}{{ 
+    |>{\raggedright}m{0.6\textwidth} | 
+        >{\centering}m{0.17\textwidth} | 
+        >{\centering\arraybackslash}m{0.15\textwidth}|}}
+
+        \hline
+    {\begin{center} Наименование показателя \end{center}} & Единицы измерения &	Значение \\
+    
+    \hline
+    Общее количество часов работы каждого бизнес-аналитика & $\hour$ &\totalHoursPerPersonValueBI \\
+
+    \hline
+    Общее количество часов работы каждого системного архитектора & $\hour$ &\totalHoursPerPersonValueArch \\
+
+    \hline
+    Общее количество часов работы каждого инженера-программиста & $\hour$ &\totalHoursPerPersonValueEng \\
+
+    \hline
+    Общее количество часов работы каждого программиста & $\hour$ &\totalHoursPerPersonValueProg \\
+
+    \hline
+    Общее количество часов работы каждого специалиста по тестированию программного обеспечения & $\hour$ &\totalHoursPerPersonValueQA \\
+
+    \hline
+    Общее количество часов работы каждого дизайнера & $\hour$ &\totalHoursPerPersonValueFront \\
+
+    \hline
+    Ежемесячная заработная плата бизнес-аналитиков & $\byn$ &\monthlyWageValueBI \\
+
+    \hline
+    Ежемесячная заработная плата системных архитекторов & $\byn$ &\monthlyWageValueArch \\
+
+    \hline
+    Ежемесячная заработная плата инженеров-программистов & $\byn$ &\monthlyWageValueEng \\
+
+    \hline
+    Ежемесячная заработная плата программистов & $\byn$ &\monthlyWageValueProg \\
+
+    \hline
+    Ежемесячная заработная плата специалистов по тестированию программного обеспечения & $\byn$ &\monthlyWageValueQA \\
+
+    \hline
+    Ежемесячная заработная плата дизайнеров & $\byn$ &\monthlyWageValueFront \\
+
+    \hline
+    Число сотрудников на должности бизнес-аналитика & $\people$ &\personCountBI \\
+
+    \hline
+    Число сотрудников на должности системного архитектора & $\people$ &\personCountArch \\
+
+    \hline
+    Число сотрудников на должности инженера-программиста & $\people$ &\personCountEng \\
+
+    \hline
+    Число сотрудников на должности программиста & $\people$ &\personCountProg \\
+
+    \hline
+    Число сотрудников на должности специалиста по тестированию программного обеспечения & $\people$ &\personCountQA \\
+
+    \hline
+    Число сотрудников на должности дизайнера & $\people$ &\personCountFront \\
+    
+    \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}
+\caption{Коэффициенты для вычислений}
+\label{table:economics:expenses:initial_data_factors}
+\centering
+    \begin{tabular}{{ 
+    |>{\raggedright}m{0.6\textwidth} | 
+        >{\centering}m{0.17\textwidth} | 
+        >{\centering\arraybackslash}m{0.15\textwidth}|}}
+
+        \hline
+    {\begin{center} Наименование показателя \end{center}} & Условное обозначение &	Значение \\
+    
+    \hline
+    Коэффициент, учитывающий процент премий & $\premiumPercentFactor$ &\premiumPercentFactorValue \% \\
+
+    \hline
+    Норматив дополнительной заработной платы & $\additionalSalaryFactor$ &\additionalSalaryFactorValue \% \\
+
+    \hline
+    Норматив отчислений от фонда оплаты труда & $\socialTaxFactor$ &\socialTaxFactorValue \% \\
+
+    \hline
+    Норматив прочих затрат & $\otherExpensesFactor$ &\otherExpensesFactorValue \% \\
+
+    \hline
+    Норматив налога на добавленную стоимость & $\vatFactor$ &\vatFactorValue \% \\
+
+    \hline
+    Налог на прибыль для IT компаний & $\profitFactor$ &\profitFactorValue \% \\
+
+    \hline
+    Цена за копию программного средства & $\productPrice$ &\productPriceValue \\
+
+    \hline
+    Предполагаемое количество проданных копий & $\licenseCount$ &\licenseCountValue \\
+
+    \hline
+    \end{tabular}
+\end{table}
+    
+Для определения величины основной заработной платы участников команды сначала необходимо найти часовую заработную плату для каждого специалиста. Учитывая тот факт, что
+время работы и заработная плата между всеми специалистами одного рода распределены одинаково, то для каждого специалиста в своей области часовую ставку можно высчитать один раз.
+Формула и пример подсчета часовой ставки архитектора
+
+\begin{equation}
+    \hourWagePerPerson = \frac{\monthlyWagePerPerson}{168} = \frac{\monthlyWageValueArch}{168} = \hourWagePerArch,
+\end{equation}
+\begin{explanation}
+где & $ \monthlyWagePerPerson $ & величина ежемесячной заработной платы специалиста в конкретной области;\\
+& $ 168 $ & количество часов в одном рабочем месяце.
+\end{explanation}
+
+Трудоемкость работ позволяет оценить общее число часов, необходимое специалистам для полного выполнения работы. В случае, если специалистов в отделе работает несколько, то 
+трудоемкость является суммой затрат времени каждого специалиста по отдельности. Формула подсчета трудоемкости и работ и пример подсчета для программиста
+
+\begin{equation}
+    \totalHoursPerGroup = \sum_{i=1}^{n} \totalHoursPerPerson = \sum_{i=1}^{\personCountProg} \totalHoursPerPersonValueProg = \totalHoursValueProg,
+\end{equation}
+\begin{explanation}
+где & $ \totalHoursPerPerson $ & общее количество часов работы одного сотрудника конкретной специальности;\\
+& $ n $ & количество сотрудников выбранной специальности.
+\end{explanation}
+
+Сумму основной заработной платы без учета премий можно найти умножив часовую ставку сотрудника отдела на общий объем требуемой работы отдела. Эта величина показывает, сколько денег уйдет
+на выплату заработной платы всему отделу при условии, что премии еще не выплачивались. Пример расчета приведен для программистов.
+Для расчета суммы заработной платы всех сотрудников одной специальности без учета премии используется формула
+
+\begin{equation}
+    \salaryPerGroup = \totalHoursPerGroup \cdot \hourWagePerPerson = \totalHoursValueProg \cdot \hourWagePerProg = \salaryValueProg,
+\end{equation}
+\begin{explanation}
+где & $ \totalHoursPerPerson $ & общее количество часов работы одного сотрудника конкретной специальности;\\
+& $ n $ & количество сотрудников выбранной специальности.
+\end{explanation}
+
+Сумма основной заработной платы без учета премии показывает сколько нужно выплатить всем отделам разработки. Расчет и формула имеют следующий вид
+
+\begin{equation}
+    \salaryPrimaryWithoutPremium = \sum_{i=1}^{n} \salaryPerGroup = \salaryValueBA + \salaryValueArch + ... + \salaryValueFront = \salaryPrimaryWithoutPremiumValue,
+\end{equation}
+\begin{explanation}
+где & $ \salaryPerGroup $ & сумма основной заработной платы без учета премии конкретной специальности;\\
+& $ n $ & количество различных специальностей в команде разработчиков.
+\end{explanation}
+
+Премиальные отчисления необходимы для стимулирования сотрудников и повышения их заинтересованности в выполнении работы. Премиальная ставка показывает процент от первичной заработной платы,
+который выплачивается в качестве премии за хорошую работы. Величину премий для каждого отдела можно найти по формуле
+
+\begin{equation}
+    \premiumForPrimarySalary = \frac{\salaryPrimaryWithoutPremium \cdot \premiumPercentFactor}{100\%} = \frac{\salaryPrimaryWithoutPremiumValue \cdot \premiumPercentFactorValue\%}{100\%} = \premiumForSalaryPrimaryValue,
+\end{equation}
+\begin{explanation}
+где & $ \salaryPrimaryWithoutPremium $ & общая сумма выплат основной заработной платы без учета премии;\\
+& $ \premiumPercentFactor $ & коэффициент, учитывающий размер премии.
+\end{explanation}
+
+Итоговая основная заработная плата содержит информацию о затратах на поддержку работы специалистов с учетом премии. Расчет проводится по формуле
+\begin{equation}
+    \salaryPrimaryWithPremium = \salaryPrimaryWithoutPremium + \premiumForPrimarySalary = \salaryPrimaryWithoutPremiumValue + \premiumForSalaryPrimaryValue = \salaryPrimaryWithPremiumValue,
+\end{equation}
+\begin{explanation}
+где & $ \salaryPrimaryWithoutPremium $ & общая сумма выплат основной заработной платы без учета премии;\\
+& $ \premiumForPrimarySalary $ & общая сумма премий.
+\end{explanation}
+
+Результаты расчетов основной заработной платы приведены в таблице~\ref{table:economics:expenses:primary_wages}.
+    
+\begin{table}[!ht]
+\caption{Расчет затрат на основную заработную плату разработчиков}
+\label{table:economics:expenses:primary_wages}
+\centering
+    \begin{tabular}{| >{\raggedright}m{0.18\textwidth} 
+        | >{\centering}m{0.24\textwidth} 
+        | >{\centering}m{0.13\textwidth} 
+        | >{\centering}m{0.10\textwidth} 
+        | >{\centering\arraybackslash}m{0.10\textwidth}
+        | >{\centering\arraybackslash}m{0.11\textwidth}|}
+
+        \hline
+    {\begin{center} Наименование должности разработчика \end{center}} & Виды выполняемой работы & Месячная заработная плата, р. & Часовая заработная плата р. & Трудо-емкость работ, ч. & Сумма, р. \\
+    
+    \hline
+    Бизнес-аналитик & Сбор и анализ требований, изучение пожеланий пользователей &\monthlyWageValueBI &\hourWagePerBA &\totalHoursValueBA &\salaryValueBA \\
+
+    \hline
+    Системный архитектор & Проектирование архитектуры ПС & \monthlyWageValueArch &\hourWagePerArch &\totalHoursValueArch &\salaryValueArch \\
+
+    \hline
+    Инженер-программист & Разработка важнейших компонентов ПС & \monthlyWageValueEng &\hourWagePerEng &\totalHoursValueEng &\salaryValueEng \\
+
+    \hline
+    Программист & Разработка основных компонентов ПС & \monthlyWageValueProg &\hourWagePerProg &\totalHoursValueProg &\salaryValueProg \\
+
+    \hline
+    Специалист по тестированию программного обеспечения & Тестирование ПС &\monthlyWageValueQA &\hourWagePerQA &\totalHoursValueQA &\salaryValueQA \\
+
+    \hline
+    Дизайнер & Разработка пользовательского интерфейса & \monthlyWageValueFront &\hourWagePerFront &\totalHoursValueFront &\salaryValueFront \\
+
+    \hline
+    \multicolumn{5}{|l|}{Итого} &\salaryPrimaryWithoutPremiumValue \\
+    
+    \hline
+    \multicolumn{5}{|l|}{Премия (30\%)} &\premiumForSalaryPrimaryValue \\
+
+    \hline
+    \multicolumn{5}{|l|}{Всего основная заработная плата} &\salaryPrimaryWithPremiumValue \\
+
+    \hline
+    \end{tabular}
+\end{table}
+
+В список расходов на разработку также входят затраты на дополнительную заработную плату разработиков. Сюда входят выплаты, предусмотренные законодательством о труде, расчеты
+производятся по формуле
+
+\begin{equation}
+    \salaryAdditional = \frac{\salaryPrimaryWithPremium \cdot \additionalSalaryFactor}{100\%} = \frac{\salaryPrimaryWithPremiumValue \cdot \additionalSalaryFactorValue\%}{100\%} = \salaryAdditionalValue,
+\end{equation}
+\begin{explanation}
+где & $ \salaryPrimaryWithPremium $ & сумма основной заработной платы с учетом премии;\\
+& $ \premiumPercentFactor $ & норматив дополнительной заработной платы.
+\end{explanation}
+
+Нормы отсчислений на социальные нужны (в фонд социальной защиты населения и на обязательное страхование) устанавливаются государством и любой бизнес обязан их выплачивать.
+В соответствии с действующими законодательными актами.
+
+\begin{equation}
+    \socialTaxFactor = \frac{(\salaryPrimaryWithPremium + \salaryAdditional) \cdot \socialTaxFactor}{100\%} = \frac{(\salaryPrimaryWithPremiumValue + \salaryAdditionalValue) \cdot \socialTaxFactorValue\%}{100\%} = \socialTaxValue,
+\end{equation}
+\begin{explanation}
+где & $ \salaryPrimaryWithPremium $ & сумма основной заработной платы с учетом премии;\\
+& $ \salaryAdditional $ & сумма дополнительной заработной платы;\\
+& $ \socialTaxFactor $ & норматив отчислений от фонда оплаты труда.
+\end{explanation}
+
+Прочие затраты, включающие в себя лицензии на программное обеспечени, используемое в разработке можно рассчитать по формуле
+
+\begin{equation}
+    \otherExpenses = \frac{\salaryPrimaryWithPremium \cdot \otherExpensesFactor}{100\%} = \frac{\salaryPrimaryWithPremiumValue \cdot \otherExpensesFactorValue\%}{100\%} = \otherExpensesValue,
+\end{equation}
+\begin{explanation}
+где & $ \salaryPrimaryWithPremium $ & сумма основной заработной платы с учетом премии;\\
+& $ \otherExpensesFactor $ & норматив прочих затрат.
+\end{explanation}
+
+Результаты подсчетов сведены в таблицу~\ref{table:economics:expenses:final}.
+
+\begin{table}[!h]
+\caption{Затраты на разработку программного обеспечения}
+\label{table:economics:expenses:final}
+\centering
+    \begin{tabular}{{ 
+    |>{\raggedright}m{0.75\textwidth} | 
+        >{\centering\arraybackslash}m{0.22\textwidth}|}}
+
+        \hline
+    {\begin{center} Наименование статьи затрат \end{center}} & Значение, \byn \\
+    
+    \hline
+    Основная заработная плата разработчиков &\salaryPrimaryWithPremiumValue \\
+
+    \hline
+    Дополнительная заработная плата разработчиков &\salaryAdditionalValue \\
+
+    \hline
+    Отчисления на социальные нужды &\socialTaxValue \\
+
+    \hline
+    Прочие затраты &\otherExpensesValue \\
+
+    \hline
+    Общая сумма инвестиций в разработку &\totalExpensesValue \\
+
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Оценка результата от продажи ПО}
+\label{sec:economics:evaluation}
+
+Так как спроектированное программное обеспечение разрабатывалось для непосредственно продажи конечным пользователям, то необходимо произвести расчеты экономического эффекта при разработки
+программного обеспечения для свободной реализации на рынке информационных технологий.
+
+Цена за копию продукта была выбрана на основе статистики по средним ценам игр категории "инди" (малобюджетные), собранной на самой популярной платформе для дистрибуции видеоигр Steam. 
+Средняя цена в эквиваленте на белорусские рубли составляет около 15 рублей \cite{steam_avg_price}. При этом количество проданных копий в сегменте "инди" обычно варьируется от 5-10 тысяч 
+до сотни тысяч, а в особо успешных случаях количество копий может достигать полумиллиона и больше. Для расчетов возьмем среднее значение проданных копий, равное \licenseCountValue, что является не совсем провальным, но и не 
+слишком оптимистичным. При таком значении результат расчетов будет выглядеть наиболее правдоподобным \cite{steam_avg_sales}. 
+
+Для расчета прибыли, которую получит разработчик программного обеспечения, сначала необходимо рассчитать налог на добавленную стоимость по формуле
+
+\begin{equation}
+    \vatsymbol = \frac{(\productPrice \cdot \licenseCount \cdot \vatFactor)}{100\% + \vatFactor} = \frac{(\productPriceValue \cdot \licenseCountValue \cdot \vatFactorValue\%)}{100\% + \vatFactorValue\%} = \totalVatValue,
+\end{equation}
+\begin{explanation}
+где & $ \productPrice $ & цена за одну лицензионную копию программного средства;\\
+& $ \licenseCount $ & количество проданных копий;\\
+& $ \vatFactor $ & коэффициент подоходного налога (в Беларуси равен \vatFactorValue\%).
+\end{explanation}
+
+Имея значение налога на добавленную стоимость можно рассчитать прибыль, полученную разработчиком от реализации программного обеспечения без учета налога на прибыль
+
+\begin{equation}
+    \profitDirty = \productPrice \cdot \licenseCount - \vatsymbol - \totalExpenses = \productPriceValue \cdot \licenseCountValue - \totalVatValue - \totalExpensesValue = \profitDirtyValue,
+\end{equation}
+\begin{explanation}
+где & $ \totalExpenses $ & затраты на разработку программного обеспечения;\\
+& $ \productPrice $ & цена за одну лицензионную копию программного средства;\\
+& $ \licenseCount $ & количество проданных копий;\\
+& $ \vatFactor $ & коэффициент подоходного налога (в Беларуси равен \vatFactorValue\%).
+\end{explanation}
+
+Для IT-компаний в Беларуси введены налоговые льготы на прибыль, поэтому при расчете чистой прибыли используется льготная налоговая ставка равная \profitFactorValue\% \cite{president_lite_tax}
+
+\begin{equation}
+    \profitPure = \profitDirty \cdot (1 - \frac{\profitFactor\%}{100\%}) = \profitDirtyValue \cdot (1 - \frac{\profitFactorValue\%}{100\%}) = \profitPureValue,
+\end{equation}
+\begin{explanation}
+где & $ \profitDirty $ & прибыль без учета налога на прибыль;\\
+& $ \profitFactor $ & налоговая ставка на прибыль.
+\end{explanation}
+
+Рентабельность показывает насколько выгодны ивестиции в разработку программного обеспечения, для ее подсчета используется формула
+
+\begin{equation}
+    \profitRate = \frac{\profitPure}{\totalExpenses}\cdot100\% = \frac{\profitPureValue}{\totalExpensesValue}\cdot100\% = \profitRateValue\%,
+\end{equation}
+\begin{explanation}
+где & $ \profitPure $ & прибыль с учетом налога на прибыль;\\
+& $ \totalExpenses $ & затраты на разработку программного обеспечения.
+\end{explanation}
+
+Учитывая тот факт, что средняя ставка по депозиту равна 19\% \cite{bank_avg_deposit}, то можно сделать вывод, что инвестиции в разработку программного средства являются более выгодными, по
+сравнению с депозитным вкладом, а полученные результаты расчетов свидетельствуют об эффективности разработки проектируемого программного средства.

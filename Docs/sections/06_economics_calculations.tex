@@ -1,0 +1,94 @@
+\input{sections/06_economics_initial_data}
+
+\FPeval{\rawHourWagePerBA}{\monthlyWageValueBI / \hoursPerMonth}
+\FPround{\roundHourWagePerBA}{\rawHourWagePerBA}{2}
+\newcommand{\hourWagePerBA}{\num{\roundHourWagePerBA}}
+\FPeval{\rawHourWagePerArch}{\monthlyWageValueArch / \hoursPerMonth}
+\FPround{\roundHourWagePerArch}{\rawHourWagePerArch}{2}
+\newcommand{\hourWagePerArch}{\num{\roundHourWagePerArch}}
+\FPeval{\rawHourWagePerEng}{\monthlyWageValueEng / \hoursPerMonth}
+\FPround{\roundHourWagePerEng}{\rawHourWagePerEng}{2}
+\newcommand{\hourWagePerEng}{\num{\roundHourWagePerEng}}
+\FPeval{\rawHourWagePerProg}{\monthlyWageValueProg / \hoursPerMonth}
+\FPround{\roundHourWagePerProg}{\rawHourWagePerProg}{2}
+\newcommand{\hourWagePerProg}{\num{\roundHourWagePerProg}}
+\FPeval{\rawHourWagePerQA}{\monthlyWageValueQA / \hoursPerMonth}
+\FPround{\roundHourWagePerQA}{\rawHourWagePerQA}{2}
+\newcommand{\hourWagePerQA}{\num{\roundHourWagePerQA}}
+\FPeval{\rawHourWagePerFront}{\monthlyWageValueFront / \hoursPerMonth}
+\FPround{\roundHourWagePerFront}{\rawHourWagePerFront}{2}
+\newcommand{\hourWagePerFront}{\num{\roundHourWagePerFront}}
+
+\FPeval{\rawTotalHoursBA}{\totalHoursPerPersonValueBI * \personCountBI}
+\FPround{\roundTotalHoursBA}{\rawTotalHoursBA}{0}
+\newcommand{\totalHoursValueBA}{\num{\roundTotalHoursBA}}
+\FPeval{\rawTotalHoursArch}{\totalHoursPerPersonValueArch * \personCountArch}
+\FPround{\roundTotalHoursArch}{\rawTotalHoursArch}{0}
+\newcommand{\totalHoursValueArch}{\num{\roundTotalHoursArch}}
+\FPeval{\rawTotalHoursEng}{\totalHoursPerPersonValueEng * \personCountEng}
+\FPround{\roundTotalHoursEng}{\rawTotalHoursEng}{0}
+\newcommand{\totalHoursValueEng}{\num{\roundTotalHoursEng}}
+\FPeval{\rawTotalHoursProg}{\totalHoursPerPersonValueProg * \personCountProg}
+\FPround{\roundTotalHoursProg}{\rawTotalHoursProg}{0}
+\newcommand{\totalHoursValueProg}{\num{\roundTotalHoursProg}}
+\FPeval{\rawTotalHoursQA}{\totalHoursPerPersonValueQA * \personCountQA}
+\FPround{\roundTotalHoursQA}{\rawTotalHoursQA}{0}
+\newcommand{\totalHoursValueQA}{\num{\roundTotalHoursQA}}
+\FPeval{\rawTotalHoursFront}{\totalHoursPerPersonValueFront * \personCountFront}
+\FPround{\roundTotalHoursFront}{\rawTotalHoursFront}{0}
+\newcommand{\totalHoursValueFront}{\num{\roundTotalHoursFront}}
+
+\FPeval{\rawSalaryBA}{\rawTotalHoursBA * \rawHourWagePerBA}
+\FPround{\roundSalaryBA}{\rawSalaryBA}{2}
+\newcommand{\salaryValueBA}{\num{\roundSalaryBA}}
+\FPeval{\rawSalaryArch}{\rawTotalHoursArch * \rawHourWagePerArch}
+\FPround{\roundSalaryArch}{\rawSalaryArch}{2}
+\newcommand{\salaryValueArch}{\num{\roundSalaryArch}}
+\FPeval{\rawSalaryEng}{\rawTotalHoursEng * \rawHourWagePerEng}
+\FPround{\roundSalaryEng}{\rawSalaryEng}{2}
+\newcommand{\salaryValueEng}{\num{\roundSalaryEng}}
+\FPeval{\rawSalaryProg}{\rawTotalHoursProg * \rawHourWagePerProg}
+\FPround{\roundSalaryProg}{\rawSalaryProg}{2}
+\newcommand{\salaryValueProg}{\num{\roundSalaryProg}}
+\FPeval{\rawSalaryQA}{\rawTotalHoursQA * \rawHourWagePerQA}
+\FPround{\roundSalaryQA}{\rawSalaryQA}{2}
+\newcommand{\salaryValueQA}{\num{\roundSalaryQA}}
+\FPeval{\rawSalaryFront}{\rawTotalHoursFront * \rawHourWagePerFront}
+\FPround{\roundSalaryFront}{\rawSalaryFront}{2}
+\newcommand{\salaryValueFront}{\num{\roundSalaryFront}}
+
+\FPeval{\rawSalaryValue}{\rawSalaryBA + \rawSalaryArch + \rawSalaryEng + \rawSalaryProg + \rawSalaryQA + \rawSalaryFront}
+\FPround{\roundSalaryValue}{\rawSalaryValue}{2}
+\newcommand{\salaryPrimaryWithoutPremiumValue}{\num{\roundSalaryValue}}
+\FPeval{\rawSalaryPremiumValue}{\rawSalaryValue * \premiumPercentFactorValue/100}
+\FPround{\roundSalaryPremiumValue}{\rawSalaryPremiumValue}{2}
+\newcommand{\premiumForSalaryPrimaryValue}{\num{\roundSalaryPremiumValue}}
+\FPeval{\rawSalaryTotalValue}{\rawSalaryValue + \rawSalaryPremiumValue}
+\FPround{\roundSalaryTotalValue}{\rawSalaryTotalValue}{2}
+\newcommand{\salaryPrimaryWithPremiumValue}{\num{\roundSalaryTotalValue}}
+
+\FPeval{\rawSalaryAdditionalValue}{\rawSalaryTotalValue * \additionalSalaryFactorValue/100}
+\FPround{\roundSalaryAdditionalValue}{\rawSalaryAdditionalValue}{2}
+\newcommand{\salaryAdditionalValue}{\num{\roundSalaryAdditionalValue}}
+\FPeval{\rawSocialTaxValue}{(\rawSalaryTotalValue + \rawSalaryAdditionalValue) * \socialTaxFactorValue / 100}
+\FPround{\roundSocialTaxValue}{\rawSocialTaxValue}{2}
+\newcommand{\socialTaxValue}{\num{\roundSocialTaxValue}}
+\FPeval{\rawOtherExpensesValue}{\rawSalaryTotalValue * \otherExpensesFactorValue / 100}
+\FPround{\roundOtherExpensesValue}{\rawOtherExpensesValue}{2}
+\newcommand{\otherExpensesValue}{\num{\roundOtherExpensesValue}}
+\FPeval{\rawTotalExpensesValue}{\rawSalaryTotalValue + \rawSalaryAdditionalValue + \rawSocialTaxValue + \rawOtherExpensesValue}
+\FPround{\roundTotalExpensesValue}{\rawTotalExpensesValue}{2}
+\newcommand{\totalExpensesValue}{\num{\roundTotalExpensesValue}}
+
+\FPeval{\rawVatValue}{(\productPriceValue * \licenseCountValue * \vatFactorValue/100) / (1 + \vatFactorValue/100)}
+\FPround{\roundVatValue}{\rawVatValue}{2}
+\newcommand{\totalVatValue}{\num{\roundVatValue}}
+\FPeval{\rawProfitDirtyValue}{\productPriceValue * \licenseCountValue - \rawVatValue - \rawTotalExpensesValue}
+\FPround{\roundProfitDirtyValue}{\rawProfitDirtyValue}{2}
+\newcommand{\profitDirtyValue}{\num{\roundProfitDirtyValue}}
+\FPeval{\rawProfitPureValue}{(\rawProfitDirtyValue * (1 - \profitFactorValue / 100))}
+\FPround{\roundProfitPureValue}{\rawProfitPureValue}{2}
+\newcommand{\profitPureValue}{\num{\roundProfitPureValue}}
+\FPeval{\rawProfitRateValue}{(\rawProfitPureValue / \rawTotalExpensesValue * 100)}
+\FPround{\roundProfitRateValue}{\rawProfitRateValue}{2}
+\newcommand{\profitRateValue}{\num{\roundProfitRateValue}}
