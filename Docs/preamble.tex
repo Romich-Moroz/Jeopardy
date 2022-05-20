@@ -221,7 +221,7 @@
 \DeclareCaptionLabelSeparator{stb}{~--~}
 \captionsetup{labelsep=stb}
 \captionsetup[figure]{labelformat=stbfigure,justification=centering}
-\captionsetup[table]{labelformat=stbtable,justification=raggedright}
+\captionsetup[table]{labelformat=stbtable,justification=raggedright,format=hang,skip=0pt}
 \renewcommand{\thesubfigure}{\asbuk{subfigure}}
 
 % Зачем: Окружения для оформления формул
@@ -301,6 +301,7 @@
 % Почему: Пункт 2.3.8 Требований по оформлению пояснительной записки.
 \renewcommand{\labelenumi}{\asbuk{enumi})}
 \renewcommand{\labelenumii}{\arabic{enumii})}
+\renewcommand{\labelenumiii}{\Roman{enumiii})}
 
 % Зачем: Устанавливает отступ от границы документа до символа списка, чтобы этот отступ равнялся отступу параграфа
 % Почему: Пункт 2.3.5 Требований по оформлению пояснительной записки.
@@ -308,6 +309,7 @@
 \setlist[itemize,0]{itemindent=\parindent + 2.2ex,leftmargin=0ex,label=--}
 \setlist[enumerate,1]{itemindent=\parindent + 2.7ex,leftmargin=0ex}
 \setlist[enumerate,2]{itemindent=\parindent + \parindent - 2.7ex}
+\setlist[enumerate,3]{itemindent=\parindent + \parindent - 2.7ex}
 
 % Зачем: Включение номера раздела в номер формулы. Нумерация формул внутри раздела.
 \AtBeginDocument{\numberwithin{equation}{section}}
@@ -503,10 +505,6 @@
 singlelinecheck=false % <-- important
 ]{caption}
 
-\usepackage{threeparttablex}
-\captionsetup[table]{skip=0pt,margin=0pt,format=hang} %минимальное расстояние между подписью и таблицей, новая строка подписи таблицы будет буква под буквой
-
-\usepackage{longtable}
 \usepackage{float}
 
 \makeatletter
@@ -526,4 +524,4 @@ singlelinecheck=false % <-- important
 \usepackage{lscape}
 
 % Зачем: заставляем работать ссылки (\footnote) в таблицах
-%\usepackage{tablefootnote}
+\usepackage{tablefootnote}

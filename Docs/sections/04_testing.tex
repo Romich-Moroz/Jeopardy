@@ -66,149 +66,265 @@
     \hline
 	Авториза-ция &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Авторизация}.\newline
  		Предусловие: не иметь авторизации.
  		\begin{enumerate}
- 			\item Ввести имя пользователя и аватар.
+ 			\item Ввести имя пользователя.
  			\item Нажать кнопку <<Use credentials>>.
  		\end{enumerate}
  	\end{minipage} &
-	 \begin{enumerate}
-		\item Отображается страница авторизации.
-		\item Отображается главное меню. Над главным меню отображается выбранный аватар и имя пользователя.
-	\end{enumerate} & Да \\
-	 \hline
-
-	Главное меню &
 	\begin{minipage}[t]{1\linewidth}
-		\testnumber. \textbf{Создание лобби}.\newline
- 		Предусловие: необходимо быть авторизованным.
- 		\begin{enumerate}
- 			\item В главном меню выбрать пункт <<Host game>>.
- 			\item Задать имя лобби.
- 			\item Выбрать набор вопросов для викторины.
- 			\item Нажать кнопку <<Create lobby>>.
- 		\end{enumerate}
- 	\end{minipage} &
-	Отображается страница главного меню. По нажатию кнопки <<Host game>> отображается страница создания лобби. После ввода данных по нажатию кнопки <<Create lobby>> отображается игровое лобби. Пользователь является хостом лобби. & Да \\
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Кнопка использования данных становится активной.
+			\item Отображается главное меню. Над главным меню отображается выбранный аватар и имя пользователя.
+		\end{enumerate}
+	\end{minipage} \newline &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
 	\hline
 
 	Главное меню &
 	\begin{minipage}[t]{1\linewidth}
-		\testnumber. \textbf{Подключение к лобби без пароля}.\newline
+		\vspace{-1\baselineskip}
+		\testnumber. \textbf{Создание лобби}.\newline
  		Предусловие: необходимо быть авторизованным.
  		\begin{enumerate}
- 			\item В главном меню выбрать пункт <<Join game>>.
- 			\item Выбрать лобби без пароля из списка доступных.
- 			\item Нажать кнопку <<Join>>.
+ 			\item В главном меню выбрать пункт <<Host game>>.
+ 			\item Задать имя лобби и выбрать набор вопросов для викторины.
+    		\item Нажать кнопку <<Create lobby>>.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница главного меню. По нажатию кнопки <<Join game>> отображается страница создания лобби. По нажатию кнопки <<Join>> отображается игровое лобби. Пользователь является игроком лобби. & Да \\
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Отображается страница создания лобби.
+			\item Кнопка <<Create lobby>> становится активной.
+   			\item Отображается игровое лобби, где пользователь является ведущим.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
+
 
 	Главное меню &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\testnumber. \textbf{Подключение к лобби без пароля}.\newline
+ 		Предусловие: необходимо быть авторизованным.
+ 		\begin{enumerate}
+			\item В главном меню выбрать пункт <<Join game>>.
+			\item Выбрать лобби без пароля из списка доступных.
+			\item Нажать кнопку <<Join>>.
+ 		\end{enumerate}
+ 	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Отображается страница подключения к лобби.
+			\item Кнопка <<Join lobby>> становится активной.
+   			\item Отображается игровое лобби, где пользователь является игроком.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
+	\hline
+
+	Главное меню &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Подключение к лобби с паролем}.\newline
  		Предусловие: необходимо быть авторизованным.
  		\begin{enumerate}
- 			\item В главном меню выбрать пункт <<Join game>>.
- 			\item Выбрать лобби с паролем из списка доступных.
+			\item В главном меню выбрать пункт <<Join game>>.
+ 			\item Выбрать лобби для подключения.
  			\item Нажать кнопку <<Join>>.
  			\item Ввести верный пароль.
  			\item Нажать кнопку <<Continue>>.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница главного меню. По нажатию кнопки <<Join game>> отображается страница создания лобби. По нажатию кнопки <<Join>> отображается окно ввода пароля. После ввода пароля и нажатия кнопки <<Continue>> отображается игровое лобии. Пользователь является игроком лобби. & Да \\
-	\hline
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Отображается страница подключения к лобби.
+			\item Кнопка <<Join lobby>> становиться активной.
+   			\item Отображается окно ввода пароля.
+      		\item Кнопка <<Continue>> становится активной.
+   			\item Отображается игровое лобби, где пользователь является игроком.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
+
 
 	Главное меню &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Смена авторизационных данных}.\newline
  		Предусловие: необходимо быть авторизованным.
  		\begin{enumerate}
- 			\item В главном меню выбрать пункт <<Change credentials>>.
+			\item В главном меню выбрать пункт <<Change credentials>>.
+ 			\item Ввести имя пользователя.
+ 			\item Нажать кнопку <<Use credentials>>.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница главного меню.  По нажатию кнопки <<Change credentials>> отображается страница авторизации. На странице отображены текущие авторизационные данные  & Да \\
-
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Отображается страница авторизации.
+			\item Кнопка использования данных становится активной.
+   			\item Отображается главное меню. Над главным меню отображается выбранный аватар и имя пользователя.
+		\end{enumerate}
+	\end{minipage} \newline &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
+	\hline
 
 	Игровое лобби &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Начало игры}.\newline
  		Предусловие: необходимо быть хостом лобби.
  		\begin{enumerate}
- 			\item Дождаться подключения всех игроков.
- 			\item Нажать кнопку <<Start game>>
+			\item Ждать подключения всех игроков.
+ 			\item Нажать кнопку <<Start game>>.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница игрового лобби.  По нажатию кнопки <<Start game>> хост получает право выбора игрока для первого хода. & Да \\
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Отображается страница игрового лобби со списком подключенных игроков.
+			\item Отображается список вопросов первого раунда.
+   			\item Хост получает право выбора игрока для первого хода.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
 	\hline
 
 	Игровое лобби &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Выбор игрока для первого хода}.\newline
  		Предусловие: необходимо начать игру и быть хостом лобби.
  		\begin{enumerate}
- 			\item Нажать на аватар любого из подключенных игроков.
+			\item Нажать на аватар любого из подключенных игроков.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница игрового лобби. По нажатию на аватар любого из игроков, выбранный игрок получает право выбора вопроса. & Да \\
-
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Выбранный игрок получает право выбора вопроса.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
+	
 
 	Игровое лобби &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Выбор вопроса}.\newline
  		Предусловие: иметь право выбора вопроса.
  		\begin{enumerate}
- 			\item Нажать на любой активный вопрос из списка.
+			\item Выбрать неразыгранный вопрос из списка вопросов текущего раунда.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница игрового лобби. На странице отображается сетка с вопросами и их стоимостью. По нажатию на активный вопрос происходит отображение содержимого вопроса. Игроки получают возможность изъявить желание дать ответ.  & Да \\
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Отображается содержимое вопроса.
+   			\item У игроков появляется кнопка <<Answer question>>
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
 	\hline
 
 	Игровое лобби &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Ответ на вопрос игроком}.\newline
  		Предусловие: в данный момент отображается содержимое вопроса.
  		\begin{enumerate}
- 			\item Нажать кнопку <<Answer question>>.
+			\item Нажать кнопку <<Answer question>>.
  			\item Дать ответ организатору в устной форме.
  			\item Дождаться оценки ответа организатором.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница игрового лобби. На странице отображается текущий вопрос. По нажатию на кнопку <<Answer question>> у организатора появляются кнопки оценки правильности ответа.  & Да \\
-
-
-	Игровое лобби &
 	\begin{minipage}[t]{1\linewidth}
-		\testnumber. \textbf{Оценка правильности ответа организатором}.\newline
- 		Предусловие: игрок отвечает на вопрос.
- 		\begin{enumerate}
- 			\item Нажать кнопку <<Correct answer>>.
- 		\end{enumerate}
- 	\end{minipage} &
-     Отображается страница игрового лобби. На странице отображается текущий вопрос. По нажатию на кнопку <<Correct answer>> игроку начисляются очки, равные стоимости вопроса.  & Да \\
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item У организатора появляются кнопки оценки правильности ответа.
+   			\item Изменение игрового баланса в соответствии с правильностью ответа.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
 	\hline
 
 	Игровое лобби &
 	\begin{minipage}[t]{1\linewidth}
-		\testnumber. \textbf{Отображение победителей}.\newline
- 		Предусловие: все вопросы были разыграны.
+		\vspace{-1\baselineskip}
+		\testnumber. \textbf{Положительная оценка правильности ответа организатором}.\newline
+ 		Предусловие: игрок дает ответ на вопрос.
  		\begin{enumerate}
- 			\item Разыграть все вопросы между игроками.
+			\item Нажать кнопку <<Correct answer>>.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница игрового лобби. На странице отображается надпись Quiz is over. Над игроками-победителями отображается надпись Winner.  & Да \\
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Игроку начисляются очки, равные стоимости вопроса.
+   			\item Изменение игрового баланса в соответствии с правильностью ответа.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
 	\hline
+	
 
 	Игровое лобби &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Отображение победителей}.\newline
- 		Предусловие: пользователь находится в игровом лобби.
+ 		Предусловие: остался один неразыгранный вопрос.
  		\begin{enumerate}
- 			\item Нажать кнопку <<Disconnect>>
+			\item Разыграть последний вопрос.
  		\end{enumerate}
  	\end{minipage} &
-     Отображается страница игрового лобби. По нажатию на кнопку <<Disconnect>> происходит переход в главное меню.  & Да \\
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Отображается надпись Quiz is over.
+   			\item Над игроками победителями отображается надпись Winner.
+		\end{enumerate}
+	\end{minipage} \newline &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
 	\hline
 
 	\end{longtable}
@@ -236,37 +352,77 @@
 
 	Автори-зация &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Авторизация без данных}.\newline
- 		Предусловие: необходимо запустить приложение.
+ 		Предусловие: необходимо находится на странице авторизации.
  		\begin{enumerate}
- 			\item Ничего не вводить в поле имени пользователя.
- 			\item Не выбирать аватар
+			\item Ничего не вводить в поле имени пользователя.
  		\end{enumerate}
  	\end{minipage} &
-	Отображается страница авторизации. Кнопка использования данных неактивна. Используется аватар по умолчанию. & Да \\
-    \hline
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Кнопка использования данных неактивна.
+   			\item Используется аватар по умолчанию.
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
+	\hline
 
 	Создание лобби &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
 		\testnumber. \textbf{Создание лобби с неправильными данными}.\newline
- 		Предусловие: необходимо быть авторизованным.
+ 		Предусловие: необходимо находится на странице создания лобби.
  		\begin{enumerate}
- 			\item Ничего не вводить в поле названия лобби.
- 			\item Не выбирать пакет вопросов.
+			\item Ничего не вводить в поле названия лобби.
+   			\item Не выбирать пакет вопросов.
  		\end{enumerate}
  	\end{minipage} &
-	Отображается страница создания лобби. Кнопка создания лобби неактивна. Под полем ввода названия лобби отображается валидационная ошибка "lobby name is empty". В поле пути к пакету вопросов отображется "quiz pack is not set". & Да \\
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\begin{enumerate}
+			\item Кнопка создания лобби неактивна.
+   			\item Около поля ввода названия лобби отображается валидационная ошибка "lobby name is empty".
+   			\item В поле пути к пакету вопросов отображется "quiz pack is not set"
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1\baselineskip}
+		\centering Да
+	\end{minipage} \\
+
 
 	Подключе-ние к лобби &
 	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1.5\baselineskip}
 		\testnumber. \textbf{Подключение к лобби с неправильным паролем}.\newline
- 		Предусловие: необходимо быть авторизованным.
+ 		Предусловие: необходимо находится на странице подключения лобби.
  		\begin{enumerate}
- 			\item В поле ввода пароля ввести неправильный пароль.
+			\item В главном меню выбрать пункт <<Join game>>.
+ 			\item Выбрать лобби для подключения из списка доступных.
+ 			\item Нажать кнопку <<Join>>.
+ 			\item Ввести неверный пароль.
  			\item Нажать кнопку <<Continue>>.
  		\end{enumerate}
  	\end{minipage} &
-	Отображается страница подключения к лобби. После ввода пароля и нажатия на кнопку <<Continue>> отображется ошибка "password is invalid". & Да \\
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1.5\baselineskip}
+		\begin{enumerate}
+			\item Отображается страница подключения к лобби.
+			\item Кнопка <<Join lobby>> становится активной.
+   			\item Отображается окно для ввода пароля.
+      		\item Кнопка <<Continue>> становится активной.
+   			\item Отображется валидационная ошибка "password is invalid".
+		\end{enumerate}
+	\end{minipage} &
+	\begin{minipage}[t]{1\linewidth}
+		\vspace{-1.5\baselineskip}
+		\centering Да
+	\end{minipage} \\
 	\hline
 
 	\end{longtable}

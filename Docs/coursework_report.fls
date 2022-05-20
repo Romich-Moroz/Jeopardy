@@ -1,18 +1,18 @@
-PWD f:\=university=\4 Курс\Диплом\Note
+PWD f:\Projects\Visual Studio\Jeopardy\Docs
 INPUT C:\Users\Roman\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.tex
-OUTPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.log
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.tex
+OUTPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.log
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\preamble.tex
 INPUT F:\Software\MiKTeX\tex\latex\extsizes\extreport.cls
 INPUT F:\Software\MiKTeX\tex\latex\extsizes\extreport.cls
 INPUT F:\Software\MiKTeX\tex\latex\extsizes\extreport.cls
@@ -38,17 +38,17 @@ INPUT F:\Software\MiKTeX\tex\latex\base\exscale.sty
 INPUT F:\Software\MiKTeX\tex\latex\base\exscale.sty
 INPUT F:\Software\MiKTeX\tex\latex\base\exscale.sty
 INPUT F:\Software\MiKTeX\tex\latex\base\exscale.sty
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\fonts_windows.tex
 INPUT F:\Software\MiKTeX\tex\latex\pscyr\pscyr.sty
 INPUT F:\Software\MiKTeX\tex\latex\pscyr\pscyr.sty
 INPUT F:\Software\MiKTeX\tex\latex\pscyr\pscyr.sty
@@ -991,46 +991,6 @@ INPUT F:\Software\MiKTeX\tex\latex\textcase\textcase.sty
 INPUT F:\Software\MiKTeX\tex\latex\textcase\textcase.sty
 INPUT F:\Software\MiKTeX\tex\latex\textcase\textcase.sty
 INPUT F:\Software\MiKTeX\tex\latex\textcase\textcase.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttablex\threeparttablex.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\threeparttable\threeparttable.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\environ\environ.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT F:\Software\MiKTeX\tex\latex\trimspaces\trimspaces.sty
 INPUT F:\Software\MiKTeX\tex\latex\float\float.sty
 INPUT F:\Software\MiKTeX\tex\latex\float\float.sty
 INPUT F:\Software\MiKTeX\tex\latex\float\float.sty
@@ -1051,17 +1011,49 @@ INPUT F:\Software\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\graphics\lscape.sty
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\macros.tex
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\tablefootnote\tablefootnote.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\xifthen\xifthen.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\ifmtarg\ifmtarg.sty
+INPUT F:\Software\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT F:\Software\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\macros.tex
 INPUT F:\Software\MiKTeX\tex\latex\pscyr\t2aftm.fd
 INPUT F:\Software\MiKTeX\tex\latex\pscyr\t2aftm.fd
 INPUT F:\Software\MiKTeX\tex\latex\pscyr\t2aftm.fd
@@ -1069,7 +1061,7 @@ INPUT F:\Software\MiKTeX\tex\latex\pscyr\t2aftm.fd
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr6t.tfm
 INPUT F:\Software\MiKTeX\tex\latex\cmap\t2a.cmap
 INPUT F:\Software\MiKTeX\tex\latex\cmap\t2a.cmap
-OUTPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.pdf
+OUTPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.pdf
 INPUT F:\Software\MiKTeX\tex\latex\cmap\t2a.cmap
 INPUT F:\Software\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT F:\Software\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
@@ -1081,10 +1073,10 @@ INPUT F:\Software\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT F:\Software\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT F:\Software\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT F:\Software\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.aux
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.aux
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.aux
-OUTPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.aux
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.aux
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.aux
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.aux
+OUTPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.aux
 INPUT F:\Software\MiKTeX\tex\latex\cyrillic\t2acmr.fd
 INPUT F:\Software\MiKTeX\tex\latex\cyrillic\t2acmr.fd
 INPUT F:\Software\MiKTeX\tex\latex\cyrillic\t2acmr.fd
@@ -1211,17 +1203,17 @@ INPUT F:\Software\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT F:\Software\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT F:\Software\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT F:\Software\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-OUTPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+OUTPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
 INPUT F:\Software\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\pdflscape\pdflscape.sty
@@ -1232,17 +1224,17 @@ INPUT F:\Software\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT F:\Software\MiKTeX\tex\latex\pdflscape\pdflscape.sty
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\title.tex
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmb6t.tfm
 INPUT F:\Software\MiKTeX\fonts\vf\public\pscyr\ftmr6t.vf
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr6a.tfm
@@ -1251,410 +1243,410 @@ INPUT F:\Software\MiKTeX\fonts\vf\public\pscyr\ftmri6t.vf
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmri6a.tfm
 INPUT F:\Software\MiKTeX\fonts\vf\public\pscyr\ftmb6t.vf
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmb6a.tfm
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\abstract.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\abstract.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\table_of_contents.tex
 INPUT F:\Software\MiKTeX\fonts\vf\public\pscyr\ftmr7t.vf
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr8r.tfm
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr6t.tfm
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmb6t.tfm
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.toc
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.toc
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.toc
-OUTPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.toc
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\content.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_definitions.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\00_introduction.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_analysis.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_01_sources.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_02_analogues.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester_types.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester_types.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester_types.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester_types.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester_types.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester_types.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\siquester_types.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_acc.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_acc.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_acc.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_acc.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_acc.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_acc.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_acc.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_host.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_host.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_host.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_host.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_host.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_host.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_host.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_join.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_join.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_join.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_join.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_join.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_join.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_join.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\sigame_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\01_03_specification.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\02_domain.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_player_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_player_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_player_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_player_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_player_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_player_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_player_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_organizer_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_organizer_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_organizer_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_organizer_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_organizer_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_organizer_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_organizer_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_game.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_test.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_test.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_test.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_test.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_test.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_test.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\use_case_model_test.png
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_design.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_01_architecture.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\client_server.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\client_server.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\client_server.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\client_server.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\client_server.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\client_server.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\client_server.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\p2p.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\p2p.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\p2p.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\p2p.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\p2p.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\p2p.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\p2p.png
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_02_tester.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_03_server.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\service_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\service_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\service_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\service_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\service_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\service_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\service_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_04_client.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_play_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_play_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_play_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_play_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_play_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_play_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\game_play_alg.png
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\03_05_deployment.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\deploy.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\deploy.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\deploy.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\deploy.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\deploy.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\deploy.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\deploy.png
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\04_testing.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\05_manual.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester_err.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester_err.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester_err.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester_err.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester_err.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester_err.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\tester_err.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\identity_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\identity_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\identity_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\identity_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\identity_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\identity_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\identity_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\menu_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\menu_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\menu_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\menu_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\menu_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\menu_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\menu_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\host_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\host_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\host_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\host_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\host_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\host_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\host_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\join_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\join_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\join_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\join_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\join_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\join_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\join_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\lobby_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\lobby_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\lobby_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\lobby_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\lobby_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\lobby_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\attachments\lobby_ui.png
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_macros.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_calculations.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.toc
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.toc
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.toc
+OUTPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.toc
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\content.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_definitions.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\00_introduction.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_analysis.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_01_sources.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_02_analogues.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester_types.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester_types.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester_types.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester_types.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester_types.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester_types.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\siquester_types.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_acc.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_acc.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_acc.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_acc.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_acc.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_acc.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_acc.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_host.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_host.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_host.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_host.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_host.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_host.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_host.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_join.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_join.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_join.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_join.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_join.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_join.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_join.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\sigame_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\01_03_specification.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\02_domain.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_player_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_player_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_player_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_player_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_player_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_player_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_player_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_organizer_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_organizer_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_organizer_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_organizer_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_organizer_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_organizer_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_organizer_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_game.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_test.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_test.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_test.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_test.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_test.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_test.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\use_case_model_test.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_design.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_01_architecture.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\client_server.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\client_server.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\client_server.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\client_server.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\client_server.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\client_server.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\client_server.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\p2p.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\p2p.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\p2p.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\p2p.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\p2p.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\p2p.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\p2p.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_02_tester.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_03_server.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\service_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\service_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\service_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\service_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\service_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\service_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\service_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_04_client.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_play_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_play_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_play_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_play_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_play_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_play_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\game_play_alg.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\03_05_deployment.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\deploy.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\deploy.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\deploy.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\deploy.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\deploy.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\deploy.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\deploy.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\04_testing.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\05_manual.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester_err.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester_err.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester_err.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester_err.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester_err.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester_err.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\tester_err.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\identity_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\identity_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\identity_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\identity_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\identity_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\identity_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\identity_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\menu_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\menu_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\menu_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\menu_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\menu_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\menu_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\menu_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\host_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\host_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\host_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\host_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\host_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\host_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\host_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\join_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\join_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\join_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\join_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\join_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\join_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\join_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\lobby_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\lobby_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\lobby_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\lobby_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\lobby_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\lobby_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\lobby_ui.png
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_macros.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_calculations.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\06_economics_initial_data.tex
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr6t.tfm
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr6t.tfm
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr7t.tfm
@@ -1678,47 +1670,200 @@ INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\faqr6a.tfm
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\faqri6a.tfm
 INPUT F:\Software\MiKTeX\fonts\vf\public\pscyr\ftmr7t.vf
 INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr8r.tfm
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\07_conclusion.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\08_references.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.bbl
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.bbl
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.bbl
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.bbl
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\07_conclusion.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\08_references.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.bbl
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.bbl
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.bbl
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.bbl
 INPUT F:\Software\MiKTeX\fonts\tfm\jknappen\ec\tcrm1440.tfm
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\sections\09_appendices.tex
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.aux
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
-INPUT f:\=university=\4 Курс\Диплом\Note\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\sections\09_appendices.tex
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\UserIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\UserIdentity.cs
+INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr6t.tfm
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\UserIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\UserIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\UserIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\UserIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\TesterMainWindowViewmodel.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\TesterMainWindowViewmodel.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\TesterMainWindowViewmodel.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\TesterMainWindowViewmodel.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\TesterMainWindowViewmodel.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\TesterMainWindowViewmodel.cs
+INPUT F:\Software\MiKTeX\fonts\vf\public\pscyr\ftmr6t.vf
+INPUT F:\Software\MiKTeX\fonts\tfm\public\pscyr\ftmr6a.tfm
+INPUT F:\Software\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT C:\Users\Roman\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1200.tfm
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizRound.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizRound.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizRound.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizRound.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizRound.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizRound.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizCategory.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizCategory.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizCategory.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizCategory.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizCategory.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuizCategory.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Quiz.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Quiz.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Quiz.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Quiz.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Quiz.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Quiz.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuestionType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuestionType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuestionType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuestionType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuestionType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\QuestionType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Question.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Question.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Question.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Question.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Question.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Question.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Player.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Player.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Player.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Player.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Player.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\Player.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\NetworkIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\NetworkIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\NetworkIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\NetworkIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\NetworkIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\NetworkIdentity.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyInfo.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyInfo.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyInfo.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyInfo.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyInfo.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyInfo.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyPreview.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyPreview.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyPreview.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyPreview.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyPreview.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\LobbyPreview.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameState.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameState.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameState.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameState.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameState.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameState.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameRules.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameRules.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameRules.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameRules.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameRules.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\GameRules.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentAccessType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentAccessType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentAccessType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentAccessType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentAccessType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\src\ContentAccessType.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\StartGameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\StartGameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\StartGameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\StartGameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\StartGameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\StartGameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\SkipQuestionAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\SkipQuestionAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\SkipQuestionAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\SkipQuestionAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\SkipQuestionAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\SkipQuestionAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\RequestAnswerAttemptAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\RequestAnswerAttemptAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\RequestAnswerAttemptAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\RequestAnswerAttemptAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\RequestAnswerAttemptAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\RequestAnswerAttemptAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\QuestionSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\QuestionSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\QuestionSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\QuestionSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\QuestionSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\QuestionSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\PlayerSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\PlayerSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\PlayerSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\PlayerSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\PlayerSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\PlayerSelectAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\JudgeAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\JudgeAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\JudgeAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\JudgeAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\JudgeAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\JudgeAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\GameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\GameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\GameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\GameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\GameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\GameAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\DenyAnswerAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\DenyAnswerAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\DenyAnswerAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\DenyAnswerAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\DenyAnswerAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cmd\DenyAnswerAction.cs
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\attachments\appendices\cfg\Dockerfile
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.aux
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT f:\Projects\Visual Studio\Jeopardy\Docs\coursework_report.out
+INPUT C:\Users\Roman\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\Roman\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\Roman\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1440.pk
 INPUT C:\Users\Roman\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1440.pk
 INPUT F:\Software\MiKTeX\fonts\enc\dvips\t2\t2a.enc
