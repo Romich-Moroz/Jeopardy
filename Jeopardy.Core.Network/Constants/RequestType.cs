@@ -1,5 +1,8 @@
-﻿namespace Jeopardy.Core.Network.Constants
+﻿using ProtoBuf;
+
+namespace Jeopardy.Core.Network.Constants
 {
+    [ProtoContract]
     public enum RequestType
     {
         Undefined,

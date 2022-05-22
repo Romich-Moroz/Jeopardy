@@ -1,15 +1,20 @@
-﻿using System.Security.Cryptography;
+﻿using ProtoBuf;
+using System.Security.Cryptography;
 
 namespace Jeopardy.Core.Cryptography
 {
+    [ProtoContract]
     public class SecurePassword
     {
         private const int SaltSize = 128;
         private const int HashSize = 63;
         private const int Iterations = 100000;
 
-        public byte[] Salt { get; private set; }
-        public string PasswordHash { get; private set; }
+        [ProtoMember]
+        public byte[] Salt { get; private set; } = Array.Empty<byte>();
+        public string PasswordHash { get; private set; } = string.Empty;
+
+        private SecurePassword() { }
 
         public SecurePassword(string password, byte[]? salt = null)
         {
@@ -18,6 +23,6 @@ namespace Jeopardy.Core.Cryptography
             PasswordHash = Convert.ToBase64String(hash);
         }
 
-        public bool Verify(string passwordHash) => PasswordHash == passwordHash;
+        public bool Verify(string password) => PasswordHash == new SecurePassword(password, Salt).PasswordHash;
     }
 }

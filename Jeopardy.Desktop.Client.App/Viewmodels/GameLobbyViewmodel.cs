@@ -50,7 +50,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public bool IsMediaContent => IsQuestionContentVisible && (CurrentQuestion?.ContentType == ContentType.Video || IsSoundContent);
         public bool IsUserHost => ControlledPlayer.NetworkUserId == GameState.Host.NetworkUserId;
         public bool IsUserNotHost => !IsUserHost;
-        public bool CanAnswerQuestion => IsUserNotHost && IsQuestionContentVisible && ControlledPlayer.HasAnswerAttempt;
+        public bool CanAnswerQuestion => IsUserNotHost && GameContext is QuestionContext && ControlledPlayer.HasAnswerAttempt;
         public bool CanStartGame => GameState.CurrentRound is null && GameState.GameContext is null && IsUserHost;
         public bool CanJudge => IsUserHost && GameContext is PlayerAnswerContext;
         public int RoundMaxQuestions => CurrentRound?.Categories.Max(c => c.Questions.Count) + 1 ?? 0;

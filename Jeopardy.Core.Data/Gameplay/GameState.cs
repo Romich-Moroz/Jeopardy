@@ -59,17 +59,7 @@ namespace Jeopardy.Core.Data.Gameplay
                     }
                     else
                     {
-                        if (!SetNextRound())
-                        {
-                            var maxScore = Players.Values.Max(p => p.Score);
-                            IEnumerable<Player>? winnerPlayers = Players.Values.Where(p => p.Score == maxScore);
-                            foreach (Player? player in winnerPlayers)
-                            {
-                                player.IsWinner = true;
-                            }
-                            var winners = winnerPlayers.Select(p => p.NetworkUserId).ToList();
-                            GameContext = new WinnerContext(winners);
-                        }
+                        SetNextRoundOrShowWinner();
                     }
                 }
                 else if (GameContext is PlayerAnswerContext ctx)
@@ -79,16 +69,21 @@ namespace Jeopardy.Core.Data.Gameplay
             }
         }
 
-        private bool SetNextRound()
+        public void SetNextRoundOrShowWinner()
         {
-            QuizRound? newRound = Quiz.Rounds.FirstOrDefault(r => r.HasUnplayedCategories);
-            if (newRound is not null)
+            CurrentRound = Quiz.Rounds.FirstOrDefault(r => r.HasUnplayedCategories);
+            if (CurrentRound is null)
             {
-                CurrentRound = newRound;
-                return true;
+                CurrentQuestion = null;
+                var maxScore = Players.Values.Max(p => p.Score);
+                IEnumerable<Player>? winnerPlayers = Players.Values.Where(p => p.Score == maxScore);
+                foreach (Player? player in winnerPlayers)
+                {
+                    player.IsWinner = true;
+                }
+                var winners = winnerPlayers.Select(p => p.NetworkUserId).ToList();
+                GameContext = new WinnerContext(winners);
             }
-            CurrentRound = null;
-            return false;
         }
     }
 }

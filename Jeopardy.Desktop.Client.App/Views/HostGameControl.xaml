@@ -55,7 +55,7 @@
                     <TextBlock Text="{x:Static locales:LocaleClient.HostGame_Password}"
                                Style="{StaticResource SettingTextBlock}"
                                FontSize="20"/>
-                    <TextBox Text="{Binding PlainPassword}" 
+                    <TextBox Text="{Binding PlainPassword, UpdateSourceTrigger=PropertyChanged}" 
                              VerticalAlignment="Center" 
                              MinWidth="200"
                              FontSize="20"/>

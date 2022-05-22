@@ -1,5 +1,4 @@
-﻿using Jeopardy.Core.Cryptography;
-using Jeopardy.Core.Data.Gameplay;
+﻿using Jeopardy.Core.Data.Gameplay;
 using Jeopardy.Core.Data.Matchmaker;
 using Jeopardy.Core.Data.Quiz;
 using Jeopardy.Core.Data.Utility;
@@ -57,12 +56,6 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             {
                 if (RunValidations())
                 {
-                    if (PlainPassword != null)
-                    {
-                        LobbyInfo.Password = new SecurePassword(PlainPassword);
-                        PlainPassword = null;
-                    }
-
                     if (SelectedQuizPath != null)
                     {
                         _lobbyInfoStorage.CurrentLobbyInfo.GameState.Quiz = BinarySerializer.DeserializeFromFile<Quiz>(SelectedQuizPath);
@@ -72,7 +65,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     _lobbyInfoStorage.CurrentLobbyInfo.NetworkLobbyId = Guid.NewGuid().ToString();
                     _lobbyInfoStorage.CurrentLobbyInfo.GameState.Host = new Player(_userIdentityStorage.CurrentUserIdentity);
 
-                    _createLobbyRequest = new CreateLobbyRequest(_lobbyInfoStorage.CurrentLobbyInfo);
+                    _createLobbyRequest = new CreateLobbyRequest(_lobbyInfoStorage.CurrentLobbyInfo, PlainPassword);
                     await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(_createLobbyRequest);
                 }
             },

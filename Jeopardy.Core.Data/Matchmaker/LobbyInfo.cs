@@ -19,7 +19,7 @@ namespace Jeopardy.Core.Data.Matchmaker
         public DateTime LobbyCreationDate { get; set; } = DateTime.Now;
         [ProtoMember(5)]
         public string LobbyName { get; set; } = "Lobby name";
-        //[ProtoMember(6)]
+        [ProtoMember(6)]
         public SecurePassword? Password { get; set; }
         [ProtoMember(7)]
         public int MaxPlayerCount { get; set; } = MaxAllowedPlayerCount;

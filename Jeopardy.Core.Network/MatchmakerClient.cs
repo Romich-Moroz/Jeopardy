@@ -1,4 +1,5 @@
-﻿using Jeopardy.Core.Network.Extensions;
+﻿using Jeopardy.Core.Network.Constants;
+using Jeopardy.Core.Network.Extensions;
 using Jeopardy.Core.Network.Requests;
 using Jeopardy.Core.Network.Responses;
 using System.Net.Sockets;
@@ -23,9 +24,9 @@ namespace Jeopardy.Core.Network
             {
                 await _tcpClient.SendDataAsync(request);
             }
-            catch (IOException)
+            catch (IOException e)
             {
-                ResponseReceived?.Invoke(this, new ErrorResponse(request));
+                ResponseReceived?.Invoke(this, new ErrorResponse(request, ErrorCode.MatchmakerUnreachable, e.Message));
             }
         }
 
@@ -39,9 +40,9 @@ namespace Jeopardy.Core.Network
                     ResponseReceived?.Invoke(this, response);
                 }
             }
-            catch (IOException)
+            catch (IOException e)
             {
-
+                ResponseReceived?.Invoke(this, new ErrorResponse(null, ErrorCode.MatchmakerUnreachable, e.Message));
             }
         }
 

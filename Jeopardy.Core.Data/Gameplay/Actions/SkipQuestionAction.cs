@@ -10,7 +10,15 @@ namespace Jeopardy.Core.Data.Gameplay.Actions
             if (gameState.GameContext is QuestionContext ctx)
             {
                 gameState.CurrentQuestion = null;
-                gameState.SetNextContext(ctx.SelectorNetworkUserId);
+
+                if (gameState.CurrentRound?.HasUnplayedCategories == true)
+                {
+                    gameState.GameContext = new SelectQuestionContext(ctx.SelectorNetworkUserId);
+                }
+                else
+                {
+                    gameState.SetNextRoundOrShowWinner();
+                }
             }
         }
     }

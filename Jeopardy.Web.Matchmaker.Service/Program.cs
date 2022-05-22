@@ -1,6 +1,8 @@
-﻿using Jeopardy.Core.Data.Gameplay;
+﻿using Jeopardy.Core.Cryptography;
+using Jeopardy.Core.Data.Gameplay;
 using Jeopardy.Core.Data.Matchmaker;
 using Jeopardy.Core.Network;
+using Jeopardy.Core.Network.Constants;
 using Jeopardy.Core.Network.Extensions;
 using Jeopardy.Core.Network.Requests;
 using Jeopardy.Core.Network.Responses;
@@ -17,11 +19,10 @@ namespace Jeopardy.Web.Matchmaker.Service
         private static readonly IPEndPoint _serverAddress = new(IPAddress.Any, MatchmakerClient.DefaultPort);
 
 
-        public static async Task Main()
+        public static void Main()
         {
             Console.BackgroundColor = ConsoleColor.Black;
-            Task.Run(() => ExpiredLobbyEraser());
-            await Task.Run(() => ClientConnectionListener());
+            ClientConnectionListener();
         }
 
         private static void ClientConnectionListener()
@@ -41,9 +42,9 @@ namespace Jeopardy.Web.Matchmaker.Service
                     ClientRequestListener(client);
                 }
             }
-            catch (SocketException e)
+            catch (Exception e)
             {
-                LogError($"Server failed with SocketException: {e}");
+                LogError($"Server failed with Exception: {e}");
             }
             finally
             {
@@ -68,13 +69,9 @@ namespace Jeopardy.Web.Matchmaker.Service
                     LogInfo($"Sending response to {clientAddress} of type {response.RequestType}");
                 }
             }
-            catch (SocketException e)
+            catch (Exception e)
             {
-                LogError($"Request handling for {clientAddress} is over. SocketException: {e}");
-            }
-            catch (IOException e)
-            {
-                LogError($"Request handling for {clientAddress} is over. IOException: {e}");
+                LogError($"Request handling for {clientAddress} is over. Exception: {e}");
             }
             finally
             {
@@ -112,7 +109,7 @@ namespace Jeopardy.Web.Matchmaker.Service
             JoinLobbyRequest r => await PlayerJoin(client, r),
             DisconnectRequest r => await PlayerDisconnect(r),
             ExecuteGameActionRequest r => await ExecuteGameAction(r),
-            _ => new ErrorResponse(request),
+            _ => new ErrorResponse(request, ErrorCode.BadRequest, $"Handling for request of type {request.GetType()} is not defined"),
         };
 
         private static async Task<NetworkResponse> ExecuteGameAction(ExecuteGameActionRequest request)
@@ -127,7 +124,7 @@ namespace Jeopardy.Web.Matchmaker.Service
 
                 return new ExecuteGameActionNotification(request.GameAction);
             }
-            return new ErrorResponse(request);
+            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
         }
 
         private static async Task<NetworkResponse> PlayerDisconnect(DisconnectRequest request)
@@ -148,20 +145,33 @@ namespace Jeopardy.Web.Matchmaker.Service
 
                 return new PlayerDisconnectNotification(request.NetworkUserId);
             }
-            return new ErrorResponse(request);
+            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
         }
 
         private static async Task<NetworkResponse> PlayerJoin(TcpClient client, JoinLobbyRequest request)
         {
-            if (_lobbyList.TryGetValue(request.LobbyId, out LobbyInfo? lobbyInfo) && lobbyInfo is not null && lobbyInfo.CurrentPlayerCount < lobbyInfo.MaxPlayerCount)
+            if (_lobbyList.TryGetValue(request.NetworkLobbyId, out LobbyInfo? lobbyInfo)
+                && lobbyInfo is not null)
             {
-                request.Player.NetworkIdentity.TcpClient = client;
-                lobbyInfo.GameState.Players.Add(request.Player.NetworkUserId, request.Player);
-                await NotifyEveryoneExceptSender(lobbyInfo, request.NetworkUserId, new PlayerJoinNotification(request.Player));
-                lobbyInfo.GameState.ControlledNetworkUserId = request.Player.NetworkUserId;
-                return new JoinLobbyResponse(request.NetworkRequestId, lobbyInfo);
+                if (!lobbyInfo.IsPasswordProtected
+                    || (lobbyInfo.IsPasswordProtected
+                        && lobbyInfo.Password is not null
+                        && request.Password is not null
+                        && lobbyInfo.Password.Verify(request.Password)))
+                {
+                    if (lobbyInfo.CurrentPlayerCount < lobbyInfo.MaxPlayerCount)
+                    {
+                        request.Player.NetworkIdentity.TcpClient = client;
+                        lobbyInfo.GameState.Players.Add(request.Player.NetworkUserId, request.Player);
+                        await NotifyEveryoneExceptSender(lobbyInfo, request.NetworkUserId, new PlayerJoinNotification(request.Player));
+                        lobbyInfo.GameState.ControlledNetworkUserId = request.Player.NetworkUserId;
+                        return new JoinLobbyResponse(request.NetworkRequestId, lobbyInfo);
+                    }
+                    return new ErrorResponse(request, ErrorCode.LobbyIsFull, $"Lobby is full");
+                }
+                return new ErrorResponse(request, ErrorCode.InvalidPassword, $"Password is invalid");
             }
-            return new ErrorResponse(request);
+            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
         }
 
         private static async Task NotifyEveryoneExceptSender(LobbyInfo lobbyInfo, string networkSenderId, NetworkResponse networkResponse)
@@ -195,11 +205,15 @@ namespace Jeopardy.Web.Matchmaker.Service
         private static NetworkResponse CreateLobby(TcpClient client, CreateLobbyRequest request)
         {
             request.LobbyInfo.GameState.Host.NetworkIdentity.TcpClient = client;
+            if (request.Password is not null)
+            {
+                request.LobbyInfo.Password = new SecurePassword(request.Password);
+            }
             if (_lobbyList.TryAdd(request.LobbyInfo.NetworkLobbyId, request.LobbyInfo))
             {
                 return new CreateLobbyResponse(request.NetworkRequestId);
             }
-            return new ErrorResponse(request);
+            return new ErrorResponse(request, ErrorCode.BadRequest, "Duplicate lobby Guid, this should never happen...");
         }
 
         private static NetworkResponse DeleteLobby(DeleteLobbyRequest request)
@@ -208,23 +222,7 @@ namespace Jeopardy.Web.Matchmaker.Service
             {
                 return new DeleteLobbyResponse(request.NetworkRequestId);
             }
-            return new ErrorResponse(request);
-        }
-
-        private static void ExpiredLobbyEraser()
-        {
-            while (true)
-            {
-                IEnumerable<string>? expiredIds = _lobbyList.Where(info => info.Value.GameState.Host.NetworkIdentity.TcpClient?.Connected == false)
-                    .Select(info => info.Key);
-
-                foreach (var expiredId in expiredIds)
-                {
-                    _lobbyList.TryRemove(expiredId, out _);
-                }
-
-                Thread.Sleep(TimeSpan.FromSeconds(30));
-            }
+            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
         }
 
         private static void LogInfo(string message)

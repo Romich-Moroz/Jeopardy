@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using Jeopardy.Core.Data.Gameplay.Contexts;
+using ProtoBuf;
 
 namespace Jeopardy.Core.Data.Gameplay.Actions
 {
@@ -8,7 +9,15 @@ namespace Jeopardy.Core.Data.Gameplay.Actions
         public override void Execute(GameState gameState)
         {
             gameState.Players[AnsweringPlayerId].Score += gameState.CurrentQuestion?.Price ?? 0;
-            gameState.SetNextContext(AnsweringPlayerId);
+
+            if (gameState.CurrentRound?.HasUnplayedCategories == true)
+            {
+                gameState.GameContext = new SelectQuestionContext(AnsweringPlayerId);
+            }
+            else
+            {
+                gameState.SetNextRoundOrShowWinner();
+            }
         }
     }
 }

@@ -38,8 +38,8 @@
         
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
@@ -93,10 +93,9 @@
 
                     <Border Grid.Row="0" Visibility="{Binding IsMediaContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
                         <Border.Background>
-                            <VisualBrush>
+                            <VisualBrush Stretch="Uniform">
                                 <VisualBrush.Visual>
-                                    <Image gif:AnimationBehavior.SourceUri="../Resources/Images/MusicBackground.gif" 
-                                           Visibility="{Binding IsSoundContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"/>
+                                    <Image gif:AnimationBehavior.SourceUri="../Resources/Images/MusicBackground.gif"/>
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Border.Background>
@@ -124,7 +123,7 @@
                                     <TextBlock Text="Winner" 
                                                FontSize="20" 
                                                HorizontalAlignment="Center"
-                                               Visibility="{Binding IsWinner, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"/>
+                                               Visibility="{Binding IsWinner, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=false}"/>
                                     <Button Command="{Binding DataContext.SelectPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" 
                                             CommandParameter="{Binding NetworkUserId}"
                                             Style="{StaticResource MaterialDesignPaperDarkButton}"

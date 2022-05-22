@@ -1,11 +1,13 @@
 ﻿using Jeopardy.Core.Data.Gameplay;
 using Jeopardy.Core.Data.Matchmaker;
+using Jeopardy.Core.Network.Constants;
 using Jeopardy.Core.Network.Requests;
 using Jeopardy.Core.Network.Responses;
 using Jeopardy.Core.Wpf.Commands;
 using Jeopardy.Core.Wpf.Navigation;
 using Jeopardy.Core.Wpf.Viewmodels;
 using Jeopardy.Desktop.Client.App.Models.Storages;
+using System;
 using System.Collections.Generic;
 using System.Windows.Input;
 
@@ -25,6 +27,9 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
 
         public List<LobbyPreview> LobbyList => _lobbyInfoStorage.BrowserLobbyList;
         public int SelectedLobbyIndex { get; set; } = -1;
+        public bool ShowPasswordDialog { get; set; } = false;
+        public string Password { get; set; } = string.Empty;
+        public bool IsPasswordInvalid { get; set; } = false;
 
         public ICommand MainMenuCommand => new RelayCommand(() => _mainMenuNavigationService.Navigate(), null);
         public ICommand RefreshLobbyListCommand => new RelayCommand(
@@ -34,17 +39,42 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                 await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(_getLobbyListRequest);
             },
             null
-       );
+        );
+
+        public ICommand PasswordCancelCommand => new RelayCommand(
+            () =>
+            {
+                ShowPasswordDialog = false;
+                OnPropertyChanged(nameof(ShowPasswordDialog));
+                Password = string.Empty;
+                OnPropertyChanged(nameof(Password));
+                IsPasswordInvalid = false;
+                OnPropertyChanged(nameof(IsPasswordInvalid));
+            },
+            () => ShowPasswordDialog
+        );
+
 
         public ICommand JoinLobbyCommand => new RelayCommand(
         async () =>
         {
-            _joinLobbyRequest = new JoinLobbyRequest
-            (
-                LobbyList[SelectedLobbyIndex].NetworkLobbyId,
-                new Player(_userIdentityStorage.CurrentUserIdentity)
-            );
-            await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(_joinLobbyRequest);
+            LobbyPreview? selectedLobby = LobbyList[SelectedLobbyIndex];
+
+            if (selectedLobby.IsPasswordProtected && string.IsNullOrEmpty(Password))
+            {
+                ShowPasswordDialog = true;
+                OnPropertyChanged(nameof(ShowPasswordDialog));
+            }
+            else
+            {
+                _joinLobbyRequest = new JoinLobbyRequest
+                (
+                    selectedLobby.NetworkLobbyId,
+                    new Player(_userIdentityStorage.CurrentUserIdentity),
+                    Password
+                );
+                await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(_joinLobbyRequest);
+            }
         }, () => SelectedLobbyIndex >= 0);
 
         public LobbyBrowserViewmodel(UserIdentityStorage userIdentityStorage, LobbyInfoStorage lobbyInfoStorage, MatchmakerClientStorage matchmakerClientStorage, NavigationService<GameLobbyViewmodel> gameLobbyNavigationService, NavigationService<MainMenuViewmodel> mainMenuNavigationService)
@@ -84,6 +114,19 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                         _gameLobbyNavigationService.Navigate();
                     }
                     break;
+                case ErrorResponse r:
+                    switch (r.ErrorCode)
+                    {
+                        case ErrorCode.InvalidPassword:
+                            IsPasswordInvalid = true;
+                            OnPropertyChanged(nameof(IsPasswordInvalid));
+                            break;
+                        default:
+                            throw new InvalidOperationException($"Handling for error code {r.ErrorCode} is not implemented");
+                    }
+                    break;
+                default:
+                    throw new InvalidOperationException($"Unexpected response of type {e.GetType()} received");
             }
         }
     }
