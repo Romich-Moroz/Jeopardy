@@ -1,0 +1,208 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{#1}\else\fi
+
+\bibitem{book_makkonel}
+\selectlanguageifdefined{english}
+\BibEmph{Макконел,~С.} Совершенный код.
+  Мастер-класс~/ С.~Макконел. ---
+\newblock Издательско-торговый дом «Русская
+  редакция», 2010. ---
+\newblock 896~P.
+
+\bibitem{habr_crossplatform}
+\selectlanguageifdefined{english}
+Как правильно переходить границу:
+  кроссплатформенность в мобильном
+  приложении [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://habrahabr.ru/company/parallels/blog/254325/. --- Дата
+  доступа: 25.03.22.
+
+\bibitem{clr_csharp}
+\selectlanguageifdefined{english}
+\BibEmph{Richter,~Jeffrey}. CLR via C Sharp~/ Jeffrey~Richter. ---
+\newblock Издательство «Питер», 2021.
+
+\bibitem{msdn_desktop_vs_web}
+\selectlanguageifdefined{english}
+\BibEmph{Sheriff,~Paul~D.} Designing for Web or Desktop?
+  [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://msdn.microsoft.com/en-us/library/ms973831.aspx. --- Дата
+  доступа: 25.03.22.
+
+\bibitem{web_based_vs_desktop}
+\selectlanguageifdefined{english}
+\BibEmph{Shaaban,~Sam}. Web-Based vs “Desktop” Software
+  [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://nurelm.com/web-based-vs-desktop-software/. --- Дата
+  доступа: 25.03.22.
+
+\bibitem{desktop_vs_web_deeper_look}
+\selectlanguageifdefined{english}
+\BibEmph{Bychkov,~Dmitriy}. Desktop vs. Web Applications: A Deeper Look and
+  Comparison [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  http://www.seguetech.com/desktop-vs-web-applications/. --- Дата
+  доступа: 25.03.22.
+
+\bibitem{desktop_mobile_differences}
+\selectlanguageifdefined{english}
+\BibEmph{Summerfield,~Jason}. Mobile Website vs. Mobile App: Which is Best for
+  Your Organization? [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://www.hswsolutions.com/services/mobile-web-development/mobile-website-vs-apps/.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{introduction_to_architecture}
+\selectlanguageifdefined{english}
+\BibEmph{Garlan,~David}. An Introduction to Software Architecture~/
+  David~Garlan, Mary~Shaw~/ Ed. by V~Ambriola, G~Tortora. ---
+\newblock New Jersey~: World Scientific Publishing Company, 1994. ---
+\newblock Vol.~I. ---
+\newblock Режим доступа:
+  http://www.cs.cmu.edu/afs/cs/project/able/ftp/intro\_softarch/intro\_softarch.pdf.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{application_architecture_guide}
+\selectlanguageifdefined{english}
+\BibEmph{Team,~Microsoft Patterns \&~Practices}. Microsoft® Application
+  Architecture Guide (Patterns \& Practices)~/ Microsoft Patterns
+  \&~Practices~Team. ---
+\newblock Microsoft Press, 2009.
+
+\bibitem{ddd_quickly}
+\selectlanguageifdefined{english}
+\BibEmph{Marinescu,~Floyd}. Domain-Driven Design Quickly~/ Floyd~Marinescu,
+  Abel~Avram. ---
+\newblock LULU PR, 2007.
+
+\bibitem{software_cost_estimation}
+\selectlanguageifdefined{english}
+Software Cost Estimation with Cocomo II~/ Barry~W.~Boehm [et~al.]. ---
+\newblock Prentice Hall, 2000.
+
+\bibitem{method_of_programming_measurement_and_estimation}
+\selectlanguageifdefined{english}
+\BibEmph{Walston,~Claude~E.} A Method of Programming Measurement and
+  Estimation.~/ Claude~E.~Walston, Charles~P.~Felix~// \BibEmph{IBM Systems
+  Journal}. ---
+\newblock 1977. ---
+\newblock Vol.~16, no.~1. ---
+\newblock Pp.~54--73.
+
+\bibitem{msdn_charp}
+\selectlanguageifdefined{english}
+Введение в язык C\# и .NET Framework [Электронный
+  ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://msdn.microsoft.com/ru-ru/library/z1zx9t92.aspx. --- Дата
+  доступа: 25.03.22.
+
+\bibitem{msdn_pattern_matching}
+\selectlanguageifdefined{english}
+Pattern matching overview [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/pattern-matching.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{book_mvvm}
+\selectlanguageifdefined{english}
+\BibEmph{Weil,~Arnaud}. Learn WPF MVVM - XAML, C\# and the MVVM Pattern~/
+  Arnaud~Weil. ---
+\newblock Prentice Hall, 2016.
+
+\bibitem{msdn_serialization}
+\selectlanguageifdefined{english}
+Serialization (C\#) [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/serialization/.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{testing_ref}
+\selectlanguageifdefined{english}
+Различные виды тестирования ПО
+  [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://www.atlassian.com/ru/continuous-delivery/software-testing/types-of-software-testing.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{steam_avg_price}
+\selectlanguageifdefined{english}
+Steam Spy [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа: https://steamspy.com. --- Дата
+  доступа: 25.03.22.
+
+\bibitem{steam_avg_sales}
+\selectlanguageifdefined{english}
+Infographic: Indie game revenues on Steam [Электронный
+  ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://vginsights.com/insights/article/infographic-indie-game-revenues-on-steam.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{president_lite_tax}
+\selectlanguageifdefined{english}
+О развитии цифровой экономики [Электронный
+  ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://president.gov.by/ru/documents/dekret-8-ot-21-dekabrja-2017-g-17716.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{bank_avg_deposit}
+\selectlanguageifdefined{english}
+Процентные ставки по вкладам [Электронный
+  ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://belarusbank.by/site\_ru/25271/bel-s-01-04-22.pdf. --- Дата
+  доступа: 25.03.22.
+
+\bibitem{belstat_average_wage}
+\selectlanguageifdefined{english}
+О начисленной средней заработной плате
+  работников в феврале 2017 г. [Электронный
+  ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  http://www.belstat.gov.by/ofitsialnaya-statistika/solialnaya-sfera/trud/operativnaya-informatsiya\_8/o-nachislennoi-srednei-zarabotnoi-plate-rabotnikov/o-nachislennoy-sredney-zarabotnoy-plate-rabotnikov-v-fevrale-2017-nbsp-g/.
+  --- Дата доступа: 25.03.22.
+
+\bibitem{architecture_volosevich}
+\selectlanguageifdefined{english}
+\BibEmph{Волосевич,~А.~А.} Архитектура
+  программного обеспечения: Курс лекций для
+  студентов специальности 1-40 01 03
+  Информатика и технологии
+  программирования~/ А.~А.~Волосевич. ---
+\newblock Минск~: БГУИР, 2013.
+
+\bibitem{msdn_dotnet}
+\selectlanguageifdefined{english}
+Общие сведения о платформе .NET Framework
+  [Электронный ресурс]. ---
+\newblock Электронные данные. ---
+\newblock Режим доступа:
+  https://msdn.microsoft.com/ru-ru/library/zw4w595w(v=vs.110).aspx. ---
+  Дата доступа: 25.03.22.
+
+\end{thebibliography}
