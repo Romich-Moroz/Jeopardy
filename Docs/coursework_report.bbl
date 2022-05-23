@@ -187,22 +187,4 @@ Infographic: Indie game revenues on Steam [Электронный
   http://www.belstat.gov.by/ofitsialnaya-statistika/solialnaya-sfera/trud/operativnaya-informatsiya\_8/o-nachislennoi-srednei-zarabotnoi-plate-rabotnikov/o-nachislennoy-sredney-zarabotnoy-plate-rabotnikov-v-fevrale-2017-nbsp-g/.
   --- Дата доступа: 25.03.22.
 
-\bibitem{architecture_volosevich}
-\selectlanguageifdefined{english}
-\BibEmph{Волосевич,~А.~А.} Архитектура
-  программного обеспечения: Курс лекций для
-  студентов специальности 1-40 01 03
-  Информатика и технологии
-  программирования~/ А.~А.~Волосевич. ---
-\newblock Минск~: БГУИР, 2013.
-
-\bibitem{msdn_dotnet}
-\selectlanguageifdefined{english}
-Общие сведения о платформе .NET Framework
-  [Электронный ресурс]. ---
-\newblock Электронные данные. ---
-\newblock Режим доступа:
-  https://msdn.microsoft.com/ru-ru/library/zw4w595w(v=vs.110).aspx. ---
-  Дата доступа: 25.03.22.
-
 \end{thebibliography}

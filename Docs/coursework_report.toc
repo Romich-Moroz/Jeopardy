@@ -58,6 +58,6 @@
 \contentsline {subsection}{\numberline {6.4}Оценка результата от продажи ПО}{74}{subsection.0.6.4}%
 \contentsline {section}{Заключение}{76}{section*.31}%
 \contentsline {section}{Cписок использованных источников}{77}{section*.32}%
-\contentsline {section}{Приложение А (обязательное) Фрагменты исходного кода}{80}{section*.33}%
-\contentsline {section}{Приложение Б (обязательное) Описание команд сетевого общения}{95}{lstnumber.-15.19}%
-\contentsline {section}{Приложение В (обязательное) Конфигурационные файлы сервера}{100}{lstnumber.-23.13}%
+\contentsline {section}{Приложение А (обязательное) Фрагменты исходного кода}{79}{section*.33}%
+\contentsline {section}{Приложение Б (обязательное) Описание команд сетевого общения}{94}{lstnumber.-15.19}%
+\contentsline {section}{Приложение В (обязательное) Конфигурационные файлы сервера}{99}{lstnumber.-23.13}%

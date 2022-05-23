@@ -7,45 +7,45 @@ Reallocating 'name_of_file' (item size: 1) to 22 items.
 Database file #1: bibliography_database.bib
 Warning--empty booktitle in book_makkonel
 Warning--empty booktitle in introduction_to_architecture
-You've used 24 entries,
+You've used 22 entries,
             2678 wiz_defined-function locations,
-            741 strings with 10585 characters,
-and the built_in function-call counts, 4517 in all, are:
-= -- 580
-> -- 74
-< -- 11
-+ -- 39
-- -- 15
-* -- 142
-:= -- 468
-add.period$ -- 80
-call.type$ -- 24
+            732 strings with 10032 characters,
+and the built_in function-call counts, 4142 in all, are:
+= -- 529
+> -- 69
+< -- 10
++ -- 36
+- -- 14
+* -- 132
+:= -- 430
+add.period$ -- 74
+call.type$ -- 22
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 250
-empty$ -- 559
-format.name$ -- 27
-if$ -- 1218
+cite$ -- 24
+duplicate$ -- 228
+empty$ -- 508
+format.name$ -- 25
+if$ -- 1112
 int.to.chr$ -- 0
-int.to.str$ -- 24
+int.to.str$ -- 22
 missing$ -- 0
-newline$ -- 150
-num.names$ -- 19
-pop$ -- 142
+newline$ -- 139
+num.names$ -- 17
+pop$ -- 129
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 85
+skip$ -- 81
 stack$ -- 0
 substring$ -- 26
-swap$ -- 147
+swap$ -- 136
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 13
-width$ -- 26
-write$ -- 367
+while$ -- 12
+width$ -- 24
+write$ -- 338
 (There were 2 warnings)
