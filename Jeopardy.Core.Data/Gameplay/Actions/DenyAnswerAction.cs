@@ -22,6 +22,7 @@ namespace Jeopardy.Core.Data.Gameplay.Actions
             }
             else if (gameState.GameContext is PlayerAnswerContext ctx)
             {
+                ctx.QuestionContext.IsFirstTimeShow = false;
                 gameState.GameContext = ctx.QuestionContext;
             }
         }

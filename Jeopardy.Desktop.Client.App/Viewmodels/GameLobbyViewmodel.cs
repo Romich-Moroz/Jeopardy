@@ -265,14 +265,18 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     {
                         n.GameAction.Execute(GameState);
                         LogAction(GameState.CurrentStateDescription);
-                        switch (n.GameAction)
+                        if (GameState.GameContext is QuestionContext c && c.IsFirstTimeShow || GameContext is SelectQuestionContext || GameContext is WinnerContext)
                         {
-                            case JudgeAction:
-                            case QuestionSelectAction:
-                            case SkipQuestionAction:
-                                OnPropertyChanged(nameof(CurrentQuestion));
-                                break;
+                            OnPropertyChanged(nameof(CurrentQuestion));
                         }
+                        //switch (n.GameAction)
+                        //{
+                        //    case ApproveAnswerAction:
+                        //    case QuestionSelectAction:
+                        //    case SkipQuestionAction:
+                        //        OnPropertyChanged(nameof(CurrentQuestion));
+                        //        break;
+                        //}
                     }
                     else
                     {

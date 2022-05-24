@@ -64,6 +64,7 @@ namespace Jeopardy.Core.Data.Gameplay
                 }
                 else if (GameContext is PlayerAnswerContext ctx)
                 {
+                    ctx.QuestionContext.IsFirstTimeShow = false;
                     GameContext = ctx.QuestionContext;
                 }
             }

@@ -10,5 +10,6 @@ namespace Jeopardy.Core.Data.Gameplay.Contexts
     public class QuestionContext : GameContext
     {
         public string SelectorNetworkUserId { get; set; } = string.Empty;
+        public bool IsFirstTimeShow { get; set; } = true;
     }
 }
