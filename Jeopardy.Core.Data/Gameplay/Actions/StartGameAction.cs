@@ -10,7 +10,7 @@ namespace Jeopardy.Core.Data.Gameplay.Actions
         {
             gameState.CurrentRound = gameState.Quiz.Rounds[0];
             gameState.GameContext = new PlayerSelectContext(gameState.Host.NetworkUserId);
-            gameState.IsPaused = false;
+            gameState.IsStarted = true;
         }
 
         public override bool CanExecute(GameState gameState) => gameState.CurrentRound is null && gameState.GameContext is null;

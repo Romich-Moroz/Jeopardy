@@ -30,8 +30,10 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public LobbyInfo LobbyInfo => _lobbyInfoStorage.CurrentLobbyInfo;
         public GameRules GameRules => _lobbyInfoStorage.CurrentLobbyInfo.GameState.GameRules;
 
-        public string? SelectedQuizPath { get; set; } = "F:\\test.qpck";
+        public string? SelectedQuizPath { get; set; } = "";
         public string? PlainPassword { get; set; }
+        public bool ShowDialog { get; set; } = false;
+        public string DialogText { get; set; } = "";
 
         public bool IsValid => !string.IsNullOrWhiteSpace(SelectedQuizPath) && !string.IsNullOrWhiteSpace(LobbyInfo.LobbyName);
 
@@ -39,8 +41,10 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public ICommand SelectQuizPackCommand => new RelayCommand(
             () =>
             {
-                OpenFileDialog openFileDialog = new();
-                openFileDialog.Filter = "Quiz pack files (*.qpck)|*.qpck";
+                OpenFileDialog openFileDialog = new()
+                {
+                    Filter = "Quiz pack files (*.qpck)|*.qpck"
+                };
 
                 if (openFileDialog.ShowDialog() == true)
                 {
@@ -66,7 +70,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     _lobbyInfoStorage.CurrentLobbyInfo.GameState.Host = new Player(_userIdentityStorage.CurrentUserIdentity);
 
                     _createLobbyRequest = new CreateLobbyRequest(_lobbyInfoStorage.CurrentLobbyInfo, PlainPassword);
-                    await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(_createLobbyRequest);
+                    await _matchmakerClientStorage.Client.SendRequestAsync(_createLobbyRequest);
                 }
             },
             () => IsValid
@@ -79,21 +83,29 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             _matchmakerClientStorage = matchmakerClientStorage;
             _mainMenuNavigationService = mainMenuNavigationService;
             _gameLobbyNavigationService = gameLobbyNavigationService;
-            _matchmakerClientStorage.MatchmakerClient.ResponseReceived += MatchmakerClient_ResponseReceived;
+            _matchmakerClientStorage.Client.ResponseReceived += MatchmakerClient_ResponseReceived;
         }
 
         public override void Unsubscribe()
         {
-            _matchmakerClientStorage.MatchmakerClient.ResponseReceived -= MatchmakerClient_ResponseReceived;
+            _matchmakerClientStorage.Client.ResponseReceived -= MatchmakerClient_ResponseReceived;
             base.Unsubscribe();
         }
 
         private void MatchmakerClient_ResponseReceived(object? sender, NetworkResponse e)
         {
-            if (_createLobbyRequest?.NetworkRequestId == e.NetworkRequestId)
+            switch (e)
             {
-                _lobbyInfoStorage.CurrentLobbyInfo.GameState.ControlledNetworkUserId = _lobbyInfoStorage.CurrentLobbyInfo.GameState.Host.NetworkUserId;
-                _gameLobbyNavigationService.Navigate();
+                case CreateLobbyResponse:
+                    _lobbyInfoStorage.CurrentLobbyInfo.GameState.ControlledNetworkUserId = _lobbyInfoStorage.CurrentLobbyInfo.GameState.Host.NetworkUserId;
+                    _gameLobbyNavigationService.Navigate();
+                    break;
+                case ErrorResponse r:
+                    ShowDialog = true;
+                    OnPropertyChanged(nameof(ShowDialog));
+                    DialogText = r.Message;
+                    OnPropertyChanged(nameof(DialogText));
+                    break;
             }
         }
 

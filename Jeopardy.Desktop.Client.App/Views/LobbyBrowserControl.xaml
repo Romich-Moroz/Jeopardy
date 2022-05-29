@@ -15,10 +15,10 @@
     <UserControl.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
-    
-    <materialDesign:DialogHost IsOpen="{Binding ShowPasswordDialog}">
+
+    <materialDesign:DialogHost IsOpen="{Binding ShowErrorDialog}">
         <materialDesign:DialogHost.DialogContent>
-            <GroupBox Header="Join lobby" Width="300" FontSize="20">
+            <GroupBox Header="Error" Width="auto" FontSize="20">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -26,71 +26,89 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
-                        <TextBlock HorizontalAlignment="Center"  Text="Password is invalid" Visibility="{Binding IsPasswordInvalid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}" Grid.ColumnSpan="2" Foreground="Red"/>
-                        <TextBox Margin="0 0 0 7"  Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Password"/>
-                    </StackPanel>
-                    <Button Margin="0 0 3 0" FontSize="20" Height="auto" Grid.Row="1" Grid.Column="0" Content="Cancel" Command="{Binding PasswordCancelCommand}"/>
-                    <Button Margin="3 0 0 0" FontSize="20" Height="auto" Grid.Row="1" Grid.Column="1" Content="Continue" Command="{Binding JoinLobbyCommand}"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center"  Text="{Binding ErrorDialogText}" Padding="0 0 0 10"/>
+                    <Button Margin="0 0 3 0" FontSize="20" Height="auto" Grid.Row="1" Content="{x:Static locales:LocaleClient.Common_BackToMenu}" Command="{Binding MainMenuCommand}"/>
                 </Grid>
             </GroupBox>
         </materialDesign:DialogHost.DialogContent>
-        <StackPanel Width="1000" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <d:DesignerProperties.DesignStyle>
-                <Style TargetType="StackPanel">
-                    <Setter Property="Background" 
+        <materialDesign:DialogHost IsOpen="{Binding ShowPasswordDialog}">
+            <materialDesign:DialogHost.DialogContent>
+                <GroupBox Header="Join lobby" Width="300" FontSize="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+                            <TextBlock HorizontalAlignment="Center"  Text="Password is invalid" Visibility="{Binding IsPasswordInvalid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}" Grid.ColumnSpan="2" Foreground="Red"/>
+                            <TextBox Margin="0 0 0 7"  Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Password"/>
+                        </StackPanel>
+                        <Button Margin="0 0 3 0" FontSize="20" Height="auto" Grid.Row="1" Grid.Column="0" Content="Cancel" Command="{Binding PasswordCancelCommand}"/>
+                        <Button Margin="3 0 0 0" FontSize="20" Height="auto" Grid.Row="1" Grid.Column="1" Content="Continue" Command="{Binding JoinLobbyCommand}"/>
+                    </Grid>
+                </GroupBox>
+            </materialDesign:DialogHost.DialogContent>
+            <StackPanel Width="1000" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <d:DesignerProperties.DesignStyle>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Background" 
                         Value="White"/>
-                </Style>
-            </d:DesignerProperties.DesignStyle>
-            <TextBlock Text="Join lobby"
+                    </Style>
+                </d:DesignerProperties.DesignStyle>
+                <TextBlock Text="Join lobby"
                    HorizontalAlignment="Center"
                    FontSize="40"
                    Padding="10"/>
-            <GroupBox Header="{x:Static locales:LocaleClient.LobbyBrowser_Title}" FontSize="30">
-                <StackPanel>
-                    <DataGrid ItemsSource="{Binding LobbyList}"
+                <GroupBox Header="{x:Static locales:LocaleClient.LobbyBrowser_Title}" FontSize="30">
+                    <StackPanel>
+                        <DataGrid ItemsSource="{Binding LobbyList}"
                           AutoGenerateColumns="False"
                           CanUserAddRows="False"
                           IsReadOnly="True"
                           SelectedIndex="{Binding SelectedLobbyIndex}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_LobbyName}" 
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_LobbyName}" 
                                 Binding="{Binding LobbyName}"/>
-                            <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_Hostname}" 
+                                <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_Hostname}" 
                                 Binding="{Binding OrganizerName}"/>
-                            <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_CurrentPlayers}" 
+                                <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_CurrentPlayers}" 
                                 Binding="{Binding CurrentPlayerCount}"/>
-                            <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_MaxPlayers}"
+                                <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_MaxPlayers}"
                                 Binding="{Binding MaxPlayerCount}"/>
-                            <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_Password}"
+                                <DataGridTextColumn Header="{x:Static locales:LocaleClient.LobbyBrowser_DataGrid_Password}"
                                 Binding="{Binding IsPasswordProtected}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
-                    <StackPanel Orientation="Horizontal" 
+                        <StackPanel Orientation="Horizontal" 
                             HorizontalAlignment="Stretch"
                             Margin="5 10 10 0">
-                        <Button Content="{x:Static locales:LocaleClient.Common_BackToMenu}" 
+                            <Button Content="{x:Static locales:LocaleClient.Common_BackToMenu}" 
                             Height="auto"
                             Command="{Binding MainMenuCommand}"
                             FontSize="20"/>
-                        <Button Content="{x:Static locales:LocaleClient.LobbyBrowser_Button_Refresh}" 
+                            <Button Content="{x:Static locales:LocaleClient.LobbyBrowser_Button_Refresh}" 
                             Margin="30 0 0 0"
                             Height="auto"
                             Width="125"
                             Command="{Binding RefreshLobbyListCommand}"
                             FontSize="20"/>
-                        <Button Content="{x:Static locales:LocaleClient.LobbyBrowser_Button_Join}" 
+                            <Button Content="{x:Static locales:LocaleClient.LobbyBrowser_Button_Join}" 
                             Margin="30 0 0 0"
                             Width="125"
                             Height="auto"
                             Command="{Binding JoinLobbyCommand}"
                             FontSize="20"/>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-            </GroupBox>
-        </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </materialDesign:DialogHost>
     </materialDesign:DialogHost>
+
 </UserControl>

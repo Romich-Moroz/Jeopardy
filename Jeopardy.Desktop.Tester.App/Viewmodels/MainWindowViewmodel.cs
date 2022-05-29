@@ -101,10 +101,12 @@ namespace Jeopardy.Desktop.Tester.App.Viewmodels
         public ICommand SaveQuizCommand => new RelayCommand(
             () =>
             {
-                SaveFileDialog dlg = new();
-                dlg.Filter = "Question pack (*.qpck)|*.qpck";
-                dlg.DefaultExt = "qpck";
-                dlg.AddExtension = true;
+                SaveFileDialog dlg = new()
+                {
+                    Filter = "Question pack (*.qpck)|*.qpck",
+                    DefaultExt = "qpck",
+                    AddExtension = true
+                };
                 if (dlg.ShowDialog() == true)
                 {
                     ValidationResult = QuizPacker.Pack(Quiz);
@@ -120,8 +122,10 @@ namespace Jeopardy.Desktop.Tester.App.Viewmodels
         public ICommand OpenQuizCommand => new RelayCommand(
             () =>
             {
-                OpenFileDialog openFileDialog = new();
-                openFileDialog.Filter = "Question pack (*.qpck)|*.qpck";
+                OpenFileDialog openFileDialog = new()
+                {
+                    Filter = "Question pack (*.qpck)|*.qpck"
+                };
                 if (openFileDialog.ShowDialog() == true)
                 {
                     Quiz = BinarySerializer.DeserializeFromFile<Quiz>(openFileDialog.FileName);

@@ -43,7 +43,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public ObservableCollection<ObservableCollection<QuestionSelectorViewmodel>> RoundQuestions => CreateCurrentRoundQuestions();
         public string? QuestionHint => CurrentQuestion?.TaskDescription;
         public bool IsQuestionBoardVisible => GameContext is SelectQuestionContext;
-        public bool IsQuestionContentVisible => GameContext is QuestionContext || GameContext is PlayerAnswerContext;
+        public bool IsQuestionContentVisible => GameContext is QuestionContext or PlayerAnswerContext;
         public bool IsTextContent => IsQuestionContentVisible && CurrentQuestion?.ContentType == ContentType.Text;
         public bool IsImageContent => IsQuestionContentVisible && CurrentQuestion?.ContentType == ContentType.Image;
         public bool IsSoundContent => CurrentQuestion?.ContentType == ContentType.Sound;
@@ -51,17 +51,24 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public bool IsUserHost => ControlledPlayer.NetworkUserId == GameState.Host.NetworkUserId;
         public bool IsUserNotHost => !IsUserHost;
         public bool CanAnswerQuestion => IsUserNotHost && GameContext is QuestionContext && ControlledPlayer.HasAnswerAttempt;
-        public bool CanStartGame => GameState.CurrentRound is null && GameState.GameContext is null && IsUserHost;
+        public bool CanStartGame => GameState.CurrentRound is null && GameState.GameContext is null && IsUserHost && Players.Any();
         public bool CanJudge => IsUserHost && GameContext is PlayerAnswerContext;
         public int RoundMaxQuestions => CurrentRound?.Categories.Max(c => c.Questions.Count) + 1 ?? 0;
         public int RoundCategories => CurrentRound?.Categories.Count ?? 0;
         public bool IsWinnersVisible => GameContext is WinnerContext;
         public bool CanSkipQuestion => IsUserHost && GameContext is QuestionContext;
 
+        public bool ShowErrorDialog { get; set; }
+        public string ErrorDialogText { get; set; }
+
         public ICommand DisconnectCommand => new RelayCommand(
             async () =>
             {
-                await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(new DisconnectRequest(LobbyInfo.NetworkLobbyId, ControlledPlayer.NetworkUserId));
+                if (_matchmakerClientStorage.Client.Connected)
+                {
+                    await _matchmakerClientStorage.Client.SendRequestAsync(new DisconnectRequest(LobbyInfo.NetworkLobbyId, ControlledPlayer.NetworkUserId));
+                }
+
                 DisconnectCleanup();
             },
             null
@@ -72,7 +79,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             {
                 if (GameContext is PlayerAnswerContext ctx)
                 {
-                    await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(
+                    await _matchmakerClientStorage.Client.SendRequestAsync(
                     new ExecuteGameActionRequest(
                         LobbyInfo.NetworkLobbyId,
                         ControlledPlayer.NetworkUserId,
@@ -91,7 +98,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             {
                 if (GameContext is PlayerAnswerContext ctx)
                 {
-                    await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(
+                    await _matchmakerClientStorage.Client.SendRequestAsync(
                     new ExecuteGameActionRequest(
                         LobbyInfo.NetworkLobbyId,
                         ControlledPlayer.NetworkUserId,
@@ -108,7 +115,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public ICommand SkipQuestionCommand => new RelayCommand(
             async () =>
             {
-                await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(
+                await _matchmakerClientStorage.Client.SendRequestAsync(
                     new ExecuteGameActionRequest(
                         LobbyInfo.NetworkLobbyId,
                         ControlledPlayer.NetworkUserId,
@@ -121,7 +128,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public ICommand AnswerQuestionCommand => new RelayCommand(
             async () =>
             {
-                await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(
+                await _matchmakerClientStorage.Client.SendRequestAsync(
                     new ExecuteGameActionRequest(
                         LobbyInfo.NetworkLobbyId,
                         ControlledPlayer.NetworkUserId,
@@ -150,7 +157,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
 
                     if (_questionSelectAction.CanExecute(GameState))
                     {
-                        await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(
+                        await _matchmakerClientStorage.Client.SendRequestAsync(
                         new ExecuteGameActionRequest
                         (
                             LobbyInfo.NetworkLobbyId,
@@ -171,7 +178,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     _playerSelectAction = new PlayerSelectAction(networkUserId);
                     if (_playerSelectAction.CanExecute(GameState))
                     {
-                        await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(
+                        await _matchmakerClientStorage.Client.SendRequestAsync(
                         new ExecuteGameActionRequest
                         (
                             LobbyInfo.NetworkLobbyId,
@@ -187,7 +194,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public ICommand StartGameCommand => new RelayCommand(
             async () =>
             {
-                await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(
+                await _matchmakerClientStorage.Client.SendRequestAsync(
                     new ExecuteGameActionRequest
                     (
                         LobbyInfo.NetworkLobbyId,
@@ -204,13 +211,13 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             _lobbyInfoStorage = lobbyInfoStorage;
             _mainMenuNavigationService = mainMenuNavigationService;
             _matchmakerClientStorage = matchmakerClientStorage;
-            _matchmakerClientStorage.MatchmakerClient.ResponseReceived += MatchmakerClient_ResponseReceived;
+            _matchmakerClientStorage.Client.ResponseReceived += MatchmakerClient_ResponseReceived;
             _quizContentHelper.SaveToTempLocation(GameState.Quiz);
         }
 
         public override void Unsubscribe()
         {
-            _matchmakerClientStorage.MatchmakerClient.ResponseReceived -= MatchmakerClient_ResponseReceived;
+            _matchmakerClientStorage.Client.ResponseReceived -= MatchmakerClient_ResponseReceived;
             _quizContentHelper.Cleanup();
             base.Unsubscribe();
         }
@@ -230,9 +237,17 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                         new QuestionSelectorViewmodel{ Question = null, Text = category.HasUnplayedQuestions ? category.Name : "", IsEnabled = category.HasUnplayedQuestions }
                     };
 
-                    foreach (Question? question in category.Questions)
+                    for (var i = 0; i < RoundMaxQuestions - 1; i++)
                     {
-                        categoryResult.Add(new QuestionSelectorViewmodel { Question = question, Text = question.Unplayed ? question.Price.ToString() : "", IsEnabled = question.Unplayed });
+                        if (i < category.Questions.Count)
+                        {
+                            Question? question = category.Questions[i];
+                            categoryResult.Add(new QuestionSelectorViewmodel { Question = question, Text = question.Unplayed ? question.Price.ToString() : "", IsEnabled = question.Unplayed });
+                        }
+                        else
+                        {
+                            categoryResult.Add(new QuestionSelectorViewmodel { Question = null, Text = "", IsEnabled = false });
+                        }
                     }
 
                     result.Add(categoryResult);
@@ -254,8 +269,44 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     break;
                 case PlayerDisconnectNotification n:
                     Player player = GameState.Players[n.NetworkUserId];
-                    _lobbyInfoStorage.CurrentLobbyInfo.GameState.Players.Remove(n.NetworkUserId);
+                    _ = _lobbyInfoStorage.CurrentLobbyInfo.GameState.Players.Remove(n.NetworkUserId);
                     LogAction($"{player.NetworkIdentity.Username} disconnected");
+                    if (GameState.Players.Count == 0)
+                    {
+                        ShowErrorDialog = true;
+                        ErrorDialogText = "Lobby is closed due to lack of players";
+                        OnPropertyChanged(nameof(ShowErrorDialog));
+                        OnPropertyChanged(nameof(ErrorDialogText));
+                    }
+                    else
+                    {
+                        switch (GameState.GameContext)
+                        {
+                            case SelectQuestionContext c:
+                                if (c.SelectorNetworkUserId == n.NetworkUserId)
+                                {
+                                    c.SelectorNetworkUserId = GameState.Players.First().Key;
+                                    LogAction(GameState.CurrentStateDescription);
+                                }
+
+                                break;
+                            case QuestionContext c:
+                                if (c.SelectorNetworkUserId == n.NetworkUserId)
+                                {
+                                    c.SelectorNetworkUserId = GameState.Players.First().Key;
+                                }
+
+                                break;
+                            case PlayerAnswerContext c:
+                                if (c.AnsweringPlayerId == n.NetworkUserId)
+                                {
+                                    new DenyAnswerAction().Execute(GameState);
+                                }
+
+                                break;
+                        }
+                    }
+
                     break;
                 case HostDisconnectNotification:
                     DisconnectCleanup();
@@ -265,7 +316,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     {
                         n.GameAction.Execute(GameState);
                         LogAction(GameState.CurrentStateDescription);
-                        if (GameState.GameContext is QuestionContext c && c.IsFirstTimeShow || GameContext is SelectQuestionContext || GameContext is WinnerContext)
+                        if ((GameState.GameContext is QuestionContext c && c.IsFirstTimeShow) || GameContext is SelectQuestionContext || GameContext is WinnerContext)
                         {
                             OnPropertyChanged(nameof(CurrentQuestion));
                         }
@@ -282,8 +333,16 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     {
                         throw new InvalidOperationException("Game state mismatch");
                     }
+
+                    break;
+                case ErrorResponse r:
+                    ShowErrorDialog = true;
+                    ErrorDialogText = r.Message;
+                    OnPropertyChanged(nameof(ShowErrorDialog));
+                    OnPropertyChanged(nameof(ErrorDialogText));
                     break;
             }
+
             NotifyAllPropeties();
         }
 
@@ -319,7 +378,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
 
         private void LogAction(string message)
         {
-            ChatLog.AppendLine($"{DateTime.Now.ToString("HH:mm")} {message}");
+            _ = ChatLog.AppendLine($"{DateTime.Now.ToString("HH:mm")} {message}");
             OnPropertyChanged(nameof(ChatLog));
         }
     }

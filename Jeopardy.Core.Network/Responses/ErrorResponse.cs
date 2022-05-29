@@ -14,10 +14,10 @@ namespace Jeopardy.Core.Network.Responses
 
         private ErrorResponse() { }
 
-        public ErrorResponse(NetworkRequest request, ErrorCode errorCode, string message)
+        public ErrorResponse(NetworkRequest? request, ErrorCode errorCode, string message)
         {
-            NetworkRequestId = request.NetworkRequestId;
-            RequestType = request.RequestType;
+            NetworkRequestId = request?.NetworkRequestId ?? string.Empty;
+            RequestType = request?.RequestType ?? RequestType.Undefined;
             Message = message;
             ErrorCode = errorCode;
         }

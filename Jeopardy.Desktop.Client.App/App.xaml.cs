@@ -21,24 +21,24 @@ namespace Jeopardy.Desktop.Client.App
             var builder = new ContainerBuilder();
 
             //storages registration
-            builder.RegisterType<NavigationStorage>().AsSelf().InstancePerLifetimeScope();
-            builder.RegisterType<UserIdentityStorage>().AsSelf().InstancePerLifetimeScope();
-            builder.RegisterType<LobbyInfoStorage>().AsSelf().InstancePerLifetimeScope();
-            builder.RegisterType<MatchmakerClientStorage>().AsSelf().InstancePerLifetimeScope();
+            _ = builder.RegisterType<NavigationStorage>().AsSelf().InstancePerLifetimeScope();
+            _ = builder.RegisterType<UserIdentityStorage>().AsSelf().InstancePerLifetimeScope();
+            _ = builder.RegisterType<LobbyInfoStorage>().AsSelf().InstancePerLifetimeScope();
+            _ = builder.RegisterType<MatchmakerClientStorage>().AsSelf().InstancePerLifetimeScope();
 
             //services registration
-            builder.RegisterGeneric(typeof(NavigationService<>)).AsSelf();
+            _ = builder.RegisterGeneric(typeof(NavigationService<>)).AsSelf();
 
             //viewmodels registration
-            builder.RegisterType<MainWindowViewmodel>().AsSelf();
-            builder.RegisterType<AuthViewmodel>().AsSelf();
-            builder.RegisterType<MainMenuViewmodel>().AsSelf();
-            builder.RegisterType<HostGameViewmodel>().AsSelf();
-            builder.RegisterType<LobbyBrowserViewmodel>().AsSelf();
-            builder.RegisterType<GameLobbyViewmodel>().AsSelf();
+            _ = builder.RegisterType<MainWindowViewmodel>().AsSelf();
+            _ = builder.RegisterType<AuthViewmodel>().AsSelf();
+            _ = builder.RegisterType<MainMenuViewmodel>().AsSelf();
+            _ = builder.RegisterType<HostGameViewmodel>().AsSelf();
+            _ = builder.RegisterType<LobbyBrowserViewmodel>().AsSelf();
+            _ = builder.RegisterType<GameLobbyViewmodel>().AsSelf();
 
             //views registration
-            builder.RegisterType<MainWindow>().AsSelf();
+            _ = builder.RegisterType<MainWindow>().AsSelf();
 
             Container = builder.Build();
 

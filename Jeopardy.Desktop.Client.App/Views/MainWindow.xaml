@@ -9,7 +9,9 @@
         Width="800"
         xmlns:viewmodels="clr-namespace:Jeopardy.Desktop.Client.App.Viewmodels"
         xmlns:views="clr-namespace:Jeopardy.Desktop.Client.App.Views"
-        d:DataContext="{d:DesignInstance viewmodels:MainWindowViewmodel}">
+        d:DataContext="{d:DesignInstance viewmodels:MainWindowViewmodel}"
+        WindowStyle="None"
+        WindowState="Maximized">
 
     <ContentControl Content="{Binding CurrentViewmodel}">
         <ContentControl.Resources>

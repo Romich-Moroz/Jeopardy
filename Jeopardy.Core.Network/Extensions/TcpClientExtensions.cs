@@ -20,7 +20,7 @@ namespace Jeopardy.Core.Network.Extensions
                 {
                     if (dataSize == 0) //possible crash if recieved less than 4 bytes at first read
                     {
-                        dataSize = bytes[0] << 24 | bytes[1] << 16 | bytes[2] << 8 | bytes[3];
+                        dataSize = (bytes[0] << 24) | (bytes[1] << 16) | (bytes[2] << 8) | bytes[3];
                         ms.Write(bytes, 4, receivedPerCycle - sizeof(int));
                     }
                     else
@@ -44,9 +44,9 @@ namespace Jeopardy.Core.Network.Extensions
                 var usefulData = BinarySerializer.Serialize(data);
                 var dataSize = new byte[4]
                 {
-                    (byte)(usefulData.Length >> 24 & 0xff),
-                    (byte)(usefulData.Length >> 16 & 0xff),
-                    (byte)(usefulData.Length >> 8 & 0xff),
+                    (byte)((usefulData.Length >> 24) & 0xff),
+                    (byte)((usefulData.Length >> 16) & 0xff),
+                    (byte)((usefulData.Length >> 8) & 0xff),
                     (byte)(usefulData.Length & 0xff)
                 };
                 await stream.WriteAsync(dataSize.Concat(usefulData).ToArray());
@@ -60,6 +60,7 @@ namespace Jeopardy.Core.Network.Extensions
             {
                 Console.WriteLine("SocketException: {0}", e);
             }
+
             return false;
         }
     }

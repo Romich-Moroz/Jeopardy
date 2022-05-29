@@ -14,5 +14,7 @@ namespace Jeopardy.Core.Data.Quiz
         public QuizCategory() => Questions = new List<Question>();
 
         public QuizCategory(IList<Question> quizQuestions) => Questions = quizQuestions;
+
+        public override bool Equals(object? obj) => obj is QuizCategory r && r.Questions.SequenceEqual(Questions) && r.Name == Name;
     }
 }

@@ -9,7 +9,8 @@
              xmlns:viewmodels="clr-namespace:Jeopardy.Desktop.Client.App.Viewmodels"
              d:DataContext="{d:DesignInstance viewmodels:HostGameViewmodel}"
              xmlns:locales="clr-namespace:Jeopardy.Core.Localization.Locales;assembly=Jeopardy.Core.Localization"
-             xmlns:val="clr-namespace:Jeopardy.Core.Wpf.ValidationRules;assembly=Jeopardy.Core.Wpf">
+             xmlns:val="clr-namespace:Jeopardy.Core.Wpf.ValidationRules;assembly=Jeopardy.Core.Wpf"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <UserControl.Resources>
         <Style TargetType="TextBlock" 
@@ -19,53 +20,69 @@
         </Style>
     </UserControl.Resources>
 
-    <StackPanel Width="800" VerticalAlignment="Center">
-        <d:DesignerProperties.DesignStyle>
-            <Style TargetType="StackPanel">
-                <Setter Property="Background" 
+    <materialDesign:DialogHost IsOpen="{Binding ShowDialog}">
+        <materialDesign:DialogHost.DialogContent>
+            <GroupBox Header="Error" Width="auto" FontSize="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center"  Text="{Binding DialogText}" Padding="0 0 0 10"/>
+                    <Button Margin="0 0 3 0" FontSize="20" Height="auto" Grid.Row="1" Content="{x:Static locales:LocaleClient.Common_BackToMenu}" Command="{Binding MainMenuCommand}"/>
+                </Grid>
+            </GroupBox>
+        </materialDesign:DialogHost.DialogContent>
+        <StackPanel Width="800" VerticalAlignment="Center">
+            <d:DesignerProperties.DesignStyle>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Background" 
                         Value="White"/>
-            </Style>
-        </d:DesignerProperties.DesignStyle>
-        <TextBlock Text="Host lobby" 
+                </Style>
+            </d:DesignerProperties.DesignStyle>
+            <TextBlock Text="Host lobby" 
                    HorizontalAlignment="Center"
                    FontSize="40"
                    Padding="10"/>
-        <GroupBox Header="{x:Static locales:LocaleClient.HostGame_GeneralSettings}" FontSize="25">
-            <StackPanel Margin="0">
-                <StackPanel Orientation="Horizontal" 
+            <GroupBox Header="{x:Static locales:LocaleClient.HostGame_GeneralSettings}" FontSize="25">
+                <StackPanel Margin="0">
+                    <StackPanel Orientation="Horizontal" 
                             Margin="3 0 10 0">
-                    <TextBlock Text="{x:Static locales:LocaleClient.HostGame_LobbyName}" 
+                        <TextBlock Text="{x:Static locales:LocaleClient.HostGame_LobbyName}" 
                                Style="{StaticResource SettingTextBlock}"
                                FontSize="20"/>
-                    <TextBox VerticalAlignment="Center" 
+                        <TextBox VerticalAlignment="Center" 
                              MinWidth="200"
                              FontSize="20">
-                        <TextBox.Text>
-                            <Binding Path="LobbyInfo.LobbyName" UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-                                    <val:NotEmptyValidationRule ValidatesOnTargetUpdated="True"
+                            <TextBox.Text>
+                                <Binding Path="LobbyInfo.LobbyName" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <val:NotEmptyValidationRule ValidatesOnTargetUpdated="True"
                                                                 Message="Lobby name is required"/>
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" 
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
                             Margin="3 5 10 0">
-                    <TextBlock Text="{x:Static locales:LocaleClient.HostGame_Password}"
+                        <TextBlock Text="{x:Static locales:LocaleClient.HostGame_Password}"
                                Style="{StaticResource SettingTextBlock}"
                                FontSize="20"/>
-                    <TextBox Text="{Binding PlainPassword, UpdateSourceTrigger=PropertyChanged}" 
+                        <TextBox Text="{Binding PlainPassword, UpdateSourceTrigger=PropertyChanged}" 
                              VerticalAlignment="Center" 
                              MinWidth="200"
                              FontSize="20"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
                             Margin="3 5 10 10">
-                    <TextBlock Text="{x:Static locales:LocaleClient.HostGame_MaxPlayerCount}"
+                        <TextBlock Text="{x:Static locales:LocaleClient.HostGame_MaxPlayerCount}"
                                Style="{StaticResource SettingTextBlock}"
                                FontSize="20"/>
-                    <Slider Value="{Binding LobbyInfo.MaxPlayerCount, UpdateSourceTrigger=PropertyChanged}"
+                        <Slider Value="{Binding LobbyInfo.MaxPlayerCount, UpdateSourceTrigger=PropertyChanged}"
                             Minimum="{Binding LobbyInfo.MinAllowedPlayerCount}"
                             Maximum="{Binding LobbyInfo.MaxAllowedPlayerCount}"
                             Style="{StaticResource MaterialDesignDiscreteSlider}"
@@ -73,35 +90,35 @@
                             TickFrequency="1"
                             TickPlacement="BottomRight" 
                             FontSize="20"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
                             Margin="3 5 10 20">
-                    <Button Content="{x:Static locales:LocaleClient.HostGame_SelectPack}"
+                        <Button Content="{x:Static locales:LocaleClient.HostGame_SelectPack}"
                             Width="180"
                             Height="auto"
                             FontSize="20"
                             Margin="0 0 20 0"
                             Command="{Binding SelectQuizPackCommand}"/>
-                    <TextBox
+                        <TextBox
                              VerticalAlignment="Center" 
                              MinWidth="100"
                              FontSize="14"
                              IsReadOnly="True"
                              IsReadOnlyCaretVisible="False">
-                        <TextBox.Text>
-                            <Binding Path="SelectedQuizPath" UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-                                    <val:NotEmptyValidationRule ValidatesOnTargetUpdated="True"
+                            <TextBox.Text>
+                                <Binding Path="SelectedQuizPath" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <val:NotEmptyValidationRule ValidatesOnTargetUpdated="True"
                                                                 Message="Quiz pack not selected"/>
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
+
                 </StackPanel>
-                
-            </StackPanel>
-        </GroupBox>
-        <!--<GroupBox Header="{x:Static locales:LocaleClient.HostGame_GameplaySettings}">
+            </GroupBox>
+            <!--<GroupBox Header="{x:Static locales:LocaleClient.HostGame_GameplaySettings}">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" 
                             Margin="3 10 10 0">
@@ -138,7 +155,7 @@
             </StackPanel>
         </GroupBox>-->
 
-        <!--<ListBox Grid.Row="1" ItemsSource="{Binding ValidationResult.FieldValidationResults}" MaxHeight="100">
+            <!--<ListBox Grid.Row="1" ItemsSource="{Binding ValidationResult.FieldValidationResults}" MaxHeight="100">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}"/>
@@ -146,18 +163,19 @@
             </ListBox.ItemTemplate>
         </ListBox>-->
 
-        <StackPanel Orientation="Horizontal" 
+            <StackPanel Orientation="Horizontal" 
                     Margin="10 10 10 0">
-            <Button Content="{x:Static locales:LocaleClient.Common_BackToMenu}" 
+                <Button Content="{x:Static locales:LocaleClient.Common_BackToMenu}" 
                     Height="auto"
                     Command="{Binding MainMenuCommand}"
                     FontSize="20"/>
-            <Button Content="{x:Static locales:LocaleClient.HostGame_CreateLobby}" 
+                <Button Content="{x:Static locales:LocaleClient.HostGame_CreateLobby}" 
                     Height="auto"
                     Margin="30 0 0 0"
                     Width="auto"
                     Command="{Binding CreateLobbyCommand}"
                     FontSize="20"/>
+            </StackPanel>
         </StackPanel>
-    </StackPanel>
+    </materialDesign:DialogHost>
 </UserControl>

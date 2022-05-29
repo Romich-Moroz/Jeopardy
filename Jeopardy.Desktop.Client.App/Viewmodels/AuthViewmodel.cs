@@ -27,8 +27,10 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         public ICommand SetAvatarCommand => new RelayCommand(
             () =>
             {
-                OpenFileDialog openFileDialog = new();
-                openFileDialog.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg";
+                OpenFileDialog openFileDialog = new()
+                {
+                    Filter = "Image files (*.png;*.jpg)|*.png;*.jpg"
+                };
 
                 if (openFileDialog.ShowDialog() == true)
                 {

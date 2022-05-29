@@ -12,7 +12,6 @@ namespace Jeopardy.Core.Data.Gameplay.Actions
         public override void Execute(GameState gameState) => gameState.GameContext = new SelectQuestionContext(SelectedNetworkUserId);
         public override bool CanExecute(GameState gameState) => gameState.GameContext is PlayerSelectContext;
 
-
         private PlayerSelectAction() { }
         public PlayerSelectAction(string selectedNetworkUserId) => SelectedNetworkUserId = selectedNetworkUserId;
     }

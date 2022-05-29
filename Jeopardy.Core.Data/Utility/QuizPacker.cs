@@ -43,7 +43,7 @@ namespace Jeopardy.Core.Data.Utility
                             result.FieldValidationResults.Add(FieldValidationResult.Error(CreateMessage("Task description is empty", i, j, k)));
                         }
 
-                        if (quiz.Rounds[i].Categories[j].Questions[k].ContentType < ContentType.Text || quiz.Rounds[i].Categories[j].Questions[k].ContentType > ContentType.Video)
+                        if (quiz.Rounds[i].Categories[j].Questions[k].ContentType is < ContentType.Text or > ContentType.Video)
                         {
                             result.FieldValidationResults.Add(FieldValidationResult.Error(CreateMessage("Specified content type is not supported", i, j, k)));
                         }
@@ -68,6 +68,7 @@ namespace Jeopardy.Core.Data.Utility
                                             result.FieldValidationResults.Add(FieldValidationResult.Warning(CreateMessage("File does not exist, previous content remains", i, j, k)));
                                         }
                                     }
+
                                     break;
                                 //case ContentAccessType.Link:
                                 //    if (!IsUrlValid(quiz.Rounds[i].Categories[j].Questions[k].ContentPath))
@@ -111,6 +112,7 @@ namespace Jeopardy.Core.Data.Utility
                                     {
                                         PackMediaQuestion(question);
                                     }
+
                                     break;
                             }
                         }

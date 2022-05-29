@@ -17,7 +17,7 @@ namespace Jeopardy.Core.Data.Gameplay.Actions
                 }
                 else
                 {
-                    gameState.SetNextRoundOrShowWinner();
+                    gameState.SetNextRoundOrShowWinner(ctx.SelectorNetworkUserId);
                 }
             }
         }

@@ -19,21 +19,21 @@ namespace Jeopardy.Core.Data.Gameplay
         [ProtoMember(5)]
         public GameContext? GameContext { get; set; }
         [ProtoMember(6)]
-        public bool IsPaused { get; set; } = true;
+        public bool IsStarted { get; set; } = false;
         [ProtoMember(7)]
         public string ControlledNetworkUserId { get; set; } = string.Empty; //0 - host, 1 - first player etc
 
         public string CurrentStateDescription => GameContext switch
         {
             null => "Waiting for host to start",
-            PlayerSelectContext c => $"Waiting for player selection from " + (c.SelectorNetworkUserId == Host.NetworkUserId ? $"{Host.Username}" : $"{Players[c.SelectorNetworkUserId].Username}"),
-            SelectQuestionContext c => $"Waiting for question selection from {Players[c.SelectorNetworkUserId].Username}",
+            PlayerSelectContext c => $"Waiting for player selection from " + (c.SelectorNetworkUserId == Host.NetworkUserId ? $"{Host.Username}" : $"{(Players.TryGetValue(c.SelectorNetworkUserId, out Player? value) ? value.Username : "")}"),
+            SelectQuestionContext c => $"Waiting for question selection from {(Players.TryGetValue(c.SelectorNetworkUserId, out Player? value) ? value.Username : "")}",
             SimpleQuestionContext => $"Simple question with reward of {CurrentQuestion?.Price}",
             WinnerContext => $"Congratulations to winners!!!",
             //SponsoredQuestionContext => $"Sponsored question with reward of {CurrentQuestion?.Price}",
             //SecretQuestionContext => $"Secret question with price of {CurrentQuestion?.Price * GameRules.SecretQuestionRewardMultiplier}",
             //AuctionQuestionContext => $"Auction started, initial bet is {CurrentQuestion?.Price}, max bet is {CurrentQuestion?.Price * GameRules.StakeQuestionMaxStakeMultiplier}, make your bets",
-            PlayerAnswerContext c => $"Player {Players[c.AnsweringPlayerId].Username} is answering",
+            PlayerAnswerContext c => $"Player {(Players.TryGetValue(c.AnsweringPlayerId, out Player? value) ? value.Username : "")} is answering",
             _ => "Description for this state is not defined"
         };
 
@@ -59,7 +59,7 @@ namespace Jeopardy.Core.Data.Gameplay
                     }
                     else
                     {
-                        SetNextRoundOrShowWinner();
+                        SetNextRoundOrShowWinner(answeringPlayerId);
                     }
                 }
                 else if (GameContext is PlayerAnswerContext ctx)
@@ -70,7 +70,7 @@ namespace Jeopardy.Core.Data.Gameplay
             }
         }
 
-        public void SetNextRoundOrShowWinner()
+        public void SetNextRoundOrShowWinner(string answeringPlayerId)
         {
             CurrentRound = Quiz.Rounds.FirstOrDefault(r => r.HasUnplayedCategories);
             if (CurrentRound is null)
@@ -82,8 +82,13 @@ namespace Jeopardy.Core.Data.Gameplay
                 {
                     player.IsWinner = true;
                 }
+
                 var winners = winnerPlayers.Select(p => p.NetworkUserId).ToList();
                 GameContext = new WinnerContext(winners);
+            }
+            else
+            {
+                GameContext = new SelectQuestionContext(answeringPlayerId);
             }
         }
     }

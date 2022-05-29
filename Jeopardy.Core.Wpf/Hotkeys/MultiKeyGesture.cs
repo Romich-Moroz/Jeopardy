@@ -57,7 +57,7 @@ namespace Jeopardy.Core.Wpf.Hotkeys
             return true;
         }
 
-        private static bool IsDefinedKey(Key key) => key >= Key.None && key <= Key.OemClear;
+        private static bool IsDefinedKey(Key key) => key is >= Key.None and <= Key.OemClear;
 
         private bool IsExpiredTimeFrame() => _currentKeyIndex != 0 && !(DateTime.Now - _lastKeyPressDateTime <= _maximumDelayBetweenKeyPresses);
 

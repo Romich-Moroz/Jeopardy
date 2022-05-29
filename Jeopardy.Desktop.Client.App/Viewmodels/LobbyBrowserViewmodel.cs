@@ -24,10 +24,11 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
         private GetLobbyListRequest? _getLobbyListRequest;
         private JoinLobbyRequest? _joinLobbyRequest;
 
-
         public List<LobbyPreview> LobbyList => _lobbyInfoStorage.BrowserLobbyList;
         public int SelectedLobbyIndex { get; set; } = -1;
         public bool ShowPasswordDialog { get; set; } = false;
+        public bool ShowErrorDialog { get; set; } = false;
+        public string ErrorDialogText { get; set; } = "";
         public string Password { get; set; } = string.Empty;
         public bool IsPasswordInvalid { get; set; } = false;
 
@@ -36,7 +37,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             async () =>
             {
                 _getLobbyListRequest = new GetLobbyListRequest(_userIdentityStorage.CurrentUserIdentity.NetworkUserId);
-                await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(_getLobbyListRequest);
+                await _matchmakerClientStorage.Client.SendRequestAsync(_getLobbyListRequest);
             },
             null
         );
@@ -53,7 +54,6 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             },
             () => ShowPasswordDialog
         );
-
 
         public ICommand JoinLobbyCommand => new RelayCommand(
         async () =>
@@ -73,7 +73,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                     new Player(_userIdentityStorage.CurrentUserIdentity),
                     Password
                 );
-                await _matchmakerClientStorage.MatchmakerClient.SendRequestAsync(_joinLobbyRequest);
+                await _matchmakerClientStorage.Client.SendRequestAsync(_joinLobbyRequest);
             }
         }, () => SelectedLobbyIndex >= 0);
 
@@ -84,15 +84,15 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
             _matchmakerClientStorage = matchmakerClientStorage;
             _gameLobbyNavigationService = gameLobbyNavigationService;
             _mainMenuNavigationService = mainMenuNavigationService;
-            _matchmakerClientStorage.MatchmakerClient.ResponseReceived += MatchmakerClient_ResponseReceived;
+            _matchmakerClientStorage.Client.ResponseReceived += MatchmakerClient_ResponseReceived;
 
-
-            RefreshLobbyListCommand.Execute(null);
+            _lobbyInfoStorage.BrowserLobbyList = new List<LobbyPreview>();
+            //RefreshLobbyListCommand.Execute(null);
         }
 
         public override void Unsubscribe()
         {
-            _matchmakerClientStorage.MatchmakerClient.ResponseReceived -= MatchmakerClient_ResponseReceived;
+            _matchmakerClientStorage.Client.ResponseReceived -= MatchmakerClient_ResponseReceived;
             base.Unsubscribe();
         }
 
@@ -106,6 +106,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                         _lobbyInfoStorage.BrowserLobbyList = r.LobbyPreviews;
                         OnPropertyChanged(nameof(LobbyList));
                     }
+
                     break;
                 case JoinLobbyResponse r:
                     if (e.NetworkRequestId == _joinLobbyRequest?.NetworkRequestId)
@@ -113,6 +114,7 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                         _lobbyInfoStorage.CurrentLobbyInfo = r.LobbyInfo;
                         _gameLobbyNavigationService.Navigate();
                     }
+
                     break;
                 case ErrorResponse r:
                     switch (r.ErrorCode)
@@ -122,8 +124,13 @@ namespace Jeopardy.Desktop.Client.App.Viewmodels
                             OnPropertyChanged(nameof(IsPasswordInvalid));
                             break;
                         default:
-                            throw new InvalidOperationException($"Handling for error code {r.ErrorCode} is not implemented");
+                            ShowErrorDialog = true;
+                            ErrorDialogText = r.Message;
+                            OnPropertyChanged(nameof(ShowErrorDialog));
+                            OnPropertyChanged(nameof(ErrorDialogText));
+                            break;
                     }
+
                     break;
                 default:
                     throw new InvalidOperationException($"Unexpected response of type {e.GetType()} received");

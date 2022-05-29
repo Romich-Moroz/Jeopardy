@@ -1,5 +1,7 @@
 ﻿using Jeopardy.Core.Cryptography;
 using Jeopardy.Core.Data.Gameplay;
+using Jeopardy.Core.Data.Gameplay.Actions;
+using Jeopardy.Core.Data.Gameplay.Contexts;
 using Jeopardy.Core.Data.Matchmaker;
 using Jeopardy.Core.Network;
 using Jeopardy.Core.Network.Constants;
@@ -17,7 +19,6 @@ namespace Jeopardy.Web.Matchmaker.Service
     {
         private static readonly ConcurrentDictionary<string, LobbyInfo> _lobbyList = new();
         private static readonly IPEndPoint _serverAddress = new(IPAddress.Any, MatchmakerClient.DefaultPort);
-
 
         public static void Main()
         {
@@ -65,7 +66,7 @@ namespace Jeopardy.Web.Matchmaker.Service
                     NetworkRequest? request = await client.ReceiveDataAsync<NetworkRequest>();
                     LogInfo($"Recieved request from {clientAddress} of type {request.RequestType}");
                     NetworkResponse? response = await PrepareResponse(client, request);
-                    await client.SendDataAsync(response);
+                    _ = await client.SendDataAsync(response);
                     LogInfo($"Sending response to {clientAddress} of type {response.RequestType}");
                 }
             }
@@ -82,7 +83,7 @@ namespace Jeopardy.Web.Matchmaker.Service
                     {
                         LogWarning($"Host disconnected {clientAddress}, lobby deleted");
                         await NotifyEveryoneExceptSender(lobby, host.NetworkUserId, new HostDisconnectNotification());
-                        DeleteLobby(new DeleteLobbyRequest(host.NetworkUserId, lobby.NetworkLobbyId));
+                        _ = DeleteLobby(new DeleteLobbyRequest(host.NetworkUserId, lobby.NetworkLobbyId));
                         break;
                     }
 
@@ -90,13 +91,14 @@ namespace Jeopardy.Web.Matchmaker.Service
                     {
                         if (player.NetworkIdentity.TcpClient?.Client.RemoteEndPoint == clientAddress)
                         {
-                            lobby.GameState.Players.Remove(player.NetworkUserId);
+                            _ = lobby.GameState.Players.Remove(player.NetworkUserId);
                             await NotifyEveryoneExceptSender(lobby, player.NetworkUserId, new PlayerDisconnectNotification(player.NetworkUserId));
                             LogWarning($"Client disconnected {clientAddress}");
                             break;
                         }
                     }
                 }
+
                 client.Close();
             }
         }
@@ -124,7 +126,8 @@ namespace Jeopardy.Web.Matchmaker.Service
 
                 return new ExecuteGameActionNotification(request.GameAction);
             }
-            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
+
+            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby no longer exists");
         }
 
         private static async Task<NetworkResponse> PlayerDisconnect(DisconnectRequest request)
@@ -132,20 +135,47 @@ namespace Jeopardy.Web.Matchmaker.Service
             if (_lobbyList.TryGetValue(request.NetworkLobbyId, out LobbyInfo? lobbyInfo) && lobbyInfo is not null)
             {
                 Player? host = lobbyInfo.GameState.Host;
+                GameState? gameState = lobbyInfo.GameState;
                 if (host.NetworkUserId == request.NetworkUserId)
                 {
-                    DeleteLobby(new DeleteLobbyRequest(request.NetworkUserId, request.NetworkLobbyId));
+                    _ = DeleteLobby(new DeleteLobbyRequest(request.NetworkUserId, request.NetworkLobbyId));
                     await NotifyEveryoneExceptSender(lobbyInfo, request.NetworkUserId, new HostDisconnectNotification());
                 }
                 else
                 {
-                    lobbyInfo.GameState.Players.Remove(request.NetworkUserId);
+                    _ = gameState.Players.Remove(request.NetworkUserId);
+                    switch (gameState.GameContext)
+                    {
+                        case SelectQuestionContext c:
+                            if (c.SelectorNetworkUserId == request.NetworkUserId)
+                            {
+                                c.SelectorNetworkUserId = gameState.Players.First().Key;
+                            }
+
+                            break;
+                        case QuestionContext c:
+                            if (c.SelectorNetworkUserId == request.NetworkUserId)
+                            {
+                                c.SelectorNetworkUserId = gameState.Players.First().Key;
+                            }
+
+                            break;
+                        case PlayerAnswerContext c:
+                            if (c.AnsweringPlayerId == request.NetworkUserId)
+                            {
+                                new DenyAnswerAction().Execute(gameState);
+                            }
+
+                            break;
+                    }
+
                     await NotifyEveryoneExceptSender(lobbyInfo, request.NetworkUserId, new PlayerDisconnectNotification(request.NetworkUserId));
                 }
 
                 return new PlayerDisconnectNotification(request.NetworkUserId);
             }
-            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
+
+            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby no longer exists");
         }
 
         private static async Task<NetworkResponse> PlayerJoin(TcpClient client, JoinLobbyRequest request)
@@ -167,11 +197,14 @@ namespace Jeopardy.Web.Matchmaker.Service
                         lobbyInfo.GameState.ControlledNetworkUserId = request.Player.NetworkUserId;
                         return new JoinLobbyResponse(request.NetworkRequestId, lobbyInfo);
                     }
+
                     return new ErrorResponse(request, ErrorCode.LobbyIsFull, $"Lobby is full");
                 }
+
                 return new ErrorResponse(request, ErrorCode.InvalidPassword, $"Password is invalid");
             }
-            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
+
+            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby no longer exists");
         }
 
         private static async Task NotifyEveryoneExceptSender(LobbyInfo lobbyInfo, string networkSenderId, NetworkResponse networkResponse)
@@ -185,7 +218,7 @@ namespace Jeopardy.Web.Matchmaker.Service
             {
                 if (connection is not null)
                 {
-                    await connection.SendDataAsync(networkResponse);
+                    _ = await connection.SendDataAsync(networkResponse);
                 }
                 else
                 {
@@ -198,6 +231,7 @@ namespace Jeopardy.Web.Matchmaker.Service
             new GetLobbyListResponse(
                 request.NetworkRequestId,
                 _lobbyList.Values.OrderByDescending(l => l.LobbyCreationDate)
+                .Where(li => !li.GameState.IsStarted)
                 .Select(li => li.ToLobbyPreview())
                 .ToList()
             );
@@ -209,21 +243,15 @@ namespace Jeopardy.Web.Matchmaker.Service
             {
                 request.LobbyInfo.Password = new SecurePassword(request.Password);
             }
-            if (_lobbyList.TryAdd(request.LobbyInfo.NetworkLobbyId, request.LobbyInfo))
-            {
-                return new CreateLobbyResponse(request.NetworkRequestId);
-            }
-            return new ErrorResponse(request, ErrorCode.BadRequest, "Duplicate lobby Guid, this should never happen...");
+
+            return _lobbyList.TryAdd(request.LobbyInfo.NetworkLobbyId, request.LobbyInfo)
+                ? new CreateLobbyResponse(request.NetworkRequestId)
+                : new ErrorResponse(request, ErrorCode.BadRequest, "Duplicate lobby Guid, this should never happen...");
         }
 
-        private static NetworkResponse DeleteLobby(DeleteLobbyRequest request)
-        {
-            if (_lobbyList.Remove(request.NetworkLobbyId, out _))
-            {
-                return new DeleteLobbyResponse(request.NetworkRequestId);
-            }
-            return new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby with id {request.NetworkLobbyId} no longer exists");
-        }
+        private static NetworkResponse DeleteLobby(DeleteLobbyRequest request) => _lobbyList.Remove(request.NetworkLobbyId, out _)
+                ? new DeleteLobbyResponse(request.NetworkRequestId)
+                : new ErrorResponse(request, ErrorCode.LobbyNotFound, $"Lobby no longer exists");
 
         private static void LogInfo(string message)
         {

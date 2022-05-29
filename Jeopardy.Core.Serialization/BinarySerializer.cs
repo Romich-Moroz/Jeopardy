@@ -24,7 +24,7 @@ namespace Jeopardy.Core.Serialization
             using MemoryStream? stream = new();
 
             stream.Write(bytes, 0, bytes.Length);
-            stream.Seek(0, SeekOrigin.Begin);
+            _ = stream.Seek(0, SeekOrigin.Begin);
 
             return Serializer.Deserialize<T>(stream);
         }

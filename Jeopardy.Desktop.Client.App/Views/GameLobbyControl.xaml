@@ -12,7 +12,8 @@
              xmlns:gameplay="clr-namespace:Jeopardy.Core.Data.Gameplay;assembly=Jeopardy.Core.Data"
              d:DataContext="{d:DesignInstance viewmodels:GameLobbyViewmodel}"
              xmlns:converters="clr-namespace:Jeopardy.Core.Wpf.Converters;assembly=Jeopardy.Core.Wpf"
-             xmlns:locales="clr-namespace:Jeopardy.Core.Localization.Locales;assembly=Jeopardy.Core.Localization">
+             xmlns:locales="clr-namespace:Jeopardy.Core.Localization.Locales;assembly=Jeopardy.Core.Localization"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <UserControl.Resources>
         <BitmapImage x:Key="DefaultAvatar" 
                      UriSource="../Resources/Images/DefaultAvatar.png" />
@@ -21,190 +22,206 @@
         <converters:ContentConverter x:Key="ContentConverter"/>
     </UserControl.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <GroupBox Grid.Column="0" Header="Host info" FontSize="20">
-            <StackPanel VerticalAlignment="Center">
-                <Image Width="auto" Source="{Binding HostPlayer.NetworkIdentity.Avatar, FallbackValue={StaticResource DefaultAvatar}, Converter={StaticResource ImageConverter}}"/>
-                <TextBlock TextWrapping="Wrap" Text="{Binding HostPlayer.NetworkIdentity.Username}" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBlock TextWrapping="Wrap" Text="{Binding GameState.CurrentStateDescription}" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </GroupBox>
-        
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="9*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-
-            <GroupBox Grid.Row="0" Header="{Binding CurrentRound.Name, StringFormat=Round: {0}}" FontSize="20">
+    <materialDesign:DialogHost IsOpen="{Binding ShowErrorDialog}">
+        <materialDesign:DialogHost.DialogContent>
+            <GroupBox Header="Error" Width="auto" FontSize="20">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center"  Text="{Binding ErrorDialogText}" Padding="0 0 0 10"/>
+                    <Button Margin="0 0 3 0" FontSize="20" Height="auto" Grid.Row="1" Content="{x:Static locales:LocaleClient.Common_BackToMenu}" Command="{Binding DisconnectCommand}"/>
+                </Grid>
+            </GroupBox>
+        </materialDesign:DialogHost.DialogContent>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                    <ItemsControl Grid.Row="0" 
+            <GroupBox Grid.Column="0" Header="Host info" FontSize="20">
+                <StackPanel VerticalAlignment="Center">
+                    <Image Width="auto" Source="{Binding HostPlayer.NetworkIdentity.Avatar, FallbackValue={StaticResource DefaultAvatar}, Converter={StaticResource ImageConverter}}"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding HostPlayer.NetworkIdentity.Username}" FontSize="20" HorizontalAlignment="Center"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding GameState.CurrentStateDescription}" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </GroupBox>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <GroupBox Grid.Row="0" Header="{Binding CurrentRound.Name, StringFormat=Round: {0}}" FontSize="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <ItemsControl Grid.Row="0" 
                                   ItemsSource="{Binding RoundQuestions}"
                                   Visibility="{Binding IsQuestionBoardVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <UniformGrid Rows="{Binding DataContext.RoundCategories, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" 
-                                             Columns="1"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ItemsControl ItemsSource="{Binding}">
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <UniformGrid Columns="{Binding DataContext.RoundMaxQuestions, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate DataType="{x:Type localvm:QuestionSelectorViewmodel}">
-                                            <Button Content="{Binding Text}"
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel VerticalAlignment="Center"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <UniformGrid Columns="{Binding DataContext.RoundMaxQuestions, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type localvm:QuestionSelectorViewmodel}">
+                                                <Button Content="{Binding Text}"
                                                     Command="{Binding DataContext.SelectQuestionCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" 
                                                     CommandParameter="{Binding Question}"
                                                     IsEnabled="{Binding IsEnabled}"
                                                     MinHeight="75" 
                                                     MaxHeight="200"
                                                     FontSize="20">
-                                            </Button>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                                                </Button>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
 
-                    <Border Grid.Row="0" Visibility="{Binding IsTextContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
-                        <TextBlock FontSize="70" Text="{Binding CurrentQuestion, Converter={StaticResource ContentConverter}}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-                    </Border>
+                        <Border Grid.Row="0" Visibility="{Binding IsTextContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
+                            <TextBlock FontSize="70" Text="{Binding CurrentQuestion, Converter={StaticResource ContentConverter}}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        </Border>
 
-                    <Border Grid.Row="0" Visibility="{Binding IsImageContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
-                        <Image Source="{Binding CurrentQuestion, Converter={StaticResource ContentConverter}}"/>
-                    </Border>
+                        <Border Grid.Row="0" Visibility="{Binding IsImageContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
+                            <Image Source="{Binding CurrentQuestion, Converter={StaticResource ContentConverter}}"/>
+                        </Border>
 
-                    <Border Grid.Row="0" Visibility="{Binding IsMediaContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
-                        <Border.Background>
-                            <VisualBrush Stretch="Uniform">
-                                <VisualBrush.Visual>
-                                    <Image gif:AnimationBehavior.SourceUri="../Resources/Images/MusicBackground.gif"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </Border.Background>
+                        <Border Grid.Row="0" Visibility="{Binding IsMediaContent, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
+                            <Border.Background>
+                                <VisualBrush Stretch="Uniform">
+                                    <VisualBrush.Visual>
+                                        <Image gif:AnimationBehavior.SourceUri="../Resources/Images/MusicBackground.gif"/>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Border.Background>
 
-                        <MediaElement LoadedBehavior="Play" UnloadedBehavior="Stop" Source="{Binding CurrentQuestion.ContentPath}"  />
-                    </Border>
+                            <MediaElement LoadedBehavior="Play" UnloadedBehavior="Stop" Source="{Binding CurrentQuestion.ContentPath}"  />
+                        </Border>
 
-                    <Border Grid.Row="0" Visibility="{Binding IsWinnersVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
-                        <TextBlock FontSize="70" Text="Quiz is over" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-                    </Border>
-                </Grid>
-            </GroupBox>
+                        <Border Grid.Row="0" Visibility="{Binding IsWinnersVisible, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}">
+                            <TextBlock FontSize="70" Text="Quiz is over" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        </Border>
+                    </Grid>
+                </GroupBox>
 
-            <GroupBox Grid.Row="1" Header="Players" FontSize="20">
-                <StackPanel>
-                    <ItemsControl ItemsSource="{Binding Players}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <UniformGrid Rows="1" Columns="8"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate DataType="{x:Type gameplay:Player}">
-                                <StackPanel VerticalAlignment="Center">
-                                    <TextBlock Text="Winner" 
+                <GroupBox Grid.Row="1" Header="Players" FontSize="20">
+                    <StackPanel>
+                        <ItemsControl ItemsSource="{Binding Players}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <UniformGrid Rows="1" Columns="8"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type gameplay:Player}">
+                                    <StackPanel VerticalAlignment="Center">
+                                        <TextBlock Text="Winner" 
                                                FontSize="20" 
                                                HorizontalAlignment="Center"
                                                Visibility="{Binding IsWinner, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=false}"/>
-                                    <Button Command="{Binding DataContext.SelectPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" 
+                                        <Button Command="{Binding DataContext.SelectPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" 
                                             CommandParameter="{Binding NetworkUserId}"
                                             Style="{StaticResource MaterialDesignPaperDarkButton}"
                                             Height="auto" MaxHeight="150">
-                                        <Image Source="{Binding NetworkIdentity.Avatar, FallbackValue={StaticResource DefaultAvatar}, Converter={StaticResource ImageConverter}}"/>
-                                    </Button>
-                                    <TextBlock Text="{Binding NetworkIdentity.Username}" 
+                                            <Image Source="{Binding NetworkIdentity.Avatar, FallbackValue={StaticResource DefaultAvatar}, Converter={StaticResource ImageConverter}}"/>
+                                        </Button>
+                                        <TextBlock Text="{Binding NetworkIdentity.Username}" 
                                                FontSize="20" 
                                                HorizontalAlignment="Center"/>
-                                    <TextBlock Text="{Binding Score}" 
+                                        <TextBlock Text="{Binding Score}" 
                                                HorizontalAlignment="Center"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                    <TextBlock Grid.Row="4" 
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <TextBlock Grid.Row="4" 
                        Grid.ColumnSpan="2" 
                        HorizontalAlignment="Center"
                        Text="{Binding CurrentQuestion.CorrectAnswer, StringFormat=Correct answer: {0}}"
                        Visibility="{Binding IsUserHost, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"
                        FontSize="20"
                        Padding="3"/>
-                    <TextBlock Grid.Row="4" 
+                        <TextBlock Grid.Row="4" 
                        Grid.ColumnSpan="2" 
                        HorizontalAlignment="Center"
                        Text="{Binding CurrentQuestion.TaskDescription, StringFormat=Hint: {0}}"
                        Visibility="{Binding IsUserNotHost, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"
                        FontSize="20"
                        Padding="3"/>
-                </StackPanel>
-            </GroupBox>
-            
-        </Grid>
-        <GroupBox Grid.Column="2" Header="Game history &amp; controls" FontSize="20">
-            <Grid ShowGridLines="False">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <ScrollViewer Padding="10" Grid.Row="0">
-                    <TextBlock TextWrapping="Wrap" Text="{Binding ChatLog}"/>
-                </ScrollViewer>
-                <Button FontSize="15" 
+                    </StackPanel>
+                </GroupBox>
+
+            </Grid>
+            <GroupBox Grid.Column="2" Header="Game history &amp; controls" FontSize="20">
+                <Grid ShowGridLines="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Padding="10" Grid.Row="0">
+                        <TextBlock TextWrapping="Wrap" Text="{Binding ChatLog}"/>
+                    </ScrollViewer>
+                    <Button FontSize="15" 
                         Margin="5" 
                         Grid.Row="1" 
                         Content="Approve answer"
                         Command="{Binding ApproveAnswerCommand}"
                         Visibility="{Binding CanJudge, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"/>
-                <Button FontSize="15" 
+                    <Button FontSize="15" 
                         Margin="5" 
                         Grid.Row="2" 
                         Content="Deny answer"
                         Command="{Binding DeclineAnswerCommand}"
                         Visibility="{Binding CanJudge, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"/>
 
-                <Button FontSize="15" 
+                    <Button FontSize="15" 
                         Margin="5" 
                         Grid.Row="3" 
                         Content="Start game" 
                         Command="{Binding StartGameCommand}"
                         Visibility="{Binding CanStartGame, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"/>
-                <Button FontSize="15" 
+                    <Button FontSize="15" 
                         Margin="5" 
                         Grid.Row="4" 
                         Content="{x:Static locales:LocaleClient.GameLobby_Button_Answer}" 
                         Command="{Binding AnswerQuestionCommand}"
                         Visibility="{Binding CanAnswerQuestion, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"/>
-                <Button FontSize="15" 
+                    <Button FontSize="15" 
                         Margin="5" 
                         Grid.Row="5" 
                         Content="Skip question" 
                         Command="{Binding SkipQuestionCommand}"
                         Visibility="{Binding CanSkipQuestion, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"/>
-                <Button FontSize="15" Margin="5" Grid.Row="6" Content="{x:Static locales:LocaleClient.GameLobby_Button_Exit}" Command="{Binding DisconnectCommand}"/>
-            </Grid>
-        </GroupBox>
-    </Grid>
+                    <Button FontSize="15" Margin="5" Grid.Row="6" Content="{x:Static locales:LocaleClient.GameLobby_Button_Exit}" Command="{Binding DisconnectCommand}"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </materialDesign:DialogHost>
 </UserControl>

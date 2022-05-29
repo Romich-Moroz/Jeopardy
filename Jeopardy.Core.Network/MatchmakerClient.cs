@@ -13,36 +13,76 @@ namespace Jeopardy.Core.Network
         public const int DefaultPort = 50000;
         public const string DefaultEndpoint = "127.0.0.1";
 
-        private bool _disposed = false;
-        private readonly TcpClient _tcpClient = new(DefaultEndpoint, DefaultPort);
+        public bool Connected { get; private set; }
 
-        public MatchmakerClient() => Task.Run(() => WaitForResponses());
+        private bool _disposed = false;
+        private TcpClient _tcpClient;
+
+        public MatchmakerClient() => Reconnect();
 
         public async Task SendRequestAsync(NetworkRequest request)
         {
-            try
+            if (TryEstablishConnection())
             {
-                await _tcpClient.SendDataAsync(request);
+                try
+                {
+                    _ = await _tcpClient.SendDataAsync(request);
+                }
+                catch (IOException e)
+                {
+                    ResponseReceived?.Invoke(this, new ErrorResponse(request, ErrorCode.MatchmakerUnreachable, e.Message));
+                    Connected = false;
+                }
             }
-            catch (IOException e)
+            else
             {
-                ResponseReceived?.Invoke(this, new ErrorResponse(request, ErrorCode.MatchmakerUnreachable, e.Message));
+                ResponseReceived?.Invoke(this, new ErrorResponse(request, ErrorCode.MatchmakerUnreachable, "Matchmaker is unreachable"));
             }
         }
+
+        public void Reconnect() => Task.Run(() => WaitForResponses());
 
         private async Task WaitForResponses()
         {
             try
             {
-                while (true)
+                if (TryEstablishConnection())
                 {
-                    NetworkResponse? response = await _tcpClient.ReceiveDataAsync<NetworkResponse>();
-                    ResponseReceived?.Invoke(this, response);
+                    while (true)
+                    {
+                        NetworkResponse? response = await _tcpClient.ReceiveDataAsync<NetworkResponse>();
+                        ResponseReceived?.Invoke(this, response);
+                    }
+                }
+                else
+                {
+                    ResponseReceived?.Invoke(this, new ErrorResponse(null, ErrorCode.MatchmakerUnreachable, "Matchmaker is unreachable"));
                 }
             }
-            catch (IOException e)
+            catch
             {
-                ResponseReceived?.Invoke(this, new ErrorResponse(null, ErrorCode.MatchmakerUnreachable, e.Message));
+                ResponseReceived?.Invoke(this, new ErrorResponse(null, ErrorCode.MatchmakerUnreachable, "Matchmaker is unreachable"));
+                Dispose();
+            }
+
+            Connected = false;
+        }
+
+        public bool TryEstablishConnection()
+        {
+            try
+            {
+                if (!Connected)
+                {
+                    _tcpClient = new(DefaultEndpoint, DefaultPort);
+                    Connected = true;
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 

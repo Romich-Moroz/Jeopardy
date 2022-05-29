@@ -19,7 +19,7 @@
         {
             var fieldName = string.IsNullOrWhiteSpace(FieldName) ? "" : $", \"{FieldName}\"";
             var fieldValue = string.IsNullOrWhiteSpace(FieldValue) ? "" : $": {FieldValue}";
-            return $"{ValidationResultType} - {Message}{fieldName }{fieldValue}";
+            return $"{ValidationResultType} - {Message}{fieldName}{fieldValue}";
         }
     }
 }

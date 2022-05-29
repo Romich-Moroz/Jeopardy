@@ -24,5 +24,7 @@ namespace Jeopardy.Core.Data.Quiz
         public string ContentPath { get; set; } = string.Empty;
         [ProtoMember(9)]
         public bool Unplayed { get; set; } = true;
+
+        public override bool Equals(object? obj) => obj is Question q && q.Price == Price && q.TaskDescription == TaskDescription && q.CorrectAnswer == CorrectAnswer;
     }
 }

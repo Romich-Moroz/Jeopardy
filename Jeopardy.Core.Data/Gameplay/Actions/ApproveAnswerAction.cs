@@ -12,11 +12,12 @@ namespace Jeopardy.Core.Data.Gameplay.Actions
 
             if (gameState.CurrentRound?.HasUnplayedCategories == true)
             {
+                gameState.CurrentQuestion = null;
                 gameState.GameContext = new SelectQuestionContext(AnsweringPlayerId);
             }
             else
             {
-                gameState.SetNextRoundOrShowWinner();
+                gameState.SetNextRoundOrShowWinner(AnsweringPlayerId);
             }
         }
     }
